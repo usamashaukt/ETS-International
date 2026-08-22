@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 import RedesignLanding from "@/pages/RedesignLanding"
 import LegacyEts from "@/pages/LegacyEts"
-import VersionSwitcher from "@/components/common/VersionSwitcher"
-import { isLegacyRoute, navigateTo } from "@/utils/routing"
+import { isLegacyRoute } from "@/utils/routing"
 import type { RouteType } from "@/types"
 
 export default function App() {
@@ -24,19 +23,9 @@ export default function App() {
     }
   }, [])
 
-  const handleNavigate = (route: RouteType) => {
-    navigateTo(route)
-    setCurrentRoute(route)
-  }
-
   return (
-    <div className="relative">
+    <>
       {currentRoute === "legacy-ets" ? <LegacyEts /> : <RedesignLanding />}
-
-      <VersionSwitcher
-        currentRoute={currentRoute}
-        onNavigate={handleNavigate}
-      />
-    </div>
+    </>
   )
 }
