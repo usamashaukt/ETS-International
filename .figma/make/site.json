@@ -1,7 +1,15 @@
 {
+  "title": "ETS International — Eco-Friendly Cleaning & Aviation Solutions",
   "description": "Showcasing innovative eco-friendly cleaning solutions, this platform serves B2B clients in aviation and industrial sectors, promoting sustainability and efficiency.",
+  "language": "en",
+  "icons": {
+    "icon": "/favicon.png"
+  },
+  "openGraph": {
+    "image": "https://ets-international.netlify.app/ets-logo.png"
+  },
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
