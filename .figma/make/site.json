@@ -1,0 +1,10 @@
+{
+  "description": "Showcasing innovative eco-friendly cleaning solutions, this platform serves B2B clients in aviation and industrial sectors, promoting sustainability and efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
