@@ -1644,7 +1644,7 @@ export default function App() {
               </p>
             </div>
             <form
-              className="flex gap-2 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto"
               onSubmit={(e) => {
                 e.preventDefault()
                 setEmail("")
@@ -1655,7 +1655,7 @@ export default function App() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@company.com"
-                className="flex-1 sm:w-64 px-4 py-2.5 rounded-full text-sm outline-none transition-all duration-200"
+                className="w-full sm:w-64 px-4 py-2.5 rounded-full text-sm outline-none transition-all duration-200 min-w-0"
                 style={{
                   background: "rgba(255,255,255,0.06)",
                   border: "1px solid rgba(255,255,255,0.12)",
@@ -1673,7 +1673,7 @@ export default function App() {
               />
               <button
                 type="submit"
-                className="px-6 py-2.5 rounded-full text-sm font-semibold shrink-0 transition-all duration-200 hover:scale-105"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-full text-sm font-semibold shrink-0 transition-all duration-200 hover:scale-[1.02] sm:hover:scale-105 cursor-pointer text-center"
                 style={{ background: "#00FF66", color: "#050505" }}
               >
                 Subscribe
