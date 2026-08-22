@@ -1329,7 +1329,7 @@ export default function LegacyEts() {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=600&h=400&fit=crop&auto=format"
+                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop&auto=format"
                 alt="Surface restoration and rust removal"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ opacity: "var(--img-opacity-sm)" }}
