@@ -51,18 +51,6 @@ const IconShield = () => (
     <path d="m9 12 2 2 4-4" />
   </svg>
 )
-const IconLeaf = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    className="w-6 h-6"
-  >
-    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
-    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-  </svg>
-)
 const IconDrop = () => (
   <svg
     viewBox="0 0 24 24"
@@ -72,49 +60,6 @@ const IconDrop = () => (
     className="w-6 h-6"
   >
     <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-  </svg>
-)
-const IconRecycle = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    className="w-6 h-6"
-  >
-    <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-2.763L7.196 9.5" />
-    <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-2.773l-4-7A1.83 1.83 0 0 0 15.2 8.5" />
-    <path d="m8 9 3-7 3 7" />
-    <path d="m9 20 3 2 3-2" />
-    <path d="M3 15h4l2 4" />
-    <path d="M14 13h4l2-4" />
-  </svg>
-)
-const IconCoins = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    className="w-6 h-6"
-  >
-    <circle cx="8" cy="8" r="6" />
-    <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
-    <path d="M7 6h1v4" />
-    <path d="m16.71 13.88.7.71-2.82 2.82" />
-  </svg>
-)
-const IconNoSolvent = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    className="w-6 h-6"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
-    <path d="M12 2.69l5.66 5.66a8 8 0 0 1-5.66 13.31" />
   </svg>
 )
 const IconDiamond = () => (
@@ -253,134 +198,87 @@ const IconCross = () => (
   </svg>
 )
 
-/* ─── Nav config matching screenshot ─── */
+/* ─── Nav config types ─── */
 interface NavItem {
   label: string
   items?: { label: string; hasArrow?: boolean }[]
 }
-const navConfig: NavItem[] = [
-  {
-    label: "Home",
-  },
-  {
-    label: "About Us",
-    items: [
-      { label: "About ETS Germany" },
-      { label: "Certifications & Norms" },
-      { label: "Why Choose ETS" },
-      { label: "Presentations" },
-      { label: "Co-Partners" },
-    ],
-  },
-  {
-    label: "Products",
-    items: [
-      { label: "Cleaners", hasArrow: true },
-      { label: "Ester Technology", hasArrow: true },
-      { label: "Nano Diamond", hasArrow: true },
-      { label: "Disinfection", hasArrow: true },
-      { label: "Coolants Metalworking", hasArrow: true },
-      { label: "Water Treatment", hasArrow: true },
-      { label: "Rust+Paint Blasting", hasArrow: true },
-      { label: "C2 Coating System" },
-    ],
-  },
-  {
-    label: "Disinfection",
-    items: [
-      { label: "AquaSmarter™ Water Ionization", hasArrow: true },
-      { label: "FOG-IT INNOVA (Air Disinfection)", hasArrow: true },
-      { label: "FOG-IT Desi Box", hasArrow: true },
-    ],
-  },
-  {
-    label: "Derusting & Sand Blasting",
-    items: [
-      { label: "Eco Safe Air Blaster" },
-      { label: "Bioderuster & Paint Stripping" },
-    ],
-  },
-  {
-    label: "Contact Us",
-    items: [
-      { label: "Contact Us" },
-      { label: "Executive Leadership" },
-      { label: "Location & Office Hours" },
-    ],
-  },
-]
-
-/* ─── Trust Logos & Approvals ─── */
-const TrustLogos = [
-  { name: "AIRBUS", sub: "Confirmed & Approved" },
-  { name: "BOEING", sub: "Approved Standard" },
-  { name: "EUROCOPTER", sub: "Certified" },
-  { name: "MCDONNELL DOUGLAS", sub: "Approved" },
-  { name: "NATO (NSN)", sub: "NAMSA Listed" },
-  { name: "SMI-CALIFORNIA", sub: "U.S.A. Tested" },
-  { name: "MIL-PRFs", sub: "Military Spec" },
-  { name: "ISO 9001", sub: "Certified" },
-  { name: "ISO 14001", sub: "Environmental" },
-  { name: "ISO 13485", sub: "Medical Quality" },
-  { name: "HACCP", sub: "Food & Hygiene" },
-  { name: "GMP+ FSA", sub: "Feed & Food Safety" },
-  { name: "REACH", sub: "EU Compliant" },
-]
-
-/* ─── 7 Core Advantages from Screenshot ─── */
-const whyBulletsEn = [
-  "Bio-Degradable",
-  "Economical",
-  "Water-based",
-  "Solvent-free",
-  "Highly efficient customized cleaning products & equipments",
-  "On-site staff Training & Consultancy",
-  "Cost Efficient",
-]
-
-const whyBulletsDe = [
-  "Biologisch abbaubar",
-  "Wirtschaftlich & sparsam",
-  "Auf Wasserbasis formuliert",
-  "Vollständig lösungsmittelfrei",
-  "Hocheffiziente, maßgeschneiderte Reinigungsprodukte & Maschinen",
-  "Mitarbeiterschulung & technische Beratung vor Ort",
-  "Kosteneffizient und prozessoptimiert",
-]
-
-/* ─── 15 Toxic Substances Replaced by ETS ─── */
-const toxicPills = [
-  "Solvent",
-  "Paraffin",
-  "Trekolene",
-  "Caustic Soda",
-  "Acetone",
-  "Citric Acid",
-  "Alcohol",
-  "Toluene",
-  "Spirits",
-  "Petrochemicals",
-  "Carbonic Acid III",
-  "Vinegar",
-  "Acids",
-  "Phosphates",
-  "Silicate",
-]
-
-/* ─── Toxic Replacements Matrix ─── */
-const toxicSubstances = [
-  { toxic: "Solvent & Spirits", ets: "ETS 100% Biodegradable Water-Based Solvent Replacements" },
-  { toxic: "Paraffin & Trekolene", ets: "ETS Safe Industrial & Metalworking Fluids" },
-  { toxic: "Caustic Soda & Acids", ets: "ETS Bioderuster & Neutral-pH Rust Removers" },
-  { toxic: "Acetone, Toluene & Alcohol", ets: "ETS Safe Organic Bio-Solvents & Degreasers" },
-  { toxic: "Petrochemicals & Hydrocarbons", ets: "ETS Eco Bio-Cleaners & Ester Technology" },
-  { toxic: "Phosphates & Silicates", ets: "ETS Non-Staining, Residue-Free Eco Formulas" },
-]
 
 /* ─── Translations (EN & DE) ─── */
 const translations = {
   en: {
+    langLabel: "DE",
     getQuote: "Request a Quote",
+    scroll: "Scroll",
+
+    nav: [
+      {
+        label: "Home",
+      },
+      {
+        label: "About Us",
+        items: [
+          { label: "About ETS Germany" },
+          { label: "Certifications & Norms" },
+          { label: "Why Choose ETS" },
+          { label: "Presentations" },
+          { label: "Co-Partners" },
+        ],
+      },
+      {
+        label: "Products",
+        items: [
+          { label: "Cleaners", hasArrow: true },
+          { label: "Ester Technology", hasArrow: true },
+          { label: "Nano Diamond", hasArrow: true },
+          { label: "Disinfection", hasArrow: true },
+          { label: "Coolants Metalworking", hasArrow: true },
+          { label: "Water Treatment", hasArrow: true },
+          { label: "Rust+Paint Blasting", hasArrow: true },
+          { label: "C2 Coating System" },
+        ],
+      },
+      {
+        label: "Disinfection",
+        items: [
+          { label: "AquaSmarter™ Water Ionization", hasArrow: true },
+          { label: "FOG-IT INNOVA (Air Disinfection)", hasArrow: true },
+          { label: "FOG-IT Desi Box", hasArrow: true },
+        ],
+      },
+      {
+        label: "Derusting & Sand Blasting",
+        items: [
+          { label: "Eco Safe Air Blaster" },
+          { label: "Bioderuster & Paint Stripping" },
+        ],
+      },
+      {
+        label: "Contact Us",
+        items: [
+          { label: "Contact Us" },
+          { label: "Executive Leadership" },
+          { label: "Location & Office Hours" },
+        ],
+      },
+    ] as NavItem[],
+
+    trustLogos: [
+      { name: "AIRBUS", sub: "Confirmed & Approved" },
+      { name: "BOEING", sub: "Approved Standard" },
+      { name: "EUROCOPTER", sub: "Certified" },
+      { name: "MCDONNELL DOUGLAS", sub: "Approved" },
+      { name: "NATO (NSN)", sub: "NAMSA Listed" },
+      { name: "SMI-CALIFORNIA", sub: "U.S.A. Tested" },
+      { name: "MIL-PRFs", sub: "Military Spec" },
+      { name: "ISO 9001", sub: "Certified" },
+      { name: "ISO 14001", sub: "Environmental" },
+      { name: "ISO 13485", sub: "Medical Quality" },
+      { name: "HACCP", sub: "Food & Hygiene" },
+      { name: "GMP+ FSA", sub: "Feed & Food Safety" },
+      { name: "REACH", sub: "EU Compliant" },
+    ],
+
     heroTag: "ESTABLISHED 2007 · ISO 9001, 14001 & 13485 CERTIFIED · AIRBUS & BOEING APPROVED",
     heroTitle: "Welcome to ETS International",
     heroSubtitle: "PROFESSIONAL CLEANING SOLUTIONS",
@@ -433,31 +331,223 @@ const translations = {
     derustingSub: "06 — Surface Restoration",
     derustingDesc: "Eco Safe Air Blaster and Bioderuster remove rust and old coatings without dangerous acid baths or toxic dust.",
 
+    whyTag: "Environmental Responsibility",
     whyTitle: "Why Choose ETS",
     whySubtitle: "Eco-responsibility paired with uncompromising engineering performance.",
     whyLead:
       "ETS - Products will help your company to listen to environmental responsibility today and:",
+    whyBullets: [
+      "Bio-Degradable",
+      "Economical",
+      "Water-based",
+      "Solvent-free",
+      "Highly efficient customized cleaning products & equipments",
+      "On-site staff Training & Consultancy",
+      "Cost Efficient",
+    ],
     whyReplace:
       "ETS products can replace dangerous and toxic substances like:",
 
-    replaceTitle: "Replacing Dangerous & Toxic Substances",
-    replaceSubtitle:
-      "In line with the MCUEP (Montreal & UN Environmental Program), ETS replaces hazardous legacy chemicals like acetone, solvents, caustic soda, and acids.",
+    toxicPills: [
+      "Solvent",
+      "Paraffin",
+      "Trekolene",
+      "Caustic Soda",
+      "Acetone",
+      "Citric Acid",
+      "Alcohol",
+      "Toluene",
+      "Spirits",
+      "Petrochemicals",
+      "Carbonic Acid III",
+      "Vinegar",
+      "Acids",
+      "Phosphates",
+      "Silicate",
+    ],
 
-    footerTagline:
-      "ETS INTERNATIONAL UG (haftungsbeschränkt) — Wilhelm-Rupert-Str. 38, 51147 Köln, Germany. Professional bio-degradable cleaning chemistry.",
+    toxicReplacesLabel: "Replaces Hazardous:",
+    toxicSolutionLabel: "ETS Eco Solution:",
+    toxicSubstances: [
+      { toxic: "Solvent & Spirits", ets: "ETS 100% Biodegradable Water-Based Solvent Replacements" },
+      { toxic: "Paraffin & Trekolene", ets: "ETS Safe Industrial & Metalworking Fluids" },
+      { toxic: "Caustic Soda & Acids", ets: "ETS Bioderuster & Neutral-pH Rust Removers" },
+      { toxic: "Acetone, Toluene & Alcohol", ets: "ETS Safe Organic Bio-Solvents & Degreasers" },
+      { toxic: "Petrochemicals & Hydrocarbons", ets: "ETS Eco Bio-Cleaners & Ester Technology" },
+      { toxic: "Phosphates & Silicates", ets: "ETS Non-Staining, Residue-Free Eco Formulas" },
+    ],
+
+    propTechTag: "Proprietary Technologies",
+    aquaBadge: "12 Months Continuous Ionization (No Electricity)",
+    aquaTitle: "AquaSmarter™",
+    aquaSub: "Self-Operating Water Treatment.",
+    aquaDesc:
+      "The AquaSmarter ionizing capsule lasts for 12 full months and operates completely without electricity. As water passes through, active ions sanitize basins, drinking water, and waste water treatment systems naturally.",
+    aquaFeatures: [
+      "12 Months Ionizing Capsule",
+      "Zero Electricity Needed",
+      "Drink & Waste Water Ready",
+      "100% Eco-Safe Formulation",
+    ],
+    aquaCta: "Inquire about AquaSmarter capsules",
+
+    nanoBadge: "Nano Diamond Lubrication Technology",
+    nanoTitle: "Nano Diamond™",
+    nanoDesc:
+      "For industrial and fleet customers, we guarantee a fuel saving of minimum 6% after adding our Nanodiamond technology to engines and machinery, reducing mechanical wear and optimizing energy efficiency.",
+    nanoCta: "Request Nano Diamond fleet trial",
+    nanoStats: [
+      {
+        val: "6%+",
+        label: "Guaranteed minimum fuel saving",
+        color: "#00FF66",
+      },
+      {
+        val: "100%",
+        label: "Safe for modern engines & turbines",
+        color: "#00ccff",
+      },
+      {
+        val: "2×",
+        label: "Extended equipment & tool life",
+        color: "#00FF66",
+      },
+      {
+        val: "0",
+        label: "Toxic emissions or harmful residue",
+        color: "#00ccff",
+      },
+    ],
+
+    testimonialsTag: "Client Feedback",
+    testimonialsTitle: "Trusted Across Global Operations",
+    testimonialsList: [
+      {
+        quote:
+          "The staff was courteous and knowledgeable, addressing all our concerns promptly with tailored cleaning formulations.",
+        author: "Ron Burnwood",
+        role: "Operations Director",
+      },
+      {
+        quote:
+          "Choosing ETS International for our industrial compliance and environmental transition was undoubtedly the right decision.",
+        author: "Lily Granger",
+        role: "Technical Compliance Lead",
+      },
+      {
+        quote:
+          "ETS International exceeded our expectations in every way possible — performance, safety, and regulatory documentation.",
+        author: "Jeson Foxx",
+        role: "Fleet Maintenance Chief",
+      },
+    ],
+
+    contactCtaTitlePre: "Ready to Upgrade to ",
+    contactCtaTitleHighlight: "Certified Eco Chemistry?",
+    contactCtaDesc:
+      "Consult directly with our German engineering team. We formulate customized cleaning chemistry, sample batches, and full regulatory compliance dossiers.",
+    contactEmailBtn: "Email: info@etsint.eu",
+    contactCallBtn: "Call +49 2203 18889-0",
+
     footerCompany:
       "ETS International is the professional provider of eco-friendly and bio-degradable solutions for industrial and professional cleaning and maintenance. We offer customized engineering, private label packaging, and training courses for our partners.",
     footerHoursTitle: "OPENING HOURS",
     footerHours: "Mon - Fri: 8:00 AM - 5:00 PM\nSaturday & Sunday: Closed",
     footerAppTitle: "ETS Products application on:",
+    footerAppList: [
+      "• Aviation Industry",
+      "• Marine / Off-Shore Industry",
+      "• Refinery & Oil / Gas Production",
+      "• Military Industry",
+      "• Food, Beverage & Restaurant Services",
+      "• Disinfection & Odor Control",
+      "• Derusting & Prevention",
+    ],
     footerCourtTitle: "Court Registration",
+    footerCourtCeo: "CEO: Dipl.-Ing. Massoud Rad Soltani",
     footerContactTitle: "Contact Information",
+    footerNewsletterTitle: "Technical bulletins & product updates",
+    footerNewsletterDesc: "Subscribe for regulatory news, SDS updates, and new eco formulations.",
+    footerNewsletterPlaceholder: "your@company.com",
+    footerNewsletterBtn: "Subscribe",
     footerCopyright:
       "Copyright © 2024 / All rights reserved. ETS INTERNATIONAL UG Köln - Germany",
+    footerLegalLinks: ["Privacy Policy", "Terms of Use", "Imprint"],
   },
+
   de: {
+    langLabel: "EN",
     getQuote: "Angebot anfordern",
+    scroll: "Scrollen",
+
+    nav: [
+      {
+        label: "Startseite",
+      },
+      {
+        label: "Über uns",
+        items: [
+          { label: "Über ETS Germany" },
+          { label: "Zertifizierungen & Normen" },
+          { label: "Warum ETS wählen" },
+          { label: "Präsentationen" },
+          { label: "Kooperationspartner" },
+        ],
+      },
+      {
+        label: "Produkte",
+        items: [
+          { label: "Reiniger", hasArrow: true },
+          { label: "Ester-Technologie", hasArrow: true },
+          { label: "Nano Diamond", hasArrow: true },
+          { label: "Desinfektion", hasArrow: true },
+          { label: "Kühlschmierstoffe Metallbearbeitung", hasArrow: true },
+          { label: "Wasseraufbereitung", hasArrow: true },
+          { label: "Rost- & Farbentfernung (Strahlen)", hasArrow: true },
+          { label: "C2-Beschichtungssystem" },
+        ],
+      },
+      {
+        label: "Desinfektion",
+        items: [
+          { label: "AquaSmarter™ Wasserionisierung", hasArrow: true },
+          { label: "FOG-IT INNOVA (Raumdesinfektion)", hasArrow: true },
+          { label: "FOG-IT Desi Box", hasArrow: true },
+        ],
+      },
+      {
+        label: "Entrostung & Sandstrahlen",
+        items: [
+          { label: "Eco Safe Air Blaster" },
+          { label: "Bio-Entroster & Farbentfernung" },
+        ],
+      },
+      {
+        label: "Kontakt",
+        items: [
+          { label: "Kontakt" },
+          { label: "Unternehmensführung" },
+          { label: "Standort & Öffnungszeiten" },
+        ],
+      },
+    ] as NavItem[],
+
+    trustLogos: [
+      { name: "AIRBUS", sub: "Bestätigt & Freigegeben" },
+      { name: "BOEING", sub: "Zugelassener Standard" },
+      { name: "EUROCOPTER", sub: "Zertifiziert" },
+      { name: "MCDONNELL DOUGLAS", sub: "Zugelassen" },
+      { name: "NATO (NSN)", sub: "NAMSA gelistet" },
+      { name: "SMI-CALIFORNIA", sub: "In den USA geprüft" },
+      { name: "MIL-PRFs", sub: "Militärnorm" },
+      { name: "ISO 9001", sub: "Zertifiziert" },
+      { name: "ISO 14001", sub: "Umweltmanagement" },
+      { name: "ISO 13485", sub: "Medizinprodukt-Norm" },
+      { name: "HACCP", sub: "Lebensmittel & Hygiene" },
+      { name: "GMP+ FSA", sub: "Futtermittel- & Lebensmittelsicherheit" },
+      { name: "REACH", sub: "EU-konform" },
+    ],
+
     heroTag: "GEGRÜNDET 2007 · ISO 9001, 14001 & 13485 ZERTIFIZIERT · AIRBUS & BOEING ZUGELASSEN",
     heroTitle: "Willkommen bei ETS International",
     heroSubtitle: "PROFESSIONELLE REINIGUNGSLÖSUNGEN",
@@ -510,28 +600,148 @@ const translations = {
     derustingSub: "06 — Oberflächensanierung",
     derustingDesc: "Eco Safe Air Blaster und Bioderuster entfernen Rost und Altlacke ohne gefährliche Säurebäder oder giftigen Staub.",
 
+    whyTag: "Umweltverantwortung",
     whyTitle: "Warum ETS wählen",
     whySubtitle: "Umweltverantwortung kombiniert mit kompromissloser technischer Leistungsfähigkeit.",
     whyLead:
       "ETS-Produkte helfen Ihrem Unternehmen, ökologische Verantwortung mit Spitzenleistung zu verbinden:",
+    whyBullets: [
+      "Biologisch abbaubar",
+      "Wirtschaftlich & sparsam",
+      "Auf Wasserbasis formuliert",
+      "Vollständig lösungsmittelfrei",
+      "Hocheffiziente, maßgeschneiderte Reinigungsprodukte & Maschinen",
+      "Mitarbeiterschulung & technische Beratung vor Ort",
+      "Kosteneffizient und prozessoptimiert",
+    ],
     whyReplace:
       "ETS-Produkte können gefährliche und giftige Substanzen ersetzen wie:",
 
-    replaceTitle: "Ersatz gefährlicher & giftiger Substanzen",
-    replaceSubtitle:
-      "Gemäß der MCUEP-Konvention (Montreal & UN-Umweltprogramm) ersetzt ETS schädliche Altsubstanzen wie Aceton, Lösungsmittel, Natronlauge und Säuren.",
+    toxicPills: [
+      "Lösungsmittel",
+      "Paraffin",
+      "Trekolen",
+      "Natronlauge",
+      "Aceton",
+      "Zitronensäure",
+      "Alkohol",
+      "Toluol",
+      "Spiritus",
+      "Petrochemikalien",
+      "Kohlensäure III",
+      "Essig",
+      "Säuren",
+      "Phosphate",
+      "Silikate",
+    ],
 
-    footerTagline:
-      "ETS INTERNATIONAL UG (haftungsbeschränkt) — Wilhelm-Rupert-Str. 38, 51147 Köln, Deutschland. Professionelle biologisch abbaubare Reinigungschemie.",
+    toxicReplacesLabel: "Ersetzt Gefahrstoff:",
+    toxicSolutionLabel: "ETS Öko-Lösung:",
+    toxicSubstances: [
+      { toxic: "Lösungsmittel & Spiritus", ets: "ETS 100% biologisch abbaubarer wasserbasierter Lösungsmittelersatz" },
+      { toxic: "Paraffin & Trekolen", ets: "ETS sichere Industrie- & Metallbearbeitungsflüssigkeiten" },
+      { toxic: "Natronlauge & Säuren", ets: "ETS Bio-Entroster & pH-neutrale Rostentferner" },
+      { toxic: "Aceton, Toluol & Alkohol", ets: "ETS sichere organische Bio-Lösungsmittel & Entfetter" },
+      { toxic: "Petrochemikalien & Kohlenwasserstoffe", ets: "ETS Öko-Bio-Reiniger & Ester-Technologie" },
+      { toxic: "Phosphate & Silikate", ets: "ETS rückstandsfreie, fleckenfreie Öko-Rezepturen" },
+    ],
+
+    propTechTag: "Proprietäre Technologien",
+    aquaBadge: "12 Monate kontinuierliche Ionisation (ohne Strom)",
+    aquaTitle: "AquaSmarter™",
+    aquaSub: "Selbsttätige Wasseraufbereitung.",
+    aquaDesc:
+      "Die AquaSmarter-Ionisierungskapsel hält 12 volle Monate und arbeitet völlig ohne Strom. Beim Durchströmen des Wassers desinfizieren aktive Ionen Becken, Trinkwasser und Abwassersysteme auf natürliche Weise.",
+    aquaFeatures: [
+      "12 Monate Ionisierungskapsel",
+      "Kein Stromanschluss erforderlich",
+      "Für Trink- & Abwasser geeignet",
+      "100% umweltfreundliche Formulierung",
+    ],
+    aquaCta: "AquaSmarter-Kapseln anfragen",
+
+    nanoBadge: "Nano Diamond Schmierstofftechnologie",
+    nanoTitle: "Nano Diamond™",
+    nanoDesc:
+      "Für Industrie- und Flottenkunden garantieren wir eine Kraftstoffersparnis von mindestens 6% nach dem Einsatz unserer Nano-Diamond-Technologie in Motoren und Maschinen – bei reduziertem Verschleiß und optimierter Energieeffizienz.",
+    nanoCta: "Nano Diamond Flottentest anfordern",
+    nanoStats: [
+      {
+        val: "6%+",
+        label: "Garantierte Mindest-Kraftstoffersparnis",
+        color: "#00FF66",
+      },
+      {
+        val: "100%",
+        label: "Sicher für moderne Motoren & Turbinen",
+        color: "#00ccff",
+      },
+      {
+        val: "2×",
+        label: "Verdoppelte Werkzeug- & Standzeit",
+        color: "#00FF66",
+      },
+      {
+        val: "0",
+        label: "Keine giftigen Emissionen oder Rückstände",
+        color: "#00ccff",
+      },
+    ],
+
+    testimonialsTag: "Kundenstimmen & Referenzen",
+    testimonialsTitle: "Weltweites Vertrauen im industriellen Einsatz",
+    testimonialsList: [
+      {
+        quote:
+          "Das Team war äußerst kompetent und zuvorkommend und hat all unsere Anforderungen umgehend mit maßgeschneiderten Reinigungsformulierungen gelöst.",
+        author: "Ron Burnwood",
+        role: "Leiter Betrieb & Logistik",
+      },
+      {
+        quote:
+          "Die Entscheidung für ETS International bei unserer industriellen Compliance- und Umweltumstellung war zweifellos der richtige Schritt.",
+        author: "Lily Granger",
+        role: "Leiterin Technische Compliance",
+      },
+      {
+        quote:
+          "ETS International hat unsere Erwartungen in jeder Hinsicht übertroffen – bei Leistung, Sicherheit und regulatorischer Dokumentation.",
+        author: "Jeson Foxx",
+        role: "Leiter Flotteninstandhaltung",
+      },
+    ],
+
+    contactCtaTitlePre: "Bereit für den Umstieg auf ",
+    contactCtaTitleHighlight: "zertifizierte Öko-Chemie?",
+    contactCtaDesc:
+      "Lassen Sie sich direkt von unserem deutschen Ingenieurteam beraten. Wir entwickeln maßgeschneiderte Reinigungschemie, Musterchargen und vollständige Konformitätsdossiers.",
+    contactEmailBtn: "E-Mail: info@etsint.eu",
+    contactCallBtn: "Anrufen: +49 2203 18889-0",
+
     footerCompany:
       "ETS International ist der professionelle Anbieter von umweltfreundlichen und biologisch abbaubaren Lösungen für die industrielle und gewerbliche Reinigung und Instandhaltung. Wir bieten maßgeschneiderte Entwicklungen, Private Labeling und Vor-Ort-Schulungen.",
     footerHoursTitle: "ÖFFNUNGSZEITEN",
     footerHours: "Mo - Fr: 8:00 - 17:00 Uhr\nSamstag & Sonntag: Geschlossen",
     footerAppTitle: "ETS-Produktanwendungen in:",
+    footerAppList: [
+      "• Luftfahrtindustrie",
+      "• Marine- & Offshore-Industrie",
+      "• Raffinerien & Öl-/Gasförderung",
+      "• Militärische Anwendungen",
+      "• Lebensmittel-, Getränke- & Gastronomiebereich",
+      "• Desinfektion & Geruchsneutralisation",
+      "• Entrostung & Korrosionsschutz",
+    ],
     footerCourtTitle: "Registergericht & Firmensitz",
+    footerCourtCeo: "Geschäftsführer: Dipl.-Ing. Massoud Rad Soltani",
     footerContactTitle: "Kontaktinformationen",
+    footerNewsletterTitle: "Technische Merkblätter & Produkt-Updates",
+    footerNewsletterDesc: "Abonnieren Sie regulatorische Neuigkeiten, Sicherheitsdatenblatt-Updates und neue Öko-Formulierungen.",
+    footerNewsletterPlaceholder: "ihre@firma.de",
+    footerNewsletterBtn: "Abonnieren",
     footerCopyright:
       "Copyright © 2024 / Alle Rechte vorbehalten. ETS INTERNATIONAL UG Köln - Deutschland",
+    footerLegalLinks: ["Datenschutz", "Nutzungsbedingungen", "Impressum"],
   },
 } as const
 
@@ -539,7 +749,10 @@ type Lang = keyof typeof translations
 
 export default function LegacyEts() {
   const [isDark, setIsDark] = useState(true)
-  const [lang, setLang] = useState<Lang>("en")
+  const [lang, setLang] = useState<Lang>(() => {
+    const stored = localStorage.getItem("ets-lang")
+    return stored === "de" || stored === "en" ? stored : "en"
+  })
   const i = translations[lang]
   const [menuOpen, setMenuOpen] = useState(false)
   const [openMobileNav, setOpenMobileNav] = useState<string | null>(null)
@@ -548,7 +761,7 @@ export default function LegacyEts() {
   const [email, setEmail] = useState("")
   const dropdownTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  /* Initialise from localStorage / OS preference */
+  /* Initialise theme from localStorage / OS preference */
   useEffect(() => {
     const stored = localStorage.getItem("ets-theme")
     if (stored) {
@@ -566,6 +779,12 @@ export default function LegacyEts() {
     )
     localStorage.setItem("ets-theme", isDark ? "dark" : "light")
   }, [isDark])
+
+  const toggleLanguage = () => {
+    const nextLang = lang === "en" ? "de" : "en"
+    setLang(nextLang)
+    localStorage.setItem("ets-lang", nextLang)
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -648,7 +867,7 @@ export default function LegacyEts() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-0.5">
-            {navConfig.map((nav) => (
+            {i.nav.map((nav) => (
               <div
                 key={nav.label}
                 className="relative"
@@ -666,21 +885,23 @@ export default function LegacyEts() {
                   }}
                 >
                   {nav.label}
-                  <span
-                    className="transition-transform duration-200"
-                    style={{
-                      transform:
-                        activeDropdown === nav.label
-                          ? "rotate(180deg)"
-                          : "rotate(0deg)",
-                      display: "inline-flex",
-                    }}
-                  >
-                    <IconChevronDown />
-                  </span>
+                  {nav.items && nav.items.length > 0 && (
+                    <span
+                      className="transition-transform duration-200"
+                      style={{
+                        transform:
+                          activeDropdown === nav.label
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                        display: "inline-flex",
+                      }}
+                    >
+                      <IconChevronDown />
+                    </span>
+                  )}
                 </button>
 
-                {activeDropdown === nav.label && (
+                {nav.items && nav.items.length > 0 && activeDropdown === nav.label && (
                   <div
                     className="absolute top-full left-0 mt-2 py-2 rounded-2xl min-w-[240px] z-50 shadow-2xl"
                     style={{
@@ -701,14 +922,14 @@ export default function LegacyEts() {
                         onMouseEnter={(e) => {
                           ; (e.currentTarget as HTMLElement).style.color =
                             "var(--dropdown-hover-text)"
-                            ; (e.currentTarget as HTMLElement).style.background =
-                              "var(--dropdown-hover-bg)"
+                          ; (e.currentTarget as HTMLElement).style.background =
+                            "var(--dropdown-hover-bg)"
                         }}
                         onMouseLeave={(e) => {
                           ; (e.currentTarget as HTMLElement).style.color =
                             "var(--fg-muted)"
-                            ; (e.currentTarget as HTMLElement).style.background =
-                              "transparent"
+                          ; (e.currentTarget as HTMLElement).style.background =
+                            "transparent"
                         }}
                       >
                         <span>{item.label}</span>
@@ -725,7 +946,7 @@ export default function LegacyEts() {
           <div className="flex items-center gap-2">
             {/* Language switcher */}
             <button
-              onClick={() => setLang(lang === "en" ? "de" : "en")}
+              onClick={toggleLanguage}
               className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-200 hover:scale-105"
               style={{
                 background: isDark
@@ -736,7 +957,7 @@ export default function LegacyEts() {
               }}
               aria-label="Switch language"
             >
-              {lang === "en" ? "DE" : "EN"}
+              {i.langLabel}
             </button>
 
             {/* Theme toggle */}
@@ -788,7 +1009,7 @@ export default function LegacyEts() {
               border: `1px solid ${t.border}`,
             }}
           >
-            {navConfig.map((nav) => (
+            {i.nav.map((nav) => (
               <div key={nav.label}>
                 <button
                   className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm transition-colors"
@@ -800,20 +1021,22 @@ export default function LegacyEts() {
                   }
                 >
                   <span>{nav.label}</span>
-                  <span
-                    style={{
-                      transform:
-                        openMobileNav === nav.label
-                          ? "rotate(180deg)"
-                          : "rotate(0deg)",
-                      display: "inline-flex",
-                      transition: "transform 0.2s",
-                    }}
-                  >
-                    <IconChevronDown />
-                  </span>
+                  {nav.items && nav.items.length > 0 && (
+                    <span
+                      style={{
+                        transform:
+                          openMobileNav === nav.label
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                        display: "inline-flex",
+                        transition: "transform 0.2s",
+                      }}
+                    >
+                      <IconChevronDown />
+                    </span>
+                  )}
                 </button>
-                {openMobileNav === nav.label && (
+                {nav.items && nav.items.length > 0 && openMobileNav === nav.label && (
                   <div className="pl-4 pb-1 flex flex-col gap-0.5">
                     {nav.items.map((item) => (
                       <a
@@ -946,7 +1169,7 @@ export default function LegacyEts() {
           {/* Stats from etsint.eu */}
           <div className="fade-up delay-4 mt-16 flex flex-wrap gap-x-12 gap-y-6">
             {i.stats.map((s) => (
-              <div key={s.val} className="flex flex-col gap-0.5">
+              <div key={s.label} className="flex flex-col gap-0.5">
                 <span
                   className="text-3xl font-black"
                   style={{
@@ -975,7 +1198,7 @@ export default function LegacyEts() {
             className="text-xs tracking-widest uppercase"
             style={{ color: t.dim }}
           >
-            Scroll
+            {i.scroll}
           </span>
           <div
             className="w-px h-10 bg-gradient-to-b"
@@ -1006,7 +1229,7 @@ export default function LegacyEts() {
             }}
           />
           <div className="ticker-track">
-            {[...TrustLogos, ...TrustLogos, ...TrustLogos].map((logo, idx) => (
+            {[...i.trustLogos, ...i.trustLogos, ...i.trustLogos].map((logo, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-3 px-8 shrink-0 transition-opacity duration-300 hover:opacity-70"
@@ -1457,7 +1680,7 @@ export default function LegacyEts() {
                 className="text-xs font-semibold tracking-widest uppercase"
                 style={{ color: "#00FF66" }}
               >
-                Environmental Responsibility
+                {i.whyTag}
               </span>
               <div className="h-px w-10 bg-[#00FF66]" />
             </div>
@@ -1488,7 +1711,7 @@ export default function LegacyEts() {
             }}
           >
             <ul className="space-y-3.5">
-              {(lang === "de" ? whyBulletsDe : whyBulletsEn).map((bullet, idx) => (
+              {i.whyBullets.map((bullet, idx) => (
                 <li
                   key={idx}
                   className="flex items-start gap-3 text-sm sm:text-base font-medium"
@@ -1510,7 +1733,7 @@ export default function LegacyEts() {
 
           {/* 15 Glowing Green Pill Badges */}
           <div className="flex flex-wrap gap-2.5 sm:gap-3 justify-center max-w-3xl mx-auto mb-16">
-            {toxicPills.map((substance) => (
+            {i.toxicPills.map((substance) => (
               <span
                 key={substance}
                 className="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 hover:scale-105"
@@ -1528,7 +1751,7 @@ export default function LegacyEts() {
 
           {/* Toxic Replacements Matrix */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {toxicSubstances.map((item, idx) => (
+            {i.toxicSubstances.map((item, idx) => (
               <div
                 key={idx}
                 className="p-5 rounded-2xl border flex flex-col justify-between"
@@ -1542,7 +1765,7 @@ export default function LegacyEts() {
                     <span className="p-1 rounded bg-red-500/10 text-red-400">
                       <IconCross />
                     </span>
-                    Replaces Hazardous:
+                    {i.toxicReplacesLabel}
                   </div>
                   <div className="font-semibold text-sm" style={{ color: t.dim }}>
                     {item.toxic}
@@ -1554,7 +1777,7 @@ export default function LegacyEts() {
                     <span className="p-1 rounded bg-[#00FF66]/10 text-[#00FF66]">
                       <IconCheck />
                     </span>
-                    ETS Eco Solution:
+                    {i.toxicSolutionLabel}
                   </div>
                   <div className="text-xs font-medium leading-relaxed" style={{ color: t.fg }}>
                     {item.ets}
@@ -1587,7 +1810,7 @@ export default function LegacyEts() {
               className="text-xs font-semibold tracking-widest uppercase"
               style={{ color: "#00FF66" }}
             >
-              Proprietary Technologies
+              {i.propTechTag}
             </span>
           </div>
 
@@ -1630,7 +1853,7 @@ export default function LegacyEts() {
                   color: t.certText,
                 }}
               >
-                <IconDrop /> 12 Months Continuous Ionization (No Electricity)
+                <IconDrop /> {i.aquaBadge}
               </div>
               <h2
                 className="text-3xl sm:text-4xl font-black tracking-tight mb-4"
@@ -1639,22 +1862,17 @@ export default function LegacyEts() {
                   color: t.fg,
                 }}
               >
-                AquaSmarter™ <br />
-                <span style={{ color: t.dim }}>Self-Operating Water Treatment.</span>
+                {i.aquaTitle} <br />
+                <span style={{ color: t.dim }}>{i.aquaSub}</span>
               </h2>
               <p
                 className="leading-relaxed mb-6 text-sm sm:text-base"
                 style={{ color: t.muted }}
               >
-                The AquaSmarter ionizing capsule lasts for 12 full months and operates completely without electricity. As water passes through, active ions sanitize basins, drinking water, and waste water treatment systems naturally.
+                {i.aquaDesc}
               </p>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {[
-                  "12 Months Ionizing Capsule",
-                  "Zero Electricity Needed",
-                  "Drink & Waste Water Ready",
-                  "100% Eco-Safe Formulation",
-                ].map((f) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {i.aquaFeatures.map((f) => (
                   <div
                     key={f}
                     className="flex items-center gap-2 text-xs sm:text-sm"
@@ -1670,7 +1888,7 @@ export default function LegacyEts() {
                 className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-200"
                 style={{ color: "#00FF66" }}
               >
-                Inquire about AquaSmarter capsules <IconArrowRight />
+                {i.aquaCta} <IconArrowRight />
               </a>
             </div>
           </div>
@@ -1695,7 +1913,7 @@ export default function LegacyEts() {
                     color: "#00ccff",
                   }}
                 >
-                  <IconDiamond /> Nano Diamond Lubrication Technology
+                  <IconDiamond /> {i.nanoBadge}
                 </div>
                 <h2
                   className="text-3xl sm:text-4xl font-black tracking-tight mb-4"
@@ -1704,43 +1922,22 @@ export default function LegacyEts() {
                     color: t.fg,
                   }}
                 >
-                  Nano Diamond™
+                  {i.nanoTitle}
                 </h2>
                 <p className="leading-relaxed mb-6 text-sm sm:text-base" style={{ color: t.muted }}>
-                  For industrial and fleet customers, we guarantee a fuel saving of minimum 6% after adding our Nanodiamond technology to engines and machinery, reducing mechanical wear and optimizing energy efficiency.
+                  {i.nanoDesc}
                 </p>
                 <a
                   href="#contact"
                   className="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-200"
                   style={{ color: t.fg }}
                 >
-                  Request Nano Diamond fleet trial <IconArrowRight />
+                  {i.nanoCta} <IconArrowRight />
                 </a>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  {
-                    val: "6%+",
-                    label: "Guaranteed minimum fuel saving",
-                    color: "#00FF66",
-                  },
-                  {
-                    val: "100%",
-                    label: "Safe for modern engines & turbines",
-                    color: "#00ccff",
-                  },
-                  {
-                    val: "2×",
-                    label: "Extended equipment & tool life",
-                    color: "#00FF66",
-                  },
-                  {
-                    val: "0",
-                    label: "Toxic emissions or harmful residue",
-                    color: "#00ccff",
-                  },
-                ].map((stat) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {i.nanoStats.map((stat) => (
                   <div
                     key={stat.label}
                     className="p-5 rounded-xl"
@@ -1783,7 +1980,7 @@ export default function LegacyEts() {
               className="text-xs font-semibold tracking-widest uppercase block mb-2"
               style={{ color: "#00FF66" }}
             >
-              Client Feedback
+              {i.testimonialsTag}
             </span>
             <h2
               className="text-3xl sm:text-4xl font-black tracking-tight"
@@ -1792,31 +1989,12 @@ export default function LegacyEts() {
                 color: t.fg,
               }}
             >
-              Trusted Across Global Operations
+              {i.testimonialsTitle}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                quote:
-                  "The staff was courteous and knowledgeable, addressing all our concerns promptly with tailored cleaning formulations.",
-                author: "Ron Burnwood",
-                role: "Operations Director",
-              },
-              {
-                quote:
-                  "Choosing ETS International for our industrial compliance and environmental transition was undoubtedly the right decision.",
-                author: "Lily Granger",
-                role: "Technical Compliance Lead",
-              },
-              {
-                quote:
-                  "ETS International exceeded our expectations in every way possible — performance, safety, and regulatory documentation.",
-                author: "Jeson Foxx",
-                role: "Fleet Maintenance Chief",
-              },
-            ].map((tItem, idx) => (
+            {i.testimonialsList.map((tItem, idx) => (
               <div
                 key={idx}
                 className="p-6 rounded-2xl border flex flex-col justify-between"
@@ -1867,14 +2045,14 @@ export default function LegacyEts() {
                   color: t.fg,
                 }}
               >
-                Ready to Upgrade to{" "}
-                <span style={{ color: "#00FF66" }}>Certified Eco Chemistry?</span>
+                {i.contactCtaTitlePre}
+                <span style={{ color: "#00FF66" }}>{i.contactCtaTitleHighlight}</span>
               </h2>
               <p
                 className="max-w-xl mx-auto mb-8 text-sm sm:text-base leading-relaxed"
                 style={{ color: t.muted }}
               >
-                Consult directly with our German engineering team. We formulate customized cleaning chemistry, sample batches, and full regulatory compliance dossiers.
+                {i.contactCtaDesc}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -1882,14 +2060,14 @@ export default function LegacyEts() {
                   className="glow-btn px-8 py-4 rounded-full font-semibold text-sm"
                   style={{ background: "#00FF66", color: "#050505" }}
                 >
-                  Email: info@etsint.eu
+                  {i.contactEmailBtn}
                 </a>
                 <a
                   href="tel:+492203188890"
                   className="px-8 py-4 rounded-full font-semibold text-sm border transition-colors"
                   style={{ borderColor: t.border, color: t.fg }}
                 >
-                  Call +49 2203 18889-0
+                  {i.contactCallBtn}
                 </a>
               </div>
             </div>
@@ -1944,13 +2122,9 @@ export default function LegacyEts() {
                 {i.footerAppTitle}
               </h4>
               <ul className="space-y-2 text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
-                <li>• Aviation Industry</li>
-                <li>• Marine / Off-Shore Industry</li>
-                <li>• Refinery & Oil / Gas Production</li>
-                <li>• Military Industry</li>
-                <li>• Food, Beverage & Restaurant Services</li>
-                <li>• Disinfection & Odor Control</li>
-                <li>• Derusting & Prevention</li>
+                {i.footerAppList.map((app, idx) => (
+                  <li key={idx}>{app}</li>
+                ))}
               </ul>
             </div>
 
@@ -1973,7 +2147,7 @@ export default function LegacyEts() {
                 <div>WEEE DE: 77800049</div>
                 <div>Wilhelm-Rupert-Str. 38, 51147 Köln, Germany</div>
                 <div className="pt-2 text-white font-medium">
-                  CEO: Dipl.-Ing. Massoud Rad Soltani
+                  {i.footerCourtCeo}
                 </div>
               </div>
             </div>
@@ -2024,13 +2198,13 @@ export default function LegacyEts() {
                 className="font-bold text-base mb-1 text-white"
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
-                Technical bulletins & product updates
+                {i.footerNewsletterTitle}
               </h4>
               <p
                 className="text-xs sm:text-sm"
                 style={{ color: "rgba(255,255,255,0.45)" }}
               >
-                Subscribe for regulatory news, SDS updates, and new eco formulations.
+                {i.footerNewsletterDesc}
               </p>
             </div>
             <form
@@ -2044,7 +2218,7 @@ export default function LegacyEts() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@company.com"
+                placeholder={i.footerNewsletterPlaceholder}
                 className="w-full sm:w-64 px-4 py-2.5 rounded-full text-sm outline-none transition-all duration-200 min-w-0"
                 style={{
                   background: "rgba(255,255,255,0.06)",
@@ -2066,7 +2240,7 @@ export default function LegacyEts() {
                 className="w-full sm:w-auto px-6 py-2.5 rounded-full text-sm font-semibold shrink-0 transition-all duration-200 hover:scale-[1.02] sm:hover:scale-105 cursor-pointer text-center"
                 style={{ background: "#00FF66", color: "#050505" }}
               >
-                Subscribe
+                {i.footerNewsletterBtn}
               </button>
             </form>
           </div>
@@ -2080,7 +2254,7 @@ export default function LegacyEts() {
               {i.footerCopyright}
             </p>
             <div className="flex items-center gap-6">
-              {["Privacy Policy", "Terms of Use", "Imprint"].map((link) => (
+              {i.footerLegalLinks.map((link) => (
                 <a
                   key={link}
                   href="#"

@@ -214,7 +214,7 @@ const IconChevronRight = () => (
 /* ─── Nav config ─── */
 interface NavItem {
   label: string
-  items: { label: string hasArrow?: boolean }[]
+  items: { label: string; hasArrow?: boolean }[]
 }
 const navConfig: NavItem[] = [
   {
