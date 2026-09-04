@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router";
-import { useTheme } from "@/lib/store";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
+import { useTheme } from "@/context/ThemeContext";
+import { T, JK, GREEN, CYAN } from "@/theme";
 import { subpagesData, type SubpageInfo } from "@/data/subpagesData";
 import {
   IconArrowRight,
@@ -10,7 +10,7 @@ import {
   IconChevronRight,
   IconFactory,
   IconPlane,
-} from "@/lib/icons";
+} from "@/components/icons";
 
 interface SubpageTemplateProps {
   forcedSlug?: string;
@@ -65,28 +65,28 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
   };
 
   return (
-    <div className="pt-24 pb-20 min-h-screen" style={{ background: T.bg, color: T.fg }}>
+    <div className="pt-24 pb-20 min-h-screen bg-theme-base text-theme-fg">
       {/* ── Breadcrumb ── */}
       <div className="max-w-6xl mx-auto px-6 py-4">
-        <nav className="flex items-center gap-2 text-xs font-medium" style={{ color: T.faint }}>
-          <Link to="/" className="hover:underline transition-colors" style={{ color: T.muted }}>
+        <nav className="flex items-center gap-2 text-xs font-medium text-theme-faint">
+          <Link to="/" className="hover:underline transition-colors text-theme-muted">
             Home
           </Link>
           <IconChevronRight />
           {data.parentSlug ? (
-            <Link to={data.parentSlug} className="hover:underline transition-colors" style={{ color: T.muted }}>
+            <Link to={data.parentSlug} className="hover:underline transition-colors text-theme-muted">
               {data.parentMenu}
             </Link>
           ) : (
-            <span style={{ color: T.muted }}>{data.parentMenu}</span>
+            <span className="text-theme-muted">{data.parentMenu}</span>
           )}
           <IconChevronRight />
-          <span style={{ color: GREEN }}>{data.title}</span>
+          <span className="text-theme-neon">{data.title}</span>
         </nav>
       </div>
 
       {/* ── Hero Section ── */}
-      <section className="relative overflow-hidden border-y" style={{ borderColor: T.borderSubtle }}>
+      <section className="relative overflow-hidden border-y border-theme-subtle">
         {/* Background Image with Dark Gradient Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
@@ -99,8 +99,8 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
             className="absolute inset-0"
             style={{
               background: isDark
-                ? "linear-gradient(to right, rgba(5,5,5,0.95) 30%, rgba(5,5,5,0.7) 100%)"
-                : "linear-gradient(to right, rgba(248,249,250,0.95) 30%, rgba(248,249,250,0.7) 100%)",
+                ? "linear-gradient(to bottom, rgba(5,5,5,0.75) 0%, rgba(10,25,47,0.85) 50%, #050505 100%)"
+                : "linear-gradient(to bottom, rgba(248,249,250,0.8) 0%, rgba(248,249,250,0.92) 50%, #F8F9FA 100%)",
             }}
           />
           <div
@@ -112,35 +112,31 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6"
-            style={{ background: T.certBg, border: `1px solid ${T.certBorder}`, color: T.certText }}>
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: T.certText }} />
+          <div className="badge-cert mb-6">
+            <span className="badge-dot" />
             {data.badge}
           </div>
 
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6 max-w-4xl"
-            style={{ fontFamily: JK, color: T.fg }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6 max-w-4xl font-display text-theme-fg"
           >
             {data.title}
           </h1>
 
-          <p className="text-lg md:text-xl font-medium max-w-2xl mb-8 leading-relaxed" style={{ color: T.muted }}>
+          <p className="text-lg md:text-xl font-medium max-w-2xl mb-8 leading-relaxed text-theme-muted">
             {data.subtitle}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
             <Link
               to="/quote"
-              className="flex items-center gap-2.5 px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-105 glow-btn"
-              style={{ background: GREEN, color: "#050505", boxShadow: "0 0 24px rgba(0,255,102,0.3)" }}
+              className="btn-neon glow-btn hover:scale-105"
             >
               Request Free Sample & Quote <IconArrowRight />
             </Link>
             <Link
               to="/contact"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border transition-all duration-200 hover:scale-105"
-              style={{ borderColor: T.border, color: T.fg, background: T.glassCard }}
+              className="btn-secondary hover:scale-105"
             >
               Contact Specialist
             </Link>
@@ -153,31 +149,29 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-xs font-bold tracking-widest uppercase" style={{ color: GREEN }}>
+              <span className="text-xs font-bold tracking-widest uppercase text-theme-neon">
                 TECHNICAL OVERVIEW
               </span>
-              <div className="h-px w-12" style={{ background: GREEN }} />
+              <div className="h-px w-12 bg-[#00FF66]" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black mb-6" style={{ fontFamily: JK }}>
+            <h2 className="text-2xl sm:text-3xl font-black mb-6 font-display text-theme-fg">
               Engineered to Deliver Clean-Tech Excellence Without Compromise
             </h2>
-            <p className="text-base leading-relaxed mb-8" style={{ color: T.muted }}>
+            <p className="text-base leading-relaxed mb-8 text-theme-muted">
               {data.overview}
             </p>
 
             {/* Applications List */}
-            <h3 className="text-sm font-bold tracking-widest uppercase mb-4" style={{ color: T.dim }}>
+            <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-theme-dim">
               PRIMARY DEPLOYMENT USE-CASES:
             </h3>
             <div className="space-y-3">
               {data.applications.map((app, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl border transition-all duration-200"
-                  style={{ background: T.glassCard, borderColor: T.borderSubtle }}>
-                  <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ background: "rgba(0,255,102,0.15)", color: GREEN }}>
+                <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl border border-theme-subtle card-glass transition-all duration-200">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-[rgba(0,255,102,0.15)] text-theme-neon">
                     <IconCheck />
                   </div>
-                  <span className="text-sm font-medium" style={{ color: T.fg }}>
+                  <span className="text-sm font-medium text-theme-fg">
                     {app}
                   </span>
                 </div>
@@ -187,31 +181,28 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
 
           {/* Specifications Card */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl p-6 sm:p-8 border shadow-xl backdrop-blur-md"
-              style={{ background: T.glassCard, borderColor: T.border }}>
-              <div className="flex items-center justify-between pb-4 mb-6 border-b" style={{ borderColor: T.borderSubtle }}>
+            <div className="card-glass p-6 sm:p-8 shadow-xl">
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-theme-subtle">
                 <div>
-                  <h3 className="font-bold text-lg" style={{ fontFamily: JK }}>
+                  <h3 className="font-bold text-lg font-display text-theme-fg">
                     Technical Specifications
                   </h3>
-                  <span className="text-xs" style={{ color: T.dim }}>
+                  <span className="text-xs text-theme-dim">
                     Standard Laboratory Analysis
                   </span>
                 </div>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: "rgba(0,204,255,0.15)", color: CYAN }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[rgba(0,204,255,0.15)] text-theme-cyan">
                   <IconShield />
                 </div>
               </div>
 
               <dl className="space-y-4">
                 {data.specifications.map((spec, i) => (
-                  <div key={i} className="flex flex-col sm:flex-row sm:justify-between py-2 border-b gap-1"
-                    style={{ borderColor: T.borderSubtle }}>
-                    <dt className="text-xs font-semibold uppercase tracking-wider" style={{ color: T.dim }}>
+                  <div key={i} className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-theme-subtle gap-1">
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-theme-dim">
                       {spec.label}
                     </dt>
-                    <dd className="text-sm font-bold sm:text-right" style={{ color: T.fg }}>
+                    <dd className="text-sm font-bold sm:text-right text-theme-fg">
                       {spec.value}
                     </dd>
                   </div>
@@ -219,14 +210,13 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
               </dl>
 
               {/* Certifications footer */}
-              <div className="mt-8 pt-6 border-t" style={{ borderColor: T.borderSubtle }}>
-                <span className="text-xs font-bold tracking-widest uppercase block mb-3" style={{ color: T.faint }}>
+              <div className="mt-8 pt-6 border-t border-theme-subtle">
+                <span className="text-xs font-bold tracking-widest uppercase block mb-3 text-theme-faint">
                   CERTIFIED & TESTED TO:
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {data.certifications.map((cert) => (
-                    <span key={cert} className="px-2.5 py-1 rounded text-xs font-semibold tracking-wide"
-                      style={{ background: T.certBg, border: `1px solid ${T.certBorder}`, color: T.certText }}>
+                    <span key={cert} className="badge-cert text-xs">
                       {cert}
                     </span>
                   ))}
@@ -238,12 +228,12 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
       </section>
 
       {/* ── Key Advantages / Features Bento ── */}
-      <section className="max-w-6xl mx-auto px-6 py-12 border-t" style={{ borderColor: T.borderSubtle }}>
+      <section className="max-w-6xl mx-auto px-6 py-12 border-t border-theme-subtle">
         <div className="text-center mb-12">
-          <span className="text-xs font-bold tracking-widest uppercase block mb-2" style={{ color: GREEN }}>
+          <span className="text-xs font-bold tracking-widest uppercase block mb-2 text-theme-neon">
             PERFORMANCE ADVANTAGES
           </span>
-          <h2 className="text-2xl sm:text-4xl font-black" style={{ fontFamily: JK }}>
+          <h2 className="text-2xl sm:text-4xl font-black font-display text-theme-fg">
             Why Global Operations Rely On This Solution
           </h2>
         </div>
@@ -252,23 +242,17 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
           {data.features.map((feat, idx) => (
             <div
               key={idx}
-              className="p-6 sm:p-8 rounded-2xl border transition-all duration-300 hover:translate-y-[-4px]"
-              style={{
-                background: T.glassCard,
-                borderColor: T.border,
-                boxShadow: isDark ? "0 10px 30px rgba(0,0,0,0.5)" : "0 8px 24px rgba(0,0,0,0.05)",
-              }}
+              className="card-glass p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1"
             >
               {feat.highlight && (
-                <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
-                  style={{ background: "rgba(0,255,102,0.1)", color: GREEN, border: `1px solid ${T.border}` }}>
+                <div className="badge-cert mb-4">
                   {feat.highlight}
                 </div>
               )}
-              <h3 className="text-lg font-bold mb-3" style={{ fontFamily: JK, color: T.fg }}>
+              <h3 className="text-lg font-bold mb-3 font-display text-theme-fg">
                 {feat.title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: T.muted }}>
+              <p className="text-sm leading-relaxed text-theme-muted">
                 {feat.description}
               </p>
             </div>
@@ -279,36 +263,28 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
       {/* ── Bottom CTA ── */}
       <section className="max-w-6xl mx-auto px-6 pt-12">
         <div
-          className="relative overflow-hidden rounded-3xl p-8 sm:p-12 text-center border shadow-2xl"
-          style={{
-            background: isDark
-              ? "linear-gradient(135deg, rgba(10,25,47,0.9) 0%, rgba(5,5,5,0.95) 100%)"
-              : "linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%)",
-            borderColor: T.border,
-          }}
+          className="relative overflow-hidden rounded-3xl p-8 sm:p-12 text-center card-glass border border-theme shadow-2xl"
         >
           <div className="relative z-10 max-w-2xl mx-auto">
-            <span className="text-xs font-bold tracking-widest uppercase block mb-3" style={{ color: GREEN }}>
+            <span className="text-xs font-bold tracking-widest uppercase block mb-3 text-theme-neon">
               TEST IN YOUR OWN FACILITY
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black mb-4" style={{ fontFamily: JK }}>
+            <h2 className="text-2xl sm:text-4xl font-black mb-4 font-display text-theme-fg">
               Ready to Evaluate {data.title}?
             </h2>
-            <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: T.muted }}>
+            <p className="text-sm sm:text-base leading-relaxed mb-8 text-theme-muted">
               We provide complimentary sample batches and complete Safety Data Sheet (SDS) dossiers for industrial verification trials.
             </p>
             <div className="flex flex-wrap justify-center items-center gap-4">
               <Link
                 to="/quote"
-                className="px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-105 glow-btn"
-                style={{ background: GREEN, color: "#050505", boxShadow: "0 0 20px rgba(0,255,102,0.35)" }}
+                className="btn-neon glow-btn hover:scale-105"
               >
                 Request Free Sample Batch
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-3.5 rounded-full font-semibold text-sm border transition-all duration-200 hover:scale-105"
-                style={{ borderColor: T.border, color: T.fg }}
+                className="btn-secondary hover:scale-105"
               >
                 Talk with Chemical Engineer
               </Link>

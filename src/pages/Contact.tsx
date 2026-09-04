@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import { IconMail, IconPhone, IconMapPin, IconGlobe, IconArrowRight } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader } from "@/components/shared";
+import { IconMail, IconPhone, IconMapPin, IconGlobe, IconArrowRight } from "@/components/icons";
 
 const industries = ["Aviation & Aerospace", "Marine & Offshore", "Industrial & Metal", "HACCP / Food Safety", "Disinfection", "Defence", "Other"];
 

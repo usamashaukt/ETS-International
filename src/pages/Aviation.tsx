@@ -1,9 +1,7 @@
 import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconPlane, IconShield, IconLeaf, IconCheck, IconArrowRight, IconZap } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconPlane, IconShield, IconLeaf, IconCheck, IconArrowRight, IconZap } from "@/components/icons";
 
 const products = [
   { name: "ETS AviClean", desc: "AIRBUS AIMS 09-00-002 & BOEING D6-17487 approved exterior and engine cleaning concentrate.", cert: "AIRBUS · BOEING", to: "/products/aviation" },

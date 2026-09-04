@@ -10,6 +10,18 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#050505" />
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('ets-theme');
+          if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <!-- figma:head-end -->
   </head>
   <body>

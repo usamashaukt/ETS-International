@@ -1,9 +1,6 @@
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconDrop, IconLeaf, IconShield, IconCheck, IconPlane, IconAnchor, IconFactory } from "@/lib/icons";
-import { useTheme } from "@/lib/store";
+import { GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconDrop, IconLeaf, IconShield, IconPlane, IconAnchor, IconFactory } from "@/components/icons";
 
 const steps = [
   { num: "01", title: "Water Activation", desc: "AquaSmarter concentrates are diluted with water at ratios from 1:10 to 1:100 — the water activates the surfactant system." },
@@ -20,8 +17,6 @@ const features = [
 ];
 
 export default function AquaSmarter() {
-  const { isDark } = useTheme();
-
   return (
     <>
       <PageHero
@@ -42,18 +37,18 @@ export default function AquaSmarter() {
       />
 
       {/* What is AquaSmarter */}
-      <section className="py-24 px-6" style={{ borderTop: `1px solid ${T.borderSubtle}` }}>
+      <section className="py-24 px-6 border-t border-theme-subtle">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader eyebrow="What is AquaSmarter?" title="Cleaning chemistry. Reinvented." />
-              <p className="text-lg leading-relaxed mb-6" style={{ color: T.muted }}>
+              <p className="text-lg leading-relaxed mb-6 text-theme-muted">
                 AquaSmarter is ETS International's proprietary water-based cleaning platform. Unlike conventional cleaners that rely on petroleum solvents, caustic alkalis, or phosphates, AquaSmarter uses advanced surfactant and emulsifier technology activated purely by water.
               </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: T.muted }}>
+              <p className="text-base leading-relaxed mb-6 text-theme-muted">
                 The result is a cleaning system that is genuinely safe for operators, genuinely safe for surfaces, and genuinely safe for the environment — without sacrificing the cleaning performance that professional maintenance operations demand.
               </p>
-              <p className="text-base leading-relaxed" style={{ color: T.muted }}>
+              <p className="text-base leading-relaxed text-theme-muted">
                 AquaSmarter products are used in aviation MRO, marine maintenance, food processing, and industrial manufacturing across 40+ countries.
               </p>
             </div>
@@ -61,8 +56,8 @@ export default function AquaSmarter() {
               <img src="https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&h=700&fit=crop&auto=format"
                 alt="AquaSmarter water chemistry" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: "var(--img-opacity-sm)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,255,102,0.06) 0%, rgba(0,204,255,0.04) 100%)" }} />
-              <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider"
-                style={{ background: "rgba(0,255,102,0.15)", border: "1px solid rgba(0,255,102,0.3)", color: GREEN }}>
+              <div className="absolute top-5 left-5 badge-cert">
+                <span className="badge-dot" />
                 AQUASMARTER™
               </div>
             </div>
@@ -71,7 +66,7 @@ export default function AquaSmarter() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 px-6" style={{ borderTop: `1px solid ${T.borderSubtle}` }}>
+      <section className="py-24 px-6 border-t border-theme-subtle">
         <div className="max-w-6xl mx-auto">
           <SectionHeader eyebrow="How It Works" title="Four steps. Complete clean." center />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -80,10 +75,10 @@ export default function AquaSmarter() {
                 {idx < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-6 left-full w-full h-px z-10" style={{ background: `linear-gradient(to right, ${GREEN}40, transparent)` }} />
                 )}
-                <div className="bento-card p-6 rounded-2xl border" style={{ borderColor: T.border, background: T.glassCard }}>
-                  <div className="text-3xl font-black mb-4" style={{ fontFamily: JK, color: GREEN }}>{step.num}</div>
-                  <h3 className="font-bold text-base mb-2" style={{ fontFamily: JK, color: T.fg }}>{step.title}</h3>
-                  <p className="text-xs leading-relaxed" style={{ color: T.muted }}>{step.desc}</p>
+                <div className="card-glass p-6 rounded-2xl">
+                  <div className="text-3xl font-black mb-4 font-display text-theme-neon">{step.num}</div>
+                  <h3 className="font-bold text-base mb-2 font-display text-theme-fg">{step.title}</h3>
+                  <p className="text-xs leading-relaxed text-theme-muted">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -97,8 +92,8 @@ export default function AquaSmarter() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {features.map((f) => (
               <div key={f.title} className="p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ color: GREEN }}>{f.icon}</div>
-                <h3 className="font-bold text-sm mb-2 text-white" style={{ fontFamily: JK }}>{f.title}</h3>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 text-theme-neon">{f.icon}</div>
+                <h3 className="font-bold text-sm mb-2 text-white font-display">{f.title}</h3>
                 <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{f.desc}</p>
               </div>
             ))}
@@ -107,7 +102,7 @@ export default function AquaSmarter() {
       </section>
 
       {/* Applications */}
-      <section className="py-24 px-6" style={{ borderTop: `1px solid ${T.borderSubtle}` }}>
+      <section className="py-24 px-6 border-t border-theme-subtle">
         <div className="max-w-6xl mx-auto">
           <SectionHeader eyebrow="Applications" title="AquaSmarter across industries." subtitle="One technology platform — multiple industry applications." />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
@@ -116,13 +111,13 @@ export default function AquaSmarter() {
               { icon: <IconAnchor />, label: "Marine & Offshore", desc: "Hull maintenance, engine rooms, and offshore platform equipment. MARPOL compliant — safe for overboard discharge.", to: "/industries/marine", color: "#4499ff" },
               { icon: <IconFactory />, label: "Industrial", desc: "Manufacturing equipment, metal surfaces, precision parts cleaning, and weld preparation. Zero VOC.", to: "/industries/industrial", color: CYAN },
             ].map((app) => (
-              <div key={app.label} className="bento-card group p-6 rounded-2xl border transition-all duration-300" style={{ borderColor: T.border, background: T.glassCard }}>
+              <div key={app.label} className="card-glass group p-6 rounded-2xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
                   style={{ background: `rgba(${app.color === GREEN ? "0,255,102" : app.color === CYAN ? "0,204,255" : "68,153,255"},0.08)`, border: `1px solid rgba(${app.color === GREEN ? "0,255,102" : app.color === CYAN ? "0,204,255" : "68,153,255"},0.2)`, color: app.color }}>
                   {app.icon}
                 </div>
-                <h3 className="font-bold text-base mb-2" style={{ fontFamily: JK, color: T.fg }}>{app.label}</h3>
-                <p className="text-xs leading-relaxed" style={{ color: T.muted }}>{app.desc}</p>
+                <h3 className="font-bold text-base mb-2 font-display text-theme-fg">{app.label}</h3>
+                <p className="text-xs leading-relaxed text-theme-muted">{app.desc}</p>
               </div>
             ))}
           </div>

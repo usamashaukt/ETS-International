@@ -1,10 +1,8 @@
 import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import { useTheme } from "@/lib/store";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconLeaf, IconShield, IconDiamond, IconRecycle, IconGlobe, IconZap, IconAtom, IconArrowRight } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { useTheme } from "@/context/ThemeContext";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconLeaf, IconShield, IconDiamond, IconRecycle, IconGlobe, IconZap, IconAtom, IconArrowRight } from "@/components/icons";
 
 const pillars = [
   { icon: <IconLeaf />, title: "Environmental Mission", desc: "We believe industrial cleaning can be fully decoupled from toxic chemistry. Every ETS formulation is engineered to leave no harmful trace — on surfaces, on operators, or in ecosystems." },

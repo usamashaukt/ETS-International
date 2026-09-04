@@ -1,3 +1,8 @@
+/**
+ * Centralized Theme Tokens for ETS International
+ * Maps CSS variables defined in src/index.css to reusable constants.
+ */
+
 export const T = {
   bg: "var(--bg)",
   surface: "var(--bg-surface)",
@@ -26,3 +31,5 @@ export const GREEN = "#00FF66";
 export const CYAN = "#00ccff";
 export const DARK_BG = "#030812";
 export const JK = "'Plus Jakarta Sans', sans-serif";
+
+export type ThemeTokens = typeof T;

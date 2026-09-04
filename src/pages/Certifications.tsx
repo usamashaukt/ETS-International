@@ -1,8 +1,6 @@
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconShield, IconCheck, IconFileText } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconShield, IconCheck, IconFileText } from "@/components/icons";
 
 const certs = [
   {

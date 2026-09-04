@@ -1,8 +1,9 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router";
-import etsLogo from "@/imports/ets-logo.png";
-import { useTheme, useScrolled } from "@/lib/store";
-import { T, GREEN } from "@/lib/theme";
+import etsLogo from "@/assets/images/ets-logo.png";
+import { useTheme } from "@/context/ThemeContext";
+import { useScrolled } from "@/hooks/useScrolled";
+import { T, GREEN } from "@/theme";
 import {
   IconChevronDown,
   IconChevronRight,
@@ -10,25 +11,10 @@ import {
   IconX,
   IconSun,
   IconMoon,
-} from "@/lib/icons";
+} from "@/components/icons";
+import type { NavTopItem, NavDropdownItem, NavSubItem } from "@/types";
 
-export interface NavSubItem {
-  label: string;
-  to: string;
-}
-
-export interface NavDropdownItem {
-  label: string;
-  to?: string;
-  hasFlyout?: boolean;
-  subItems?: NavSubItem[];
-}
-
-export interface NavTopItem {
-  label: string;
-  to?: string;
-  items?: NavDropdownItem[];
-}
+export type { NavTopItem, NavDropdownItem, NavSubItem };
 
 export const navConfig: NavTopItem[] = [
   {
@@ -324,7 +310,7 @@ export default function Navbar() {
                                 <Link
                                   key={sub.label}
                                   to={sub.to}
-                                  className="flex items-center justify-between px-3.5 py-2 rounded-xl text-xs xl:text-sm font-medium transition-all duration-150"
+                                  className="flex items-center px-3.5 py-2.5 rounded-xl text-xs xl:text-sm font-medium transition-all duration-150"
                                   style={{ color: T.muted }}
                                   onMouseEnter={(e) => {
                                     (e.currentTarget as HTMLElement).style.color = GREEN;
@@ -342,9 +328,6 @@ export default function Navbar() {
                                   }}
                                 >
                                   <span>{sub.label}</span>
-                                  <span className="opacity-0 group-hover/sub:opacity-100 transition-opacity">
-                                    <IconChevronRight />
-                                  </span>
                                 </Link>
                               ))}
                             </div>
@@ -515,7 +498,7 @@ export default function Navbar() {
                                 <Link
                                   key={sub.label}
                                   to={sub.to}
-                                  className="flex items-center justify-between px-3 py-1.5 rounded text-xs transition-colors"
+                                  className="flex items-center px-3 py-1.5 rounded text-xs transition-colors"
                                   style={{ color: T.dim }}
                                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = GREEN)}
                                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = T.dim)}
@@ -526,7 +509,6 @@ export default function Navbar() {
                                   }}
                                 >
                                   <span>{sub.label}</span>
-                                  <IconChevronRight />
                                 </Link>
                               ))}
                             </div>

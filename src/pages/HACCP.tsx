@@ -1,8 +1,6 @@
-import { T, JK, GREEN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconShield, IconLeaf, IconCheck, IconFileText } from "@/lib/icons";
+import { T, JK, GREEN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconShield, IconLeaf, IconCheck, IconFileText } from "@/components/icons";
 
 const products = [
   { name: "ETS FoodSafe Cleaner", desc: "NSF H1 registered food-contact-safe cleaner for food processing surfaces, conveyors, and equipment. Zero flavor taint.", cert: "NSF H1" },

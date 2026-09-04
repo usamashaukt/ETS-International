@@ -748,11 +748,23 @@ const translations = {
 type Lang = keyof typeof translations
 
 export default function LegacyEts() {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window === "undefined") return true;
+    try {
+      const stored = localStorage.getItem("ets-theme");
+      if (stored === "light") return false;
+      if (stored === "dark") return true;
+    } catch (e) {}
+    return true;
+  });
   const [lang, setLang] = useState<Lang>(() => {
-    const stored = localStorage.getItem("ets-lang")
-    return stored === "de" || stored === "en" ? stored : "en"
-  })
+    if (typeof window === "undefined") return "en";
+    try {
+      const stored = localStorage.getItem("ets-lang");
+      return stored === "de" || stored === "en" ? stored : "en";
+    } catch (e) {}
+    return "en";
+  });
   const i = translations[lang]
   const [menuOpen, setMenuOpen] = useState(false)
   const [openMobileNav, setOpenMobileNav] = useState<string | null>(null)
@@ -761,23 +773,15 @@ export default function LegacyEts() {
   const [email, setEmail] = useState("")
   const dropdownTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  /* Initialise theme from localStorage / OS preference */
-  useEffect(() => {
-    const stored = localStorage.getItem("ets-theme")
-    if (stored) {
-      setIsDark(stored === "dark")
-    } else {
-      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches)
-    }
-  }, [])
-
   /* Apply data-theme to <html> */
   useEffect(() => {
     document.documentElement.setAttribute(
       "data-theme",
       isDark ? "dark" : "light",
     )
-    localStorage.setItem("ets-theme", isDark ? "dark" : "light")
+    try {
+      localStorage.setItem("ets-theme", isDark ? "dark" : "light")
+    } catch (e) {}
   }, [isDark])
 
   const toggleLanguage = () => {

@@ -1,6 +1,7 @@
-import { createContext, useContext, useState, useEffect, useRef, type ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import type { ThemeContextType, Lang, Translations } from "@/types";
 
-export const translations = {
+export const translations: Record<Lang, Translations> = {
   en: {
     getQuote: "Get a Quote",
     heroBody: "100% biodegradable, solvent-free professional cleaning solutions for Aviation, Marine, and Industry. Performance without compromise.",
@@ -47,78 +48,80 @@ export const translations = {
     whySubtitle: "Warum Branchenführer ETS wählen.",
     footerTagline: "Saubere Technologie für Luftfahrt, Marine und Industrie — für Leistung entwickelt, zum Schutz gestaltet.",
   },
-} as const;
+};
 
-export type Lang = keyof typeof translations;
-
-interface ThemeCtx {
-  isDark: boolean;
-  setIsDark: (v: boolean) => void;
-  lang: Lang;
-  setLang: (v: Lang) => void;
-  i: typeof translations["en"] | typeof translations["de"];
-}
-
-const Ctx = createContext<ThemeCtx>({} as ThemeCtx);
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [isDark, setIsDarkState] = useState(true);
-  const [lang, setLang] = useState<Lang>("en");
+  // Synchronous lazy initialization prevents theme-flicker or resetting to dark on refresh
+  const [isDark, setIsDarkState] = useState<boolean>(() => {
+    if (typeof window === "undefined") return true;
+    try {
+      const stored = localStorage.getItem("ets-theme");
+      if (stored === "light") return false;
+      if (stored === "dark") return true;
+    } catch (e) {
+      console.warn("Unable to access localStorage for ets-theme", e);
+    }
+    return true; // Default theme
+  });
 
-  useEffect(() => {
-    const stored = localStorage.getItem("ets-theme");
-    if (stored) setIsDarkState(stored === "dark");
-    else setIsDarkState(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    const storedLang = localStorage.getItem("ets-lang") as Lang | null;
-    if (storedLang && (storedLang === "en" || storedLang === "de")) setLang(storedLang);
-  }, []);
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window === "undefined") return "en";
+    try {
+      const storedLang = localStorage.getItem("ets-lang") as Lang | null;
+      if (storedLang === "en" || storedLang === "de") return storedLang;
+    } catch (e) {
+      console.warn("Unable to access localStorage for ets-lang", e);
+    }
+    return "en";
+  });
 
   const setIsDark = (v: boolean) => {
     setIsDarkState(v);
-    document.documentElement.setAttribute("data-theme", v ? "dark" : "light");
-    localStorage.setItem("ets-theme", v ? "dark" : "light");
+    if (typeof document !== "undefined") {
+      document.documentElement.setAttribute("data-theme", v ? "dark" : "light");
+    }
+    try {
+      localStorage.setItem("ets-theme", v ? "dark" : "light");
+    } catch (e) {
+      console.warn("Failed to set ets-theme in localStorage", e);
+    }
+  };
+
+  const setLang = (v: Lang) => {
+    setLangState(v);
+    try {
+      localStorage.setItem("ets-lang", v);
+    } catch (e) {
+      console.warn("Failed to set ets-lang in localStorage", e);
+    }
   };
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-    localStorage.setItem("ets-theme", isDark ? "dark" : "light");
+    try {
+      localStorage.setItem("ets-theme", isDark ? "dark" : "light");
+    } catch (e) {}
   }, [isDark]);
 
   useEffect(() => {
-    localStorage.setItem("ets-lang", lang);
+    try {
+      localStorage.setItem("ets-lang", lang);
+    } catch (e) {}
   }, [lang]);
 
   return (
-    <Ctx.Provider value={{ isDark, setIsDark, lang, setLang, i: translations[lang] }}>
+    <ThemeContext.Provider value={{ isDark, setIsDark, lang, setLang, i: translations[lang] }}>
       {children}
-    </Ctx.Provider>
+    </ThemeContext.Provider>
   );
 }
 
-export function useTheme() {
-  return useContext(Ctx);
-}
-
-/* Navbar scroll state hook — separate so pages can't accidentally use it */
-export function useScrolled() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-  return scrolled;
-}
-
-export function useDropdown() {
-  const [active, setActive] = useState<string | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const enter = (label: string) => {
-    if (timer.current) clearTimeout(timer.current);
-    setActive(label);
-  };
-  const leave = () => {
-    timer.current = setTimeout(() => setActive(null), 120);
-  };
-  return { active, enter, leave };
+export function useTheme(): ThemeContextType {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
 }

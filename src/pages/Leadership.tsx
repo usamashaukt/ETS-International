@@ -1,7 +1,5 @@
-import { T, JK, GREEN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import CtaBanner from "@/components/CtaBanner";
-import SectionHeader from "@/components/SectionHeader";
+import { T, JK, GREEN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
 
 const team = [
   {

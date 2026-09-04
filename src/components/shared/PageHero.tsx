@@ -1,9 +1,9 @@
-import { T, JK, GREEN } from "@/lib/theme";
-import { useTheme } from "@/lib/store";
-import { IconArrowRight } from "@/lib/icons";
 import { Link } from "react-router";
+import { T, JK, GREEN } from "@/theme";
+import { useTheme } from "@/context/ThemeContext";
+import { IconArrowRight } from "@/components/icons";
 
-interface PageHeroProps {
+export interface PageHeroProps {
   eyebrow?: string;
   title: string;
   accent?: string; // word(s) to render in gradient
@@ -32,11 +32,7 @@ export default function PageHero({
 
   return (
     <section
-      className={`relative ${minHeight} flex flex-col justify-center pt-32 pb-20 px-6 overflow-hidden scanlines`}
-      style={{
-        backgroundImage: `linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)`,
-        backgroundSize: "60px 60px",
-      }}
+      className={`relative ${minHeight} flex flex-col justify-center pt-32 pb-20 px-6 overflow-hidden scanlines grid-bg`}
     >
       {imgUrl && (
         <div className="absolute inset-0 z-0">
@@ -51,27 +47,25 @@ export default function PageHero({
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         {badge && (
           <div className="fade-up delay-1 inline-flex items-center gap-2 mb-8">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium tracking-wider"
-              style={{ borderColor: T.certBorder, background: T.certBg, color: T.certText }}>
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: T.certText }} />
+            <div className="badge-cert">
+              <span className="badge-dot" />
               {badge}
             </div>
           </div>
         )}
 
         {eyebrow && (
-          <div className="fade-up delay-1 flex items-center gap-3 mb-6">
+          <div className="fade-up delay-1 eyebrow-accent mb-6">
             <div className="h-px w-10 bg-[#00FF66]" />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>{eyebrow}</span>
+            <span>{eyebrow}</span>
           </div>
         )}
 
-        <h1 className="fade-up delay-2 text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6 max-w-4xl"
-          style={{ fontFamily: JK, color: T.fg }}>
+        <h1 className="fade-up delay-2 text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6 max-w-4xl font-display text-theme-fg">
           {accent ? (
             <>
               {title.split(accent)[0]}
-              <span style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", background: "linear-gradient(90deg, #00FF66 0%, #00ccff 100%)" }}>
+              <span className="text-gradient-neon">
                 {accent}
               </span>
               {title.split(accent)[1]}
@@ -80,7 +74,7 @@ export default function PageHero({
         </h1>
 
         {subtitle && (
-          <p className="fade-up delay-3 text-lg sm:text-xl max-w-2xl mb-10 leading-relaxed" style={{ color: T.muted }}>
+          <p className="fade-up delay-3 text-lg sm:text-xl max-w-2xl mb-10 leading-relaxed text-theme-muted">
             {subtitle}
           </p>
         )}
@@ -88,14 +82,12 @@ export default function PageHero({
         {(ctaPrimary || ctaSecondary) && (
           <div className="fade-up delay-4 flex flex-wrap gap-4 items-center">
             {ctaPrimary && (
-              <Link to={ctaPrimary.to} className="glow-btn flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-105"
-                style={{ background: GREEN, color: "#050505" }}>
+              <Link to={ctaPrimary.to} className="btn-neon glow-btn hover:scale-105">
                 {ctaPrimary.label} <IconArrowRight />
               </Link>
             )}
             {ctaSecondary && (
-              <Link to={ctaSecondary.to} className="flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold text-sm border transition-all duration-200"
-                style={{ borderColor: T.border, color: T.fg }}>
+              <Link to={ctaSecondary.to} className="btn-secondary">
                 {ctaSecondary.label}
               </Link>
             )}
@@ -106,8 +98,8 @@ export default function PageHero({
           <div className="fade-up delay-4 mt-16 flex flex-wrap gap-x-12 gap-y-6">
             {stats.map((s) => (
               <div key={s.val} className="flex flex-col gap-0.5">
-                <span className="text-3xl font-black" style={{ fontFamily: JK, color: GREEN }}>{s.val}</span>
-                <span className="text-xs tracking-wide uppercase" style={{ color: T.dim }}>{s.label}</span>
+                <span className="text-3xl font-black font-display text-theme-neon">{s.val}</span>
+                <span className="text-xs tracking-wide uppercase text-theme-dim">{s.label}</span>
               </div>
             ))}
           </div>

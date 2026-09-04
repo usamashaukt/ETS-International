@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router";
-import Shell from "@/components/Shell";
+import Shell from "@/components/layout/Shell";
 import Home from "@/pages/Home";
 import LegacyEts from "@/pages/LegacyEts";
 import About from "@/pages/About";

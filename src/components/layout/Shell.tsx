@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router";
 import { useEffect } from "react";
-import { useTheme } from "@/lib/store";
-import { T } from "@/lib/theme";
+import { useTheme } from "@/context/ThemeContext";
+import { T } from "@/theme";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -14,7 +14,17 @@ export default function Shell() {
   }, [pathname]);
 
   return (
-    <div style={{ background: T.bg, color: T.fg, fontFamily: "'Inter', sans-serif", minHeight: "100vh", overflowX: "hidden", transition: "background 0.35s ease, color 0.35s ease" }}>
+    <div
+      data-theme-active={isDark ? "dark" : "light"}
+      style={{
+        background: T.bg,
+        color: T.fg,
+        fontFamily: "'Inter', sans-serif",
+        minHeight: "100vh",
+        overflowX: "hidden",
+        transition: "background 0.35s ease, color 0.35s ease",
+      }}
+    >
       <Navbar />
       <main>
         <Outlet />

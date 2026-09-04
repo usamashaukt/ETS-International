@@ -1,9 +1,7 @@
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconDiamond, IconPlane, IconFactory, IconZap, IconLeaf, IconAtom } from "@/lib/icons";
-import { useTheme } from "@/lib/store";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconDiamond, IconPlane, IconFactory, IconZap, IconLeaf, IconAtom } from "@/components/icons";
+import { useTheme } from "@/context/ThemeContext";
 
 const steps = [
   { num: "01", title: "Nano Scale", desc: "Diamond particles are processed to nanometer scale — small enough to enter microscopic surface irregularities on metal engine components." },

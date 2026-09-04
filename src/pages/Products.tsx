@@ -1,9 +1,7 @@
 import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconArrowRight, IconPlane, IconFactory, IconAnchor, IconShield, IconDrop, IconDiamond, IconFlask } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconArrowRight, IconPlane, IconFactory, IconAnchor, IconShield, IconDrop, IconDiamond, IconFlask } from "@/components/icons";
 
 export const products = [
   {

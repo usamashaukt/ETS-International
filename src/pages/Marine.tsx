@@ -1,8 +1,6 @@
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconAnchor, IconLeaf, IconShield, IconCheck } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconAnchor, IconLeaf, IconShield, IconCheck } from "@/components/icons";
 
 const products = [
   { name: "ETS MarineClean", desc: "MARPOL-compliant biodegradable hull and deck cleaner. Safe for discharge in all sea areas.", cert: "MARPOL" },

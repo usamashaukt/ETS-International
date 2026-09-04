@@ -1,9 +1,7 @@
 import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconFactory, IconLeaf, IconCheck, IconArrowRight, IconZap, IconRecycle } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconFactory, IconLeaf, IconCheck, IconArrowRight, IconZap, IconRecycle } from "@/components/icons";
 
 const products = [
   { name: "ETS Degreaser Pro", desc: "Heavy-duty biodegradable degreaser for machined metal, castings, and manufacturing equipment. Zero VOC.", cert: "REACH · OSHA" },

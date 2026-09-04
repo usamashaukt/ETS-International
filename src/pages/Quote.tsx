@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import { useTheme } from "@/lib/store";
-import { IconArrowRight, IconShield, IconLeaf, IconCheck } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { useTheme } from "@/context/ThemeContext";
+import { IconArrowRight, IconShield, IconLeaf, IconCheck } from "@/components/icons";
 
 const industries = ["Aviation & Aerospace", "Marine & Offshore", "Industrial & Metal", "HACCP / Food Safety", "Disinfection", "Defence", "Other"];
 const applications = [

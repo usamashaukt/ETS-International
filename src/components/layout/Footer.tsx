@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import etsLogo from "@/imports/ets-logo.png";
-import { T, GREEN } from "@/lib/theme";
+import etsLogo from "@/assets/images/ets-logo.png";
+import { T, GREEN } from "@/theme";
 
 export default function Footer() {
   const [email, setEmail] = useState("");

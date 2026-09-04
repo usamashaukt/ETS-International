@@ -1,8 +1,6 @@
-import { T, JK, GREEN, CYAN } from "@/lib/theme";
-import PageHero from "@/components/PageHero";
-import SectionHeader from "@/components/SectionHeader";
-import CtaBanner from "@/components/CtaBanner";
-import { IconFlask, IconShield, IconLeaf, IconCheck, IconZap } from "@/lib/icons";
+import { T, JK, GREEN, CYAN } from "@/theme";
+import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
+import { IconFlask, IconShield, IconLeaf, IconCheck, IconZap } from "@/components/icons";
 
 const products = [
   { name: "FOG-IT INNOVA", desc: "Electrostatic fogging disinfection solution for aircraft cabins, transport vehicles, and large area disinfection. Broad-spectrum antimicrobial.", cert: "EN 1276 · EN 13697" },
