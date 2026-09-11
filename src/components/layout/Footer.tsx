@@ -37,51 +37,50 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Columns */}
+          {/* Navigation Columns — aligned with site IA */}
           {[
+            {
+              heading: "Solutions",
+              links: [
+                { label: "AquaSmarter™", to: "/technology/aquasmarter" },
+                { label: "FOG-IT INNOVA™", to: "/fog-it" },
+                { label: "Desi Box", to: "/desi-box" },
+                { label: "Eco Safe Air Blaster", to: "/eco-safe-air-blaster" },
+                { label: "Bioderuster", to: "/bioderuster" },
+                { label: "Nano Diamond™", to: "/technology/nano-diamond" },
+              ],
+            },
+            {
+              heading: "Industries",
+              links: [
+                { label: "Aviation", to: "/industries/aviation" },
+                { label: "Industrial", to: "/industries/industrial" },
+                { label: "Marine", to: "/industries/marine" },
+                { label: "HACCP Food Safety", to: "/industries/haccp" },
+                { label: "Commercial Aviation", to: "/commercial-aviation-industry" },
+                { label: "Metal & Paint Workshop", to: "/metal-paint-workshop" },
+              ],
+            },
             {
               heading: "Products",
               links: [
-                { label: "Commercial Aviation", to: "/commercial-aviation-industry" },
-                { label: "Military Aviation", to: "/military-aviation-industry" },
-                { label: "Metal & Paint Workshop", to: "/metal-paint-workshop" },
-                { label: "Facilities", to: "/facilities" },
-                { label: "HACCP Food Safety", to: "/haccp-product" },
+                { label: "All Products", to: "/products" },
                 { label: "Cleaners", to: "/cleaners" },
-              ],
-            },
-            {
-              heading: "Disinfection",
-              links: [
-                { label: "AquaSmarter™ Ionization", to: "/water-treatment-introduction" },
-                { label: "Water Technical Data", to: "/water-treatment-information" },
-                { label: "FOG-IT INNOVA™", to: "/fog-it" },
-                { label: "Desi Box Sterilizer", to: "/desi-box" },
-                { label: "Nano Diamond™", to: "/technology/nano-diamond" },
-                { label: "Natural Nano Esters", to: "/esters" },
-              ],
-            },
-            {
-              heading: "Restoration",
-              links: [
-                { label: "Eco Safe Air Blaster", to: "/eco-safe-air-blaster" },
-                { label: "Bio-Deruster & Stripper", to: "/bioderuster" },
-                { label: "Actan 3F", to: "/actan-3f" },
-                { label: "Corrosion Prevention", to: "/corrosion-prevention" },
+                { label: "Equipment", to: "/equipment" },
                 { label: "Cleaning Accessories", to: "/cleaning-accessories" },
-                { label: "New Technologies", to: "/new-technologies" },
+                { label: "Shop", to: "/shop" },
+                { label: "Request a Quote", to: "/quote" },
               ],
             },
             {
-              heading: "Company",
+              heading: "Resources",
               links: [
+                { label: "Resources Hub", to: "/resources" },
                 { label: "About ETS", to: "/about" },
-                { label: "Why ETS International", to: "/why-ets" },
-                { label: "News", to: "/news" },
-                { label: "Co-Partners", to: "/co-partners" },
-                { label: "Leadership", to: "/leadership" },
+                { label: "Why ETS?", to: "/why-ets" },
                 { label: "Certifications", to: "/certifications" },
-                { label: "Get a Quote", to: "/quote" },
+                { label: "Leadership", to: "/leadership" },
+                { label: "Contact", to: "/contact" },
               ],
             },
           ].map((col) => (

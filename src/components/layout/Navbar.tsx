@@ -12,106 +12,10 @@ import {
   IconSun,
   IconMoon,
 } from "@/components/icons";
-import type { NavTopItem, NavDropdownItem, NavSubItem } from "@/types";
+import { navConfig } from "@/data/navConfig";
 
-export type { NavTopItem, NavDropdownItem, NavSubItem };
-
-export const navConfig: NavTopItem[] = [
-  {
-    label: "HOME",
-    to: "/",
-  },
-  {
-    label: "About Us",
-    items: [
-      { label: "About", to: "/about" },
-      { label: "Certifications & Approvals", to: "/certifications" },
-      { label: "Why ETS?", to: "/why-ets" },
-      { label: "Presentations", to: "/presentations" },
-      { label: "Co-Partners", to: "/co-partners" },
-    ],
-  },
-  {
-    label: "PRODUCTS",
-    items: [
-      {
-        label: "Aviation",
-        to: "/industries/aviation",
-        hasFlyout: true,
-        subItems: [
-          { label: "Commercial", to: "/commercial-aviation-industry" },
-          { label: "Military", to: "/military-aviation-industry" },
-          { label: "Advantages | Benefits", to: "/benefits" },
-          { label: "Cleaning Accessories", to: "/cleaning-accessories" },
-          { label: "Aviation Services", to: "/aviation-services" },
-        ],
-      },
-      {
-        label: "Industrial",
-        to: "/industries/industrial",
-        hasFlyout: true,
-        subItems: [
-          { label: "Metal | Paint | Workshop", to: "/metal-paint-workshop" },
-          { label: "Refineries | Gas | Pipelines", to: "/refineries-gas-pipelines" },
-          { label: "Offshore | Marine", to: "/offshore-marine" },
-          { label: "Automotive | Truck", to: "/automotive-truck" },
-        ],
-      },
-      {
-        label: "HACCP",
-        to: "/industries/haccp",
-        hasFlyout: true,
-        subItems: [
-          { label: "What is HACCP?", to: "/what-is-haccp" },
-          { label: "How it works", to: "/how-it-works" },
-          { label: "Products", to: "/haccp-product" },
-        ],
-      },
-      { label: "C² Coating Systems", to: "/products" },
-      { label: "New Technologies", to: "/new-technologies" },
-    ],
-  },
-  {
-    label: "Disinfection",
-    items: [
-      {
-        label: "AquaSmarter (Water Treatment)",
-        to: "/technology/aquasmarter",
-        hasFlyout: true,
-        subItems: [
-          { label: "Introduction", to: "/water-treatment-introduction" },
-          { label: "Information", to: "/water-treatment-information" },
-          { label: "How it works?", to: "/how-it-works-2" },
-          { label: "Applications", to: "/water-treatment-application" },
-        ],
-      },
-      {
-        label: "FOG-IT INNOVA (Space & Air)",
-        to: "/fog-it",
-        hasFlyout: true,
-        subItems: [
-          { label: "FOG-IT", to: "/fog-it" },
-          { label: "Desi Box", to: "/desi-box" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Derusting & Paint Stripping",
-    items: [
-      { label: "Eco Safe Air Blaster", to: "/eco-safe-air-blaster" },
-      { label: "Bioderuster", to: "/bioderuster" },
-    ],
-  },
-  {
-    label: "CONTACT",
-    items: [
-      { label: "Contact", to: "/contact" },
-      { label: "Leadership", to: "/leadership" },
-      { label: "Location", to: "/location" },
-    ],
-  },
-];
+export type { NavTopItem, NavDropdownItem, NavSubItem } from "@/types";
+export { navConfig };
 
 export default function Navbar() {
   const { isDark, setIsDark, lang, setLang, i } = useTheme();

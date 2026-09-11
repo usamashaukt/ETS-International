@@ -34,14 +34,17 @@ The primary objective of the redesign is **not** creating a simple brochure site
 
 ---
 
+### 🟢 Step 1 complete — Navigation & IA (Phase 1)
+- Canonical top-level nav: **Solutions · Industries · Products · Equipment · Resources · Shop · Contact** (`src/data/navConfig.ts`).
+- Footer columns aligned to the same IA.
+- Stub overview pages: `/equipment`, `/resources`, `/shop` (placeholders; full catalogs in later phases).
+- Existing deep-link routes preserved.
+
 ### 🟡 Partially Implemented / Needs Restructuring
-1. **Main Navigation Structure (Sec. 22)**:
-   - *Current:* Nav items group into "About Us", "PRODUCTS" (embedding industries), "Disinfection", "Derusting", and "CONTACT".
-   - *Requirement:* Standardize into top-level taxonomy: **SOLUTIONS**, **INDUSTRIES**, **PRODUCTS**, **EQUIPMENT**, **RESOURCES**, **CONTACT**, and **SHOP**.
-2. **Certifications Verification & Downloads (Sec. 6 & 33)**:
+1. **Certifications Verification & Downloads (Sec. 6 & 33)**:
    - *Current:* Listed with detailed textual descriptions.
    - *Requirement:* Standardized card structure with validity dates, standard numbers, and direct **[Download Certificate / PDF]** buttons.
-3. **Problem-Solving Industry Workflows (Sec. 10–16)**:
+2. **Problem-Solving Industry Workflows (Sec. 10–16)**:
    - *Current:* Standard bento and product showcase.
    - *Requirement:* Interactive "What problem are you trying to solve?" guides (e.g., Oil & Gas: Rust vs. Heavy-duty degreasing vs. Oxygen cleaning).
 
@@ -58,12 +61,12 @@ The primary objective of the redesign is **not** creating a simple brochure site
      - Dual CTAs: **[Add to Cart]** and **[Request a Quote]**
      - Related equipment & complementary products
 3. **Dedicated Equipment & Systems Section (Sec. 10)**:
-   - Top-level `/equipment` section for aircraft washers, sprayers, foamers, and reverse osmosis units.
+   - Stub `/equipment` overview exists; expand into full systems catalog (washers, sprayers, foamers, RO).
 4. **Integrated E-Commerce & Shop Flow (Sec. 19, 20, 26)**:
-   - `/shop` product catalog with pricing, shopping cart drawer/page (`/cart`), and checkout flow (`/checkout`).
+   - Stub `/shop` (“Catalog coming soon”) exists; add pricing catalog, cart (`/cart`), and checkout (`/checkout`).
    - Removal of legacy template placeholder info (e.g. +1 212 NYC address from `shop.etsint.eu`).
 5. **Resources & Downloads Hub (Sec. 22, 26)**:
-   - Searchable/filterable library for Technical Data Sheets (TDS), Safety Data Sheets (SDS), Case Studies, and FAQs.
+   - Stub `/resources` overview exists; upgrade to searchable/filterable TDS, SDS, Case Studies, and FAQs.
 6. **Germany & EU Legal Disclosures (Sec. 35)**:
    - Legal **Impressum** (mandatory under § 5 TMG in Germany)
    - **Datenschutzerklärung** (GDPR privacy policy) & Cookie Consent Banner
