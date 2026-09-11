@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { T, JK, GREEN, CYAN } from "@/theme";
 import { useTheme } from "@/context/ThemeContext";
 import { IconArrowRight, IconShield, IconLeaf, IconCheck } from "@/components/icons";
+import { ThemeSelect } from "@/components/shared";
 
 const industries = ["Aviation & Aerospace", "Marine & Offshore", "Industrial & Metal", "HACCP / Food Safety", "Disinfection", "Defence", "Other"];
 const applications = [
@@ -132,23 +133,20 @@ export default function Quote() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
-                  { key: "country", label: "Country", options: countries },
-                  { key: "industry", label: "Industry", options: industries },
-                  { key: "application", label: "Application / Use Case", options: applications },
-                  { key: "product", label: "Product of Interest", options: products },
+                  { key: "country", label: "Country", options: countries, placeholder: "Select country..." },
+                  { key: "industry", label: "Industry", options: industries, placeholder: "Select industry..." },
+                  { key: "application", label: "Application / Use Case", options: applications, placeholder: "Select application..." },
+                  { key: "product", label: "Product of Interest", options: products, placeholder: "Select product..." },
                 ].map((field) => (
                   <div key={field.key}>
                     <label className="block text-xs font-semibold tracking-wider uppercase mb-2" style={{ color: T.dim }}>{field.label}</label>
-                    <select
+                    <ThemeSelect
                       value={(form as any)[field.key]}
-                      onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                      style={{ ...inputStyle, appearance: "none" }}
-                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
-                      onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
-                    >
-                      <option value="">Select...</option>
-                      {field.options.map((o) => <option key={o} value={o}>{o}</option>)}
-                    </select>
+                      onChange={(value) => setForm({ ...form, [field.key]: value })}
+                      options={field.options}
+                      placeholder={field.placeholder}
+                      aria-label={field.label}
+                    />
                   </div>
                 ))}
               </div>

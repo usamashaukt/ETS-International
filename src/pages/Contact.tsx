@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { T, JK, GREEN, CYAN } from "@/theme";
-import { PageHero, SectionHeader } from "@/components/shared";
+import { PageHero, SectionHeader, ThemeSelect } from "@/components/shared";
 import { IconMail, IconPhone, IconMapPin, IconGlobe, IconArrowRight } from "@/components/icons";
 
 const industries = ["Aviation & Aerospace", "Marine & Offshore", "Industrial & Metal", "HACCP / Food Safety", "Disinfection", "Defence", "Other"];
@@ -139,16 +139,13 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-xs font-semibold tracking-wider uppercase mb-2" style={{ color: T.dim }}>Industry</label>
-                    <select
+                    <ThemeSelect
                       value={form.industry}
-                      onChange={(e) => setForm({ ...form, industry: e.target.value })}
-                      style={{ ...inputStyle, appearance: "none" }}
-                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
-                      onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
-                    >
-                      <option value="">Select your industry</option>
-                      {industries.map((ind) => <option key={ind} value={ind}>{ind}</option>)}
-                    </select>
+                      onChange={(value) => setForm({ ...form, industry: value })}
+                      options={industries}
+                      placeholder="Select your industry"
+                      aria-label="Industry"
+                    />
                   </div>
 
                   <div>

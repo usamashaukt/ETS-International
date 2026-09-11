@@ -454,3 +454,15 @@ body {
   }
 }
 
+/* Native select fallback — keep OS menus readable if any remain */
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  color-scheme: light;
+}
+select option {
+  background-color: var(--bg-surface);
+  color: var(--fg);
+}
+
