@@ -45,8 +45,9 @@ export default function Footer() {
                 { label: "Commercial Aviation", to: "/commercial-aviation-industry" },
                 { label: "Military Aviation", to: "/military-aviation-industry" },
                 { label: "Metal & Paint Workshop", to: "/metal-paint-workshop" },
-                { label: "Refineries & Gas", to: "/refineries-gas-pipelines" },
+                { label: "Facilities", to: "/facilities" },
                 { label: "HACCP Food Safety", to: "/haccp-product" },
+                { label: "Cleaners", to: "/cleaners" },
               ],
             },
             {
@@ -57,6 +58,7 @@ export default function Footer() {
                 { label: "FOG-IT INNOVA™", to: "/fog-it" },
                 { label: "Desi Box Sterilizer", to: "/desi-box" },
                 { label: "Nano Diamond™", to: "/technology/nano-diamond" },
+                { label: "Natural Nano Esters", to: "/esters" },
               ],
             },
             {
@@ -64,8 +66,9 @@ export default function Footer() {
               links: [
                 { label: "Eco Safe Air Blaster", to: "/eco-safe-air-blaster" },
                 { label: "Bio-Deruster & Stripper", to: "/bioderuster" },
+                { label: "Actan 3F", to: "/actan-3f" },
+                { label: "Corrosion Prevention", to: "/corrosion-prevention" },
                 { label: "Cleaning Accessories", to: "/cleaning-accessories" },
-                { label: "Aviation Services", to: "/aviation-services" },
                 { label: "New Technologies", to: "/new-technologies" },
               ],
             },
@@ -74,11 +77,11 @@ export default function Footer() {
               links: [
                 { label: "About ETS", to: "/about" },
                 { label: "Why ETS International", to: "/why-ets" },
+                { label: "News", to: "/news" },
+                { label: "Co-Partners", to: "/co-partners" },
                 { label: "Leadership", to: "/leadership" },
                 { label: "Certifications", to: "/certifications" },
-                { label: "Headquarters Location", to: "/location" },
                 { label: "Get a Quote", to: "/quote" },
-                { label: "Legacy German Site", to: "/legacy-ets" },
               ],
             },
           ].map((col) => (

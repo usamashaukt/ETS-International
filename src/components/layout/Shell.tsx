@@ -1,16 +1,17 @@
 import { Outlet, useLocation } from "react-router";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { T } from "@/theme";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import RouteProgressBar from "./RouteProgressBar";
 
 export default function Shell() {
   const { isDark } = useTheme();
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
   return (
@@ -25,11 +26,15 @@ export default function Shell() {
         transition: "background 0.35s ease, color 0.35s ease",
       }}
     >
+      <RouteProgressBar />
       <Navbar />
-      <main>
-        <Outlet />
+      <main className="relative">
+        <div key={pathname} className="page-transition min-h-[calc(100vh-80px)]">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>
   );
 }
+

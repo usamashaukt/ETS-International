@@ -67,6 +67,13 @@ export interface SubpageSpecification {
   value: string;
 }
 
+export interface RelatedProduct {
+  name: string;
+  to: string;
+  desc?: string;
+  pdf?: string;
+}
+
 export interface SubpageInfo {
   slug: string;
   category: string;
@@ -82,6 +89,9 @@ export interface SubpageInfo {
   applications: string[];
   certifications: string[];
   metaTitle?: string;
+  relatedProducts?: RelatedProduct[];
+  pdfUrl?: string;
+  pdfLabel?: string;
 }
 
 /* ─── Common UI Types ─── */

@@ -1,3 +1,6 @@
+import { etsDePagesData } from "./etsDePagesData";
+import type { RelatedProduct } from "./productPdfs";
+
 export interface SubpageInfo {
   slug: string;
   category: string;
@@ -20,9 +23,14 @@ export interface SubpageInfo {
   applications: string[];
   certifications: string[];
   metaTitle?: string;
+  /** Product cards shown on hub pages (View Product + PDF) */
+  relatedProducts?: RelatedProduct[];
+  /** Explicit PDF for this page; otherwise looked up via productPdfs[slug] */
+  pdfUrl?: string;
+  pdfLabel?: string;
 }
 
-export const subpagesData: Record<string, SubpageInfo> = {
+const coreSubpagesData: Record<string, SubpageInfo> = {
   /* ─── Aviation Subpages ─── */
   "commercial-aviation-industry": {
     slug: "commercial-aviation-industry",
@@ -71,7 +79,23 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Passenger cabin deep sanitization and carpet cleaning",
       "Galley, lavatory, and potable water holding tank maintenance"
     ],
-    certifications: ["AIRBUS AIMS 09-00-002", "BOEING D6-17487", "SMI Inc. Miami", "AMS 1526C", "ISO 9001:2015"]
+    certifications: ["AIRBUS AIMS 09-00-002", "BOEING D6-17487", "SMI Inc. Miami", "AMS 1526C", "ISO 9001:2015"],
+    relatedProducts: [
+      { name: "Aircraft Cleaner Fluid (Exterior)", to: "/aircraft-cleaner-fluid-exterior", desc: "Water-based exterior cleaner — solvent/silicon free, Airbus & Boeing tested." },
+      { name: "Aircraft Cleaner Fluid (Interior)", to: "/aircraft-cleaner-fluid-interior", desc: "AMS 1550 B interior cleaner — spray on & wipe off, acrylic-glass safe." },
+      { name: "Aircraft Cleaner Gel", to: "/aircraft-cleaner-gel", desc: "Cling gel for underside, nacelle and complex exterior areas." },
+      { name: "Aircraft Hydraulic Fluid Remover", to: "/aircraft-hydraulic-fluid-remover", desc: "Fatty-ester AHFR cleaner — AMS 1526B / SMI Miami." },
+      { name: "Aircraft Surface Polish", to: "/aircraft-polish", desc: "Restores shine on lightly discoloured aircraft paint." },
+      { name: "Aircraft Surface Protector", to: "/aircraft-protector", desc: "Protective gloss coat that slows road-film build-up." },
+      { name: "Runway Cleaner & Stripper", to: "/runway-tire-stripper", desc: "Alkaline, solvent-free rubber deposit remover for runways." },
+      { name: "Runway Light Tire Cleaner", to: "/runway-light-tire-cleaner", desc: "Rubber remover for runway lamps and taxiway lights." },
+      { name: "Hard Surface Cleaner & Disinfectant", to: "/hard-surface-cleaner-and-disinfectant", desc: "Cabin, galley and lavatory hard-surface hygiene." },
+      { name: "Hangar Floor Cleaner", to: "/aircraft-hangar-floor-cleaner", desc: "Solvent-free hangar floor cleaner for grease and mineral oil." },
+      { name: "Multi Tissue Wipes", to: "/multi-tissue-wipes", desc: "Cockpit and no-spray-zone wipes with aviation-cleaner saturation." },
+      { name: "Sky Reacher GS-T 1000", to: "/sky-reacher", desc: "Mobile aircraft cleaning machine with 1000 L tank." },
+      { name: "Easy Wash Sprayer | Foamer", to: "/easy-wash-sprayer-foamer", desc: "Foam/spray accessory for exterior wash programmes." },
+      { name: "OSMOSE RO Module", to: "/osmose", desc: "Compact reverse-osmosis mixing-water module." },
+    ],
   },
 
   "military-aviation-industry": {
@@ -114,7 +138,15 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Transport and refueling aircraft exterior decon",
       "Munitions bay, pylon, and ground support equipment (GSE) degreasing"
     ],
-    certifications: ["NATO NSN Codified", "MIL-PRF-87937D", "MIL-PRF-85570E", "ASTM F519", "NAMSA Approved"]
+    certifications: ["NATO NSN Codified", "MIL-PRF-87937D", "MIL-PRF-85570E", "ASTM F519", "NAMSA Approved"],
+    relatedProducts: [
+      { name: "Military Aircraft Cleaner Fluid (Exterior)", to: "/military-aircraft-cleaner-fluid-exterior", desc: "Water-based exterior cleaner for military aircraft and helicopters." },
+      { name: "Aircraft Cleaner Gel", to: "/aircraft-cleaner-gel", desc: "Cling gel for underside, nacelle and complex geometry." },
+      { name: "Aircraft Hydraulic Fluid Remover", to: "/aircraft-hydraulic-fluid-remover", desc: "AMS 1526B fatty-ester hydraulic fluid remover." },
+      { name: "Hard Surface Cleaner & Disinfectant", to: "/hard-surface-cleaner-and-disinfectant", desc: "Cabin and hard-surface disinfection chemistry." },
+      { name: "Multi Tissue Wipes", to: "/multi-tissue-wipes", desc: "Ready-to-use cockpit and instrument wipes." },
+      { name: "Hangar Floor Cleaner", to: "/aircraft-hangar-floor-cleaner", desc: "Solvent-free hangar floor degreaser." },
+    ],
   },
 
   "benefits": {
@@ -197,7 +229,13 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Wing surface and engine nacelle foam application",
       "Hangar floor scrubber-dryer integration"
     ],
-    certifications: ["CE Certified", "Ramp Safety Compliant", "ISO 9001:2015"]
+    certifications: ["CE Certified", "Ramp Safety Compliant", "ISO 9001:2015"],
+    relatedProducts: [
+      { name: "Sky Reacher GS-T 1000", to: "/sky-reacher", desc: "Mobile aircraft cleaning machine with integrated hose reels." },
+      { name: "Easy Wash Sprayer | Foamer", to: "/easy-wash-sprayer-foamer", desc: "Instant foam / water spray accessory." },
+      { name: "Runway Cleaning Equipment", to: "/runway-cleaning-equipment", desc: "Truck-mounted runway cleaning machine." },
+      { name: "OSMOSE RO Module", to: "/osmose", desc: "Expandable reverse-osmosis process-water module." },
+    ],
   },
 
   "aviation-services": {
@@ -280,7 +318,17 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Ultrasonic immersion cleaning of valves and hydraulic manifolds",
       "Paint booth wall and floor maintenance"
     ],
-    certifications: ["ISO 9001", "REACH Registered", "RoHS Compliant", "TRGS 600 Qualified"]
+    certifications: ["ISO 9001", "REACH Registered", "RoHS Compliant", "TRGS 600 Qualified"],
+    relatedProducts: [
+      { name: "Actan 3F Rust Protect", to: "/actan-3f", desc: "Water-based rust protection before painting." },
+      { name: "Aqua Silicon Remover", to: "/aqua-silicon-remover", desc: "Alkaline non-solvent cleaner that removes silicon." },
+      { name: "Bupi Cleaner NF", to: "/bupi-cleaner-nf-concentrate", desc: "Non-foaming alkaline cleaner with corrosion inhibition." },
+      { name: "Universal Cleaner", to: "/universal-cleaner", desc: "Economic Universal solvent-free degreaser." },
+      { name: "Heavy Duty Aluminium Cleaner", to: "/heavy-duty-aluminium-cleaner", desc: "Inhibited alkaline HDAL for ferro and non-ferro." },
+      { name: "NONSOLAr 1", to: "/nonsol-1", desc: "Solvent-free industrial cleaner with light corrosion inhibitor." },
+      { name: "NONSOLAr 6", to: "/nonsol-6", desc: "Warm cleaning-unit solvent-free degreaser." },
+      { name: "Bio-Deruster", to: "/bioderuster", desc: "Selective chelation rust removal." },
+    ],
   },
 
   "refineries-gas-pipelines": {
@@ -322,7 +370,19 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Offshore drilling rig separator vessel cleaning",
       "Refinery turnaround scheduled maintenance shutdown flushes"
     ],
-    certifications: ["ATEX Safe", "ISO 9001:2015", "REACH Registered", "OSHA Compliant"]
+    certifications: ["ATEX Safe", "ISO 9001:2015", "REACH Registered", "OSHA Compliant"],
+    relatedProducts: [
+      { name: "E-Flush", to: "/e-flush", desc: "In-situ flush concentrate for mineral-oil residues." },
+      { name: "EGR Extra", to: "/egr-extra", desc: "Fatty-ester extreme grease and tar remover." },
+      { name: "HDC Heavy Duty Cleaner", to: "/hdc", desc: "Vegetable emulsifier heavy-duty cleaner." },
+      { name: "Economic Oxygen Cleaner", to: "/economic-oxygen-cleaner", desc: "Alkaline cleaner for oxygen equipment and pipes." },
+      { name: "Antifoam", to: "/antifoam", desc: "Foam control for circulation and filling systems." },
+      { name: "Universal Cleaner", to: "/universal-cleaner", desc: "Economic Universal process degreaser." },
+      { name: "Actan 3F", to: "/actan-3f", desc: "Long-term water-based rust protection." },
+      { name: "Bio-Deruster", to: "/bioderuster", desc: "Acid-free selective rust removal." },
+      { name: "Bupi Cleaner NF", to: "/bupi-cleaner-nf-concentrate", desc: "Non-foaming concentrate for process cleaning." },
+      { name: "Floor Shine / Floor Cleaner", to: "/floor-shine", desc: "Concentrated industrial floor cleaner." },
+    ],
   },
 
   "offshore-marine": {
@@ -364,7 +424,19 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Commercial cargo ship bilge and machinery spaces",
       "Tugboat and offshore supply vessel (OSV) hull wash"
     ],
-    certifications: ["IMO MARPOL Compliant", "MEPC.107(49)", "OECD 202/203 Aquatic Tested", "ISO 9001:2015"]
+    certifications: ["IMO MARPOL Compliant", "MEPC.107(49)", "OECD 202/203 Aquatic Tested", "ISO 9001:2015"],
+    relatedProducts: [
+      { name: "Universal Cleaner", to: "/universal-cleaner", desc: "Solvent-free universal marine/industrial degreaser." },
+      { name: "Aqua Silicon Remover", to: "/aqua-silicon-remover", desc: "Strong alkaline silicon and soil remover." },
+      { name: "NONSOLAr 1", to: "/nonsol-1", desc: "Solvent-free maintenance cleaner." },
+      { name: "NONSOLAr 6", to: "/nonsol-6", desc: "Warm cleaning-unit degreaser." },
+      { name: "Heavy Duty Aluminium Cleaner", to: "/heavy-duty-aluminium-cleaner", desc: "Aluminium-safe inhibited alkaline cleaner." },
+      { name: "Actan 3F", to: "/actan-3f", desc: "Paintable rust protection." },
+      { name: "Bio-Deruster", to: "/bioderuster", desc: "Selective chelation derusting." },
+      { name: "Bupi Cleaner NF", to: "/bupi-cleaner-nf-concentrate", desc: "Non-foaming process cleaner." },
+      { name: "Multi Tissue Wipes", to: "/multi-tissue-wipes", desc: "Ready-to-use degreasing wipes." },
+      { name: "Floor Cleaner", to: "/floor-shine", desc: "Solvent-free deck and floor cleaner." },
+    ],
   },
 
   "automotive-truck": {
@@ -406,7 +478,21 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Heavy construction plant and tractor chassis wash",
       "Automotive workshop parts washers and brake detailing"
     ],
-    certifications: ["VDA Approved", "ISO 9001:2015", "DEKRA Tested", "REACH Registered"]
+    certifications: ["VDA Approved", "ISO 9001:2015", "DEKRA Tested", "REACH Registered"],
+    relatedProducts: [
+      { name: "Truckclean 300 HF", to: "/truckclean-300-hf", desc: "Light-alkaline concentrated truck cleaner." },
+      { name: "Truckclean 350", to: "/truckclean-350", desc: "High-power concentrated truck cleaner." },
+      { name: "Car Shampoo Brilliant Shine", to: "/car-shampoo-brilliant-shine", desc: "Concentrated shampoo with brilliant shine finish." },
+      { name: "Wheel Clean Profi 1", to: "/wheel-clean-profi-1", desc: "Professional wheel cleaner for wash installations." },
+      { name: "Insect Remover", to: "/insect-remover", desc: "Foam insect remover for vehicles." },
+      { name: "Truck Wax", to: "/truck-wax", desc: "Concentrated alkaline truck wash chemistry." },
+      { name: "Hot | Cold Wax", to: "/hot-cold-wax", desc: "Fast wash chemistry for all vehicle types." },
+      { name: "TGV Train Cleaner", to: "/tgv-train-cleaner", desc: "High-speed train and transport fleet cleaner." },
+      { name: "Universal Cleaner", to: "/universal-cleaner", desc: "Economic Universal degreaser." },
+      { name: "Actan 3F", to: "/actan-3f", desc: "Rust protection before painting." },
+      { name: "Bio-Deruster", to: "/bioderuster", desc: "Organic rust remover." },
+      { name: "NONSOLAr 6", to: "/nonsol-6", desc: "Solvent-free heavy-duty cleaner." },
+    ],
   },
 
   /* ─── HACCP Subpages ─── */
@@ -532,7 +618,21 @@ export const subpagesData: Record<string, SubpageInfo> = {
       "Brewery kettle and fermenter exterior washdown",
       "Supermarket deli and bakery prep counters"
     ],
-    certifications: ["NSF Registered", "HACCP Compliant", "ISO 9001", "EU Food Contact Safe"]
+    certifications: ["NSF Registered", "HACCP Compliant", "ISO 9001", "EU Food Contact Safe"],
+    relatedProducts: [
+      { name: "Alcohol-Free Cleaner & Disinfector", to: "/alcohol-free-cleaner-and-disinfector", desc: "Combined HACCP degreaser and disinfectant." },
+      { name: "Grease Cleaner", to: "/grease-cleaner", desc: "Kitchen and nutrition-industry grease remover." },
+      { name: "Glass Cleaner", to: "/glass-cleaner", desc: "Quick-drying HACCP glass cleaner concentrate." },
+      { name: "Multi Cleaner", to: "/multi-cleaner", desc: "Daily interior multicleaner for food facilities." },
+      { name: "WC Cleaner Sanipower", to: "/wc-cleaner-sanipower", desc: "Concentrated sanitary cleaner." },
+      { name: "Sanipower Extra", to: "/sanitary-bleach-liquid-sanipower-extra", desc: "Extra-concentrate lime, rust and sanitary bleach." },
+      { name: "Graffiti Cleaner", to: "/graffiti-cleaner", desc: "Paint-safe graffiti and overspray remover." },
+      { name: "Composite Panel Universal Cleaner", to: "/composite-panel-universal-cleaner", desc: "Ecological ACP / Alucobond cleaner." },
+      { name: "Composite Panel Cleaner Extra", to: "/composite-panel-cleaner-extra", desc: "Specialist for white ACP panels." },
+      { name: "Hand Wash Cleaner", to: "/hand-wash-cleaner", desc: "Disinfecting HACCP hand wash gel." },
+      { name: "Oven and Grill Cleaner", to: "/oven-and-grill-cleaner", desc: "Universal oven and grill cleaner." },
+      { name: "Floor Shine", to: "/floor-shine", desc: "Concentrated floor cleaner with shine finish." },
+    ],
   },
 
   /* ─── Technology / Products ─── */
@@ -1073,4 +1173,9 @@ export const subpagesData: Record<string, SubpageInfo> = {
     ],
     certifications: ["Registered in Cologne, Germany", "ISO 9001:2015"]
   }
+};
+
+export const subpagesData: Record<string, SubpageInfo> = {
+  ...coreSubpagesData,
+  ...etsDePagesData,
 };
