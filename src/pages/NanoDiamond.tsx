@@ -50,13 +50,13 @@ export default function NanoDiamond() {
           <div className="relative rounded-2xl overflow-hidden p-8 sm:p-10"
             style={{
               background: isDark ? "linear-gradient(135deg, rgba(10,25,47,0.95) 0%, rgba(5,5,5,1) 100%)" : "linear-gradient(135deg, rgba(10,25,47,0.06) 0%, rgba(10,25,47,0.03) 100%)",
-              border: "1px solid rgba(0,255,102,0.15)",
+              border: "1px solid var(--accent-border)",
             }}>
             <div className="absolute inset-0 pointer-events-none"
               style={{ backgroundImage: `linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)`, backgroundSize: "40px 40px", opacity: 0.5 }} />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6"
-                style={{ background: "rgba(0,204,255,0.08)", border: "1px solid rgba(0,204,255,0.2)", color: CYAN }}>
+                style={{ background: "var(--cyan-soft)", border: "1px solid var(--cyan-border)", color: CYAN }}>
                 <IconDiamond /> Nano Diamond Technology
               </div>
               <div className="text-7xl font-black mb-3" style={{ fontFamily: JK, color: GREEN }}>6%+</div>
@@ -81,13 +81,13 @@ export default function NanoDiamond() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-24 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
               <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>How It Works</span>
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
             </div>
             <h2 className="text-4xl font-black tracking-tight text-white" style={{ fontFamily: JK }}>
               Nano Diamond in four steps.
@@ -117,7 +117,7 @@ export default function NanoDiamond() {
             ].map((app) => (
               <div key={app.label} className="bento-card group p-6 rounded-2xl border transition-all duration-300" style={{ borderColor: T.border, background: T.glassCard }}>
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
-                  style={{ background: `rgba(${app.color === GREEN ? "0,255,102" : "0,204,255"},0.07)`, border: `1px solid rgba(${app.color === GREEN ? "0,255,102" : "0,204,255"},0.15)`, color: app.color }}>
+                  style={{ background: app.color === GREEN ? T.accentSoft : T.cyanSoft, border: `1px solid ${app.color === GREEN ? T.accentBorder : T.cyanBorder}`, color: app.color }}>
                   {app.icon}
                 </div>
                 <h3 className="font-bold text-base mb-2" style={{ fontFamily: JK, color: T.fg }}>{app.label}</h3>
@@ -132,9 +132,9 @@ export default function NanoDiamond() {
       <section className="py-20 px-6" style={{ borderTop: `1px solid ${T.borderSubtle}` }}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-10 bg-[#00FF66]" />
+            <div className="h-px w-10 bg-[var(--accent)]" />
             <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>Environmental Advantages</span>
-            <div className="h-px w-10 bg-[#00FF66]" />
+            <div className="h-px w-10 bg-[var(--accent)]" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-6" style={{ fontFamily: JK, color: T.fg }}>
             Less fuel. Less emissions. More life.

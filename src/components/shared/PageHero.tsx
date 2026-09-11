@@ -42,7 +42,7 @@ export default function PageHero({
       )}
 
       <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full pointer-events-none z-0"
-        style={{ background: "radial-gradient(circle, rgba(0,255,102,0.12) 0%, transparent 70%)", opacity: isDark ? 0.5 : 0.25 }} />
+        style={{ background: "radial-gradient(circle, var(--accent-soft-md) 0%, transparent 70%)", opacity: isDark ? 0.5 : 0.25 }} />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         {badge && (
@@ -56,7 +56,7 @@ export default function PageHero({
 
         {eyebrow && (
           <div className="fade-up delay-1 eyebrow-accent mb-6">
-            <div className="h-px w-10 bg-[#00FF66]" />
+            <div className="h-px w-10 bg-[var(--accent)]" />
             <span>{eyebrow}</span>
           </div>
         )}

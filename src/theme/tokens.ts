@@ -1,6 +1,9 @@
 /**
  * Centralized Theme Tokens for ETS International
  * Maps CSS variables defined in src/index.css to reusable constants.
+ *
+ * Light = Rhine Industrial (#1)
+ * Dark  = Cologne Night (#4)
  */
 
 export const T = {
@@ -25,11 +28,22 @@ export const T = {
   certBg: "var(--cert-bg)",
   certBorder: "var(--cert-border)",
   certText: "var(--cert-text)",
+  accentSoft: "var(--accent-soft)",
+  accentSoftMd: "var(--accent-soft-md)",
+  accentBorder: "var(--accent-border)",
+  accentBorderStrong: "var(--accent-border-strong)",
+  cyanSoft: "var(--cyan-soft)",
+  cyanBorder: "var(--cyan-border)",
+  sectionInset: "var(--section-inset)",
 } as const;
 
-export const GREEN = "#00FF66";
-export const CYAN = "#00ccff";
-export const DARK_BG = "#030812";
+/** Primary accent — forest (light) / mint (dark) */
+export const GREEN = "var(--accent)";
+/** Secondary accent — steel blue (light) / soft cyan (dark) */
+export const CYAN = "var(--accent-secondary)";
+/** Text/icon color on solid accent buttons */
+export const ON_ACCENT = "var(--on-accent)";
+export const DARK_BG = "var(--bg)";
 export const JK = "'Plus Jakarta Sans', sans-serif";
 
 export type ThemeTokens = typeof T;

@@ -77,7 +77,7 @@ export default function HACCP() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             {products.map((p) => (
               <div key={p.name} className="bento-card p-5 rounded-2xl border flex flex-col" style={{ borderColor: T.border, background: T.glassCard }}>
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                   <IconShield />
                 </div>
                 <h3 className="font-bold text-sm mb-1.5" style={{ fontFamily: JK, color: T.fg }}>{p.name}</h3>
@@ -90,13 +90,13 @@ export default function HACCP() {
       </section>
 
       {/* HACCP process */}
-      <section className="py-24 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-24 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
               <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>HACCP Integration</span>
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white" style={{ fontFamily: JK }}>
               ETS fits your HACCP plan.
@@ -128,7 +128,7 @@ export default function HACCP() {
               { name: "Environmental Declaration", desc: "Biodegradability and aquatic toxicity data for wastewater compliance." },
             ].map((doc) => (
               <div key={doc.name} className="bento-card p-5 rounded-2xl border flex gap-4 items-start" style={{ borderColor: T.border, background: T.glassCard }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                   <IconFileText />
                 </div>
                 <div>

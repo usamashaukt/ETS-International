@@ -102,10 +102,10 @@ export default function Certifications() {
             {certs.map((cert) => (
               <div key={cert.name} className="bento-card group p-6 rounded-2xl border transition-all duration-300" style={{ borderColor: T.border, background: T.glassCard }}>
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `rgba(${cert.color === GREEN ? "0,255,102" : "0,204,255"},0.08)`, border: `1px solid rgba(${cert.color === GREEN ? "0,255,102" : "0,204,255"},0.2)`, color: cert.color }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: cert.color === GREEN ? T.accentSoft : T.cyanSoft, border: `1px solid ${cert.color === GREEN ? T.accentBorder : T.cyanBorder}`, color: cert.color }}>
                     <IconShield />
                   </div>
-                  <span className="text-xs font-semibold tracking-wider px-2 py-1 rounded" style={{ background: `rgba(${cert.color === GREEN ? "0,255,102" : "0,204,255"},0.06)`, color: cert.color }}>
+                  <span className="text-xs font-semibold tracking-wider px-2 py-1 rounded" style={{ background: cert.color === GREEN ? T.accentSoft : T.cyanSoft, color: cert.color }}>
                     Certified
                   </span>
                 </div>
@@ -121,12 +121,12 @@ export default function Certifications() {
       </section>
 
       {/* Trust dark section */}
-      <section className="py-24 px-6" style={{ background: "rgba(3,8,18,0.95)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-24 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-10 bg-[#00FF66]" />
+                <div className="h-px w-10 bg-[var(--accent)]" />
                 <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>Why Certification Matters</span>
               </div>
               <h2 className="text-4xl sm:text-5xl font-black tracking-tight mb-6 text-white" style={{ fontFamily: JK }}>
@@ -159,7 +159,7 @@ export default function Certifications() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {documents.map((doc) => (
               <div key={doc.name} className="bento-card p-5 rounded-2xl border flex gap-4 items-start" style={{ borderColor: T.border, background: T.glassCard }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                   <IconFileText />
                 </div>
                 <div>

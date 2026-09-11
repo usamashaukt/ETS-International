@@ -24,25 +24,11 @@ export const navConfig: NavTopItem[] = [
   {
     label: "About Us",
     items: [
-      { label: "About ETS", to: "/about" },
-      { label: "Certifications & Norms", to: "/certifications" },
-      { label: "Why ETS", to: "/why-ets" },
+      { label: "About", to: "/about" },
+      { label: "Certifications & Approvals", to: "/certifications" },
+      { label: "Why ETS?", to: "/why-ets" },
       { label: "Presentations", to: "/presentations" },
-      { label: "News", to: "/news" },
-      {
-        label: "Co-Partners",
-        to: "/co-partners",
-        hasFlyout: true,
-        subItems: [
-          { label: "Co-Partners Overview", to: "/co-partners" },
-          { label: "FOG-IT", to: "/fog-it" },
-          { label: "Eco Safe Air Blaster", to: "/eco-safe-air-blaster" },
-          { label: "NanoVit / OptiMotor", to: "/nanovit-optimotor" },
-          { label: "Barrel Cleaning System", to: "/barrel-cleaner" },
-          { label: "IXCA Ceramics (ICX2)", to: "/icx2" },
-        ],
-      },
-      { label: "Legacy German Site", to: "/legacy-ets" },
+      { label: "Co-Partners", to: "/co-partners" },
     ],
   },
   {
@@ -55,25 +41,9 @@ export const navConfig: NavTopItem[] = [
         subItems: [
           { label: "Commercial", to: "/commercial-aviation-industry" },
           { label: "Military", to: "/military-aviation-industry" },
-          { label: "Advantage | Benefits", to: "/benefits" },
+          { label: "Advantages | Benefits", to: "/benefits" },
           { label: "Cleaning Accessories", to: "/cleaning-accessories" },
           { label: "Aviation Services", to: "/aviation-services" },
-          { label: "Exterior Cleaner Fluid", to: "/aircraft-cleaner-fluid-exterior" },
-          { label: "Interior Cleaner Fluid", to: "/aircraft-cleaner-fluid-interior" },
-          { label: "Aircraft Cleaner Gel", to: "/aircraft-cleaner-gel" },
-          { label: "Hydraulic Fluid Remover", to: "/aircraft-hydraulic-fluid-remover" },
-          { label: "Aircraft Polish", to: "/aircraft-polish" },
-          { label: "Aircraft Protector", to: "/aircraft-protector" },
-          { label: "Runway Tire Stripper", to: "/runway-tire-stripper" },
-          { label: "Runway Light Cleaner", to: "/runway-light-tire-cleaner" },
-          { label: "Hard Surface Disinfectant", to: "/hard-surface-cleaner-and-disinfectant" },
-          { label: "Hangar Floor Cleaner", to: "/aircraft-hangar-floor-cleaner" },
-          { label: "Military Exterior Cleaner", to: "/military-aircraft-cleaner-fluid-exterior" },
-          { label: "Sky Reacher", to: "/sky-reacher" },
-          { label: "Easy Wash Sprayer | Foamer", to: "/easy-wash-sprayer-foamer" },
-          { label: "Runway Cleaning Equipment", to: "/runway-cleaning-equipment" },
-          { label: "OSMOSE", to: "/osmose" },
-          { label: "Multi Tissue Wipes", to: "/multi-tissue-wipes" },
         ],
       },
       {
@@ -85,12 +55,6 @@ export const navConfig: NavTopItem[] = [
           { label: "Refineries | Gas | Pipelines", to: "/refineries-gas-pipelines" },
           { label: "Offshore | Marine", to: "/offshore-marine" },
           { label: "Automotive | Truck", to: "/automotive-truck" },
-          { label: "Facilities", to: "/facilities" },
-          { label: "Gastronomy | Hotel | Restaurant", to: "/gastronomy-hotel-restaurant" },
-          { label: "Medical | Hospital | Pharma", to: "/medical-equipment-hospital" },
-          { label: "Machines | Excavator | Caterpillar", to: "/machines-excavator-caterpillar" },
-          { label: "Food Industry | Agriculture", to: "/food-industry-and-agriculture" },
-          { label: "Corrosion Prevention", to: "/corrosion-prevention" },
         ],
       },
       {
@@ -99,81 +63,30 @@ export const navConfig: NavTopItem[] = [
         hasFlyout: true,
         subItems: [
           { label: "What is HACCP?", to: "/what-is-haccp" },
-          { label: "How it Works", to: "/how-it-works" },
-          { label: "Product", to: "/haccp-product" },
-          { label: "Alcohol-Free Cleaner & Disinfector", to: "/alcohol-free-cleaner-and-disinfector" },
-          { label: "Composite Panel Universal Cleaner", to: "/composite-panel-universal-cleaner" },
-          { label: "Graffiti Cleaner", to: "/graffiti-cleaner" },
-          { label: "Glass Cleaner", to: "/glass-cleaner" },
-          { label: "Composite Panel Cleaner Extra", to: "/composite-panel-cleaner-extra" },
-          { label: "Grease Cleaner", to: "/grease-cleaner" },
-          { label: "Hand Wash Cleaner", to: "/hand-wash-cleaner" },
-          { label: "Multi Cleaner", to: "/multi-cleaner" },
-          { label: "WC Cleaner Sanipower", to: "/wc-cleaner-sanipower" },
-          { label: "Sanipower Extra", to: "/sanitary-bleach-liquid-sanipower-extra" },
-          { label: "Oven and Grill Cleaner", to: "/oven-and-grill-cleaner" },
+          { label: "How it works", to: "/how-it-works" },
+          { label: "Products", to: "/haccp-product" },
         ],
       },
-      {
-        label: "Cleaners",
-        to: "/cleaners",
-        hasFlyout: true,
-        subItems: [
-          { label: "Cleaners Overview", to: "/cleaners" },
-          { label: "Actan 3F", to: "/actan-3f" },
-          { label: "Aqua Silicon Remover", to: "/aqua-silicon-remover" },
-          { label: "Bupi Cleaner NF", to: "/bupi-cleaner-nf-concentrate" },
-          { label: "Universal Cleaner", to: "/universal-cleaner" },
-          { label: "Heavy Duty Aluminium Cleaner", to: "/heavy-duty-aluminium-cleaner" },
-          { label: "NONSOLAr 1", to: "/nonsol-1" },
-          { label: "NONSOLAr 6", to: "/nonsol-6" },
-          { label: "E-Flush", to: "/e-flush" },
-          { label: "EGR Extra", to: "/egr-extra" },
-          { label: "HDC Heavy Duty Cleaner", to: "/hdc" },
-          { label: "Economic Oxygen Cleaner", to: "/economic-oxygen-cleaner" },
-          { label: "Truckclean 300 HF", to: "/truckclean-300-hf" },
-          { label: "Truckclean 350", to: "/truckclean-350" },
-          { label: "Insect Remover", to: "/insect-remover" },
-          { label: "Wheel Clean Profi 1", to: "/wheel-clean-profi-1" },
-          { label: "Truck Wax", to: "/truck-wax" },
-          { label: "Hot | Cold Wax", to: "/hot-cold-wax" },
-          { label: "Car Shampoo Brilliant Shine", to: "/car-shampoo-brilliant-shine" },
-          { label: "TGV Train Cleaner", to: "/tgv-train-cleaner" },
-          { label: "Antifoam", to: "/antifoam" },
-          { label: "Black Remover", to: "/black-remover" },
-          { label: "Floor Shine", to: "/floor-shine" },
-          { label: "Pressure Cleaner 8ATO", to: "/pressure-cleaner-8ato" },
-        ],
-      },
-      { label: "C2 Coating System", to: "/products" },
-      {
-        label: "New Technologies",
-        to: "/new-technologies",
-        hasFlyout: true,
-        subItems: [
-          { label: "New Technologies Overview", to: "/new-technologies" },
-          { label: "Natural Nano Esters", to: "/esters" },
-          { label: "Nano Diamond", to: "/technology/nano-diamond" },
-        ],
-      },
+      { label: "C² Coating Systems", to: "/products" },
+      { label: "New Technologies", to: "/new-technologies" },
     ],
   },
   {
     label: "Disinfection",
     items: [
       {
-        label: "AquaSmarter",
+        label: "AquaSmarter (Water Treatment)",
         to: "/technology/aquasmarter",
         hasFlyout: true,
         subItems: [
           { label: "Introduction", to: "/water-treatment-introduction" },
           { label: "Information", to: "/water-treatment-information" },
           { label: "How it works?", to: "/how-it-works-2" },
-          { label: "Application", to: "/water-treatment-application" },
+          { label: "Applications", to: "/water-treatment-application" },
         ],
       },
       {
-        label: "FOG-IT INNOVA",
+        label: "FOG-IT INNOVA (Space & Air)",
         to: "/fog-it",
         hasFlyout: true,
         subItems: [
@@ -188,17 +101,14 @@ export const navConfig: NavTopItem[] = [
     items: [
       { label: "Eco Safe Air Blaster", to: "/eco-safe-air-blaster" },
       { label: "Bioderuster", to: "/bioderuster" },
-      { label: "Actan 3F Rust Protect", to: "/actan-3f" },
-      { label: "Corrosion Prevention", to: "/corrosion-prevention" },
     ],
   },
   {
     label: "CONTACT",
     items: [
-      { label: "Contact Us", to: "/contact" },
+      { label: "Contact", to: "/contact" },
       { label: "Leadership", to: "/leadership" },
-      { label: "Location & Headquarters", to: "/location" },
-      { label: "Request a Quote", to: "/quote" },
+      { label: "Location", to: "/location" },
     ],
   },
 ];
@@ -252,7 +162,7 @@ export default function Navbar() {
           border: `1px solid ${scrolled ? T.border : T.borderSubtle}`,
           boxShadow: scrolled
             ? isDark
-              ? "0 16px 40px rgba(0,0,0,0.8), 0 0 20px rgba(0,255,102,0.06)"
+              ? "0 16px 40px rgba(0,0,0,0.8), 0 0 20px var(--accent-soft)"
               : "0 10px 30px rgba(0,0,0,0.08)"
             : "none",
         }}
@@ -283,7 +193,7 @@ export default function Navbar() {
                     className="flex items-center gap-1.5 px-3 py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-150 cursor-pointer"
                     style={{
                       color: isTopActive ? GREEN : T.muted,
-                      background: isTopActive ? "rgba(0,255,102,0.08)" : "transparent",
+                      background: isTopActive ? "var(--accent-soft)" : "transparent",
                     }}
                     onClick={() => setActiveDropdown(isTopActive ? null : nav.label)}
                   >
@@ -340,11 +250,11 @@ export default function Navbar() {
                             className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs xl:text-sm font-medium transition-all duration-150"
                             style={{
                               color: isSubActive ? GREEN : T.muted,
-                              background: isSubActive ? "rgba(0,255,102,0.1)" : "transparent",
+                              background: isSubActive ? "var(--accent-soft-md)" : "transparent",
                             }}
                             onMouseEnter={(e) => {
                               (e.currentTarget as HTMLElement).style.color = GREEN;
-                              (e.currentTarget as HTMLElement).style.background = "rgba(0,255,102,0.08)";
+                              (e.currentTarget as HTMLElement).style.background = "var(--accent-soft)";
                             }}
                             onMouseLeave={(e) => {
                               if (!isSubActive) {
@@ -402,7 +312,7 @@ export default function Navbar() {
                                   style={{ color: T.muted }}
                                   onMouseEnter={(e) => {
                                     (e.currentTarget as HTMLElement).style.color = GREEN;
-                                    (e.currentTarget as HTMLElement).style.background = "rgba(0,255,102,0.08)";
+                                    (e.currentTarget as HTMLElement).style.background = "var(--accent-soft)";
                                     (e.currentTarget as HTMLElement).style.transform = "translateX(3px)";
                                   }}
                                   onMouseLeave={(e) => {
@@ -466,8 +376,8 @@ export default function Navbar() {
             className="hidden sm:flex items-center gap-2 px-5 py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 hover:scale-105 glow-btn cursor-pointer"
             style={{
               background: GREEN,
-              color: "#050505",
-              boxShadow: "0 0 20px rgba(0,255,102,0.3)",
+              color: "var(--on-accent)",
+              boxShadow: "0 0 20px var(--accent-border-strong)",
             }}
           >
             {i.getQuote}
@@ -507,7 +417,7 @@ export default function Navbar() {
                     className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-colors"
                     style={{
                       color: isOpen ? GREEN : T.fg,
-                      background: isOpen ? "rgba(0,255,102,0.06)" : "transparent",
+                      background: isOpen ? "var(--accent-soft)" : "transparent",
                     }}
                     onClick={() => setOpenMobile(isOpen ? null : nav.label)}
                   >
@@ -536,7 +446,7 @@ export default function Navbar() {
                 {/* Level 2 items in mobile drawer */}
                 {hasChildren && isOpen && (
                   <div className="pl-3 pr-1 py-1 flex flex-col gap-1 border-l-2 ml-4 my-1"
-                    style={{ borderColor: "rgba(0,255,102,0.2)" }}>
+                    style={{ borderColor: "var(--accent-border)" }}>
                     {nav.items!.map((item) => {
                       const hasSub = Boolean(item.subItems && item.subItems.length > 0);
                       const isSubOpen = openMobileSub === item.label;
@@ -548,7 +458,7 @@ export default function Navbar() {
                               className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold"
                               style={{
                                 color: isSubOpen ? GREEN : T.muted,
-                                background: isSubOpen ? "rgba(0,255,102,0.06)" : "transparent",
+                                background: isSubOpen ? "var(--accent-soft)" : "transparent",
                               }}
                               onClick={() => setOpenMobileSub(isSubOpen ? null : item.label)}
                             >
@@ -581,7 +491,7 @@ export default function Navbar() {
                           {/* Level 3 items in mobile drawer */}
                           {hasSub && isSubOpen && (
                             <div className="pl-3 pr-1 py-1 flex flex-col gap-0.5 border-l-2 ml-3 my-0.5"
-                              style={{ borderColor: "rgba(0,255,102,0.3)" }}>
+                              style={{ borderColor: "var(--accent-border-strong)" }}>
                               {item.subItems!.map((sub) => (
                                 <Link
                                   key={sub.label}
@@ -613,7 +523,7 @@ export default function Navbar() {
           <Link
             to="/quote"
             className="mt-3 flex justify-center py-3 rounded-full text-sm font-semibold glow-btn"
-            style={{ background: GREEN, color: "#050505" }}
+            style={{ background: GREEN, color: "var(--on-accent)" }}
             onClick={() => setMenuOpen(false)}
           >
             {i.getQuote}

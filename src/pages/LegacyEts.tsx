@@ -446,8 +446,8 @@ const translations = {
     contactCtaTitleHighlight: "Certified Eco Chemistry?",
     contactCtaDesc:
       "Consult directly with our German engineering team. We formulate customized cleaning chemistry, sample batches, and full regulatory compliance dossiers.",
-    contactEmailBtn: "Email: info@etsint.eu",
-    contactCallBtn: "Call +49 2203 18889-0",
+    contactEmailBtn: "Email: info@etsint.de",
+    contactCallBtn: "Call +49 226 19130865",
 
     footerCompany:
       "ETS International is the professional provider of eco-friendly and bio-degradable solutions for industrial and professional cleaning and maintenance. We offer customized engineering, private label packaging, and training courses for our partners.",
@@ -464,7 +464,7 @@ const translations = {
       "• Derusting & Prevention",
     ],
     footerCourtTitle: "Court Registration",
-    footerCourtCeo: "CEO: Dipl.-Ing. Massoud Rad Soltani",
+    footerCourtCeo: "CEO: Jahangir Mirza · Ralf Brehm",
     footerContactTitle: "Contact Information",
     footerNewsletterTitle: "Technical bulletins & product updates",
     footerNewsletterDesc: "Subscribe for regulatory news, SDS updates, and new eco formulations.",
@@ -715,8 +715,8 @@ const translations = {
     contactCtaTitleHighlight: "zertifizierte Öko-Chemie?",
     contactCtaDesc:
       "Lassen Sie sich direkt von unserem deutschen Ingenieurteam beraten. Wir entwickeln maßgeschneiderte Reinigungschemie, Musterchargen und vollständige Konformitätsdossiers.",
-    contactEmailBtn: "E-Mail: info@etsint.eu",
-    contactCallBtn: "Anrufen: +49 2203 18889-0",
+    contactEmailBtn: "E-Mail: info@etsint.de",
+    contactCallBtn: "Anrufen: +49 226 19130865",
 
     footerCompany:
       "ETS International ist der professionelle Anbieter von umweltfreundlichen und biologisch abbaubaren Lösungen für die industrielle und gewerbliche Reinigung und Instandhaltung. Wir bieten maßgeschneiderte Entwicklungen, Private Labeling und Vor-Ort-Schulungen.",
@@ -733,7 +733,7 @@ const translations = {
       "• Entrostung & Korrosionsschutz",
     ],
     footerCourtTitle: "Registergericht & Firmensitz",
-    footerCourtCeo: "Geschäftsführer: Dipl.-Ing. Massoud Rad Soltani",
+    footerCourtCeo: "Geschäftsführer: Jahangir Mirza · Ralf Brehm",
     footerContactTitle: "Kontaktinformationen",
     footerNewsletterTitle: "Technische Merkblätter & Produkt-Updates",
     footerNewsletterDesc: "Abonnieren Sie regulatorische Neuigkeiten, Sicherheitsdatenblatt-Updates und neue Öko-Formulierungen.",
@@ -1170,7 +1170,7 @@ export default function LegacyEts() {
             </a>
           </div>
 
-          {/* Stats from etsint.eu */}
+          {/* Stats from etsint.de */}
           <div className="fade-up delay-4 mt-16 flex flex-wrap gap-x-12 gap-y-6">
             {i.stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-0.5">
@@ -2060,14 +2060,14 @@ export default function LegacyEts() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:info@etsint.eu"
+                  href="mailto:info@etsint.de"
                   className="glow-btn px-8 py-4 rounded-full font-semibold text-sm"
                   style={{ background: "#00FF66", color: "#050505" }}
                 >
                   {i.contactEmailBtn}
                 </a>
                 <a
-                  href="tel:+492203188890"
+                  href="tel:+4922619130865"
                   className="px-8 py-4 rounded-full font-semibold text-sm border transition-colors"
                   style={{ borderColor: t.border, color: t.fg }}
                 >
@@ -2147,7 +2147,7 @@ export default function LegacyEts() {
                 <div className="font-semibold text-white">
                   ETS International UG (haftungsbeschränkt)
                 </div>
-                <div>HRB 88478 Registergericht Köln</div>
+                <div>HRB 89819 Registergericht Köln</div>
                 <div>WEEE DE: 77800049</div>
                 <div>Wilhelm-Rupert-Str. 38, 51147 Köln, Germany</div>
                 <div className="pt-2 text-white font-medium">
@@ -2174,15 +2174,15 @@ export default function LegacyEts() {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-[#00FF66]">📞</span>
-                  <span>+49 2203 18889-0 / +49 2203 981180</span>
+                  <span>+49 226 19130865 / +49 176 84294205</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-[#00FF66]">✉️</span>
                   <a
-                    href="mailto:info@etsint.eu"
+                    href="mailto:info@etsint.de"
                     className="hover:underline text-[#00FF66]"
                   >
-                    info@etsint.eu
+                    info@etsint.de
                   </a>
                 </div>
               </div>

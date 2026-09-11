@@ -33,7 +33,7 @@ export default function Home() {
           <div className="absolute inset-0" style={{ background: T.heroOverlay }} />
         </div>
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full pointer-events-none z-0"
-          style={{ background: "radial-gradient(circle, rgba(0,255,102,0.12) 0%, transparent 70%)", opacity: isDark ? 0.5 : 0.25 }} />
+          style={{ background: "radial-gradient(circle, var(--accent-soft-md) 0%, transparent 70%)", opacity: isDark ? 0.5 : 0.25 }} />
 
         <div className="relative z-10 max-w-6xl mx-auto w-full">
           <div className="fade-up delay-1 inline-flex items-center gap-2 mb-8">
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
               <span className="text-xs font-semibold tracking-widest uppercase text-theme-neon">{i.industryTitle}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black tracking-tight max-w-lg font-display text-theme-fg">
@@ -122,7 +122,7 @@ export default function Home() {
                 alt="Aircraft jet turbine engine" className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700" style={{ opacity: "var(--img-opacity-sm)" }} />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,8,18,0.92)] via-[rgba(3,8,18,0.3)] to-transparent" />
               <div className="relative z-10 h-full flex flex-col justify-between p-7" style={{ minHeight: "380px" }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(0,255,102,0.1)] border border-[rgba(0,255,102,0.2)] text-theme-neon">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent-soft-md)] border border-[var(--accent-border)] text-theme-neon">
                   <IconPlane />
                 </div>
                 <div>
@@ -142,7 +142,7 @@ export default function Home() {
                 alt="Industrial factory" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: "var(--img-opacity-sm)" }} />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,8,18,0.92)] via-[rgba(3,8,18,0.2)] to-transparent" />
               <div className="relative z-10 flex flex-col justify-between p-6 h-full" style={{ minHeight: "180px" }}>
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-[rgba(0,204,255,0.15)] border border-[rgba(0,204,255,0.3)] text-theme-cyan">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-[var(--cyan-border)] border border-[var(--cyan-border)] text-theme-cyan">
                   <IconFactory />
                 </div>
                 <div>
@@ -176,7 +176,7 @@ export default function Home() {
                 alt="Food safety clean room" className="absolute inset-0 w-full h-full object-cover object-top" style={{ opacity: "var(--img-opacity-sm)" }} />
               <div className="absolute inset-0 bg-gradient-to-r from-[rgba(3,8,18,0.92)] via-[rgba(3,8,18,0.7)] to-transparent" />
               <div className="relative z-10 flex items-center gap-8 p-6 h-full" style={{ minHeight: "160px" }}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-[rgba(0,255,102,0.08)] border border-[rgba(0,255,102,0.2)] text-theme-neon">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-[var(--accent-soft)] border border-[var(--accent-border)] text-theme-neon">
                   <IconShield />
                 </div>
                 <div className="flex-1">
@@ -198,9 +198,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
               <span className="text-xs font-semibold tracking-widest uppercase text-theme-neon">The ETS Advantage</span>
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
             </div>
             <h2 className="text-4xl sm:text-5xl font-black tracking-tight font-display text-theme-fg">{i.whySubtitle}</h2>
             <p className="mt-4 max-w-xl mx-auto text-base leading-relaxed text-theme-muted">
@@ -210,12 +210,12 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {advantages.map((adv) => (
               <div key={adv.title} className="card-glass group p-6 rounded-2xl transition-all duration-300">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 bg-[rgba(0,255,102,0.07)] border border-[rgba(0,255,102,0.15)] text-theme-neon shadow-[0_0_20px_rgba(0,255,102,0.08)]">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 bg-[var(--accent-soft)] border border-[var(--accent-border)] text-theme-neon shadow-[0_0_20px_var(--accent-soft)]">
                   {adv.icon}
                 </div>
                 <h3 className="font-bold text-base mb-2 font-display text-theme-fg">{adv.title}</h3>
                 <p className="text-xs leading-relaxed text-theme-muted">{adv.desc}</p>
-                <div className="mt-5 h-px w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#00FF66] to-transparent" />
+                <div className="mt-5 h-px w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[var(--accent)] to-transparent" />
               </div>
             ))}
           </div>
@@ -225,10 +225,10 @@ export default function Home() {
       {/* FEATURE SPOTLIGHT */}
       <section className="py-24 px-6 relative overflow-hidden border-t border-theme-subtle">
         <div className="absolute right-0 top-0 w-[600px] h-[600px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(0,255,102,0.08) 0%, transparent 70%)", opacity: isDark ? 0.8 : 0.35 }} />
+          style={{ background: "radial-gradient(circle, var(--accent-soft) 0%, transparent 70%)", opacity: isDark ? 0.8 : 0.35 }} />
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-16">
-            <div className="h-px w-10 bg-[#00FF66]" />
+            <div className="h-px w-10 bg-[var(--accent)]" />
             <span className="text-xs font-semibold tracking-widest uppercase text-theme-neon">Feature Spotlight</span>
           </div>
 
@@ -237,7 +237,7 @@ export default function Home() {
             <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: "380px" }}>
               <img src="https://images.unsplash.com/photo-1781707436000-18016e244e87?w=800&h=600&fit=crop&auto=format"
                 alt="AquaSmarter" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[rgba(0,255,102,0.08)] to-[rgba(0,204,255,0.06)]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] to-[var(--cyan-soft)]" />
               <div className="absolute top-5 left-5 badge-cert">
                 <span className="badge-dot" />
                 AQUASMARTER™
@@ -267,11 +267,11 @@ export default function Home() {
           </div>
 
           {/* Nano Diamond */}
-          <div className="relative rounded-2xl overflow-hidden p-8 sm:p-12 card-glass border border-[rgba(0,255,102,0.12)]">
+          <div className="relative rounded-2xl overflow-hidden p-8 sm:p-12 card-glass border border-[var(--accent-soft-md)]">
             <div className="absolute inset-0 pointer-events-none grid-bg opacity-60" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-5 w-fit bg-[rgba(0,204,255,0.08)] border border-[rgba(0,204,255,0.2)] text-theme-cyan">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-5 w-fit bg-[var(--cyan-soft)] border border-[var(--cyan-border)] text-theme-cyan">
                   <IconDiamond /> Nano Diamond Technology
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-black tracking-tight mb-4 font-display text-theme-fg">Nano Diamond™</h2>

@@ -80,7 +80,7 @@ export default function Marine() {
         </div>
       </section>
 
-      <section className="py-20 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(68,153,255,0.1)" }}>
+      <section className="py-20 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid rgba(68,153,255,0.1)" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
             { icon: <IconShield />, title: "MARPOL Compliance", desc: "Products are tested to OECD 306 marine biodegradability standards, qualifying for use in all sea areas including MARPOL special areas." },

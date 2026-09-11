@@ -49,12 +49,12 @@ export default function Quote() {
   if (sent) {
     return (
       <div style={{ background: T.bg, minHeight: "100vh" }} className="flex flex-col items-center justify-center px-6 py-32">
-        <div className="w-20 h-20 rounded-full flex items-center justify-center mb-8" style={{ background: "rgba(0,255,102,0.1)", border: "2px solid rgba(0,255,102,0.3)" }}>
+        <div className="w-20 h-20 rounded-full flex items-center justify-center mb-8" style={{ background: "var(--accent-soft-md)", border: "2px solid var(--accent-border-strong)" }}>
           <span style={{ color: GREEN, fontSize: "36px" }}>✓</span>
         </div>
         <h2 className="text-4xl font-black mb-4 text-center" style={{ fontFamily: JK, color: T.fg }}>Quote request received.</h2>
         <p className="text-lg mb-8 text-center max-w-md" style={{ color: T.muted }}>Our team will review your requirements and respond within one business day with product recommendations and pricing.</p>
-        <Link to="/" className="glow-btn px-10 py-4 rounded-full font-semibold text-sm inline-flex items-center gap-2" style={{ background: GREEN, color: "#050505" }}>
+        <Link to="/" className="glow-btn px-10 py-4 rounded-full font-semibold text-sm inline-flex items-center gap-2" style={{ background: GREEN, color: "var(--on-accent)" }}>
           Return to Home <IconArrowRight />
         </Link>
       </div>
@@ -66,12 +66,12 @@ export default function Quote() {
       <div className="relative pt-32 pb-16 px-6 overflow-hidden"
         style={{ backgroundImage: `linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)`, backgroundSize: "60px 60px" }}>
         <div className="absolute -top-20 right-0 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(0,255,102,0.1) 0%, transparent 70%)", opacity: isDark ? 0.6 : 0.3 }} />
+          style={{ background: "radial-gradient(circle, var(--accent-soft-md) 0%, transparent 70%)", opacity: isDark ? 0.6 : 0.3 }} />
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-10 bg-[#00FF66]" />
+            <div className="h-px w-10 bg-[var(--accent)]" />
             <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>Get a Quote</span>
-            <div className="h-px w-10 bg-[#00FF66]" />
+            <div className="h-px w-10 bg-[var(--accent)]" />
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6" style={{ fontFamily: JK, color: T.fg }}>
             Tell us what you need to clean.
@@ -91,7 +91,7 @@ export default function Quote() {
               { icon: <IconCheck />, title: "Full Documentation", desc: "SDS, TDS, certifications, and HACCP documentation supplied with all quotes." },
             ].map((b) => (
               <div key={b.title} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                   {b.icon}
                 </div>
                 <div>
@@ -123,7 +123,7 @@ export default function Quote() {
                       value={(form as any)[field.key]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                       style={inputStyle}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                       onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                     />
                   </div>
@@ -143,7 +143,7 @@ export default function Quote() {
                       value={(form as any)[field.key]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                       style={{ ...inputStyle, appearance: "none" }}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                       onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                     >
                       <option value="">Select...</option>
@@ -164,13 +164,13 @@ export default function Quote() {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   style={{ ...inputStyle, resize: "vertical" }}
-                  onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                  onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                   onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                 />
               </div>
 
               <button type="submit" className="glow-btn w-full py-5 rounded-full font-bold text-base transition-all duration-200 hover:scale-[1.02]"
-                style={{ background: GREEN, color: "#050505", boxShadow: "0 0 30px rgba(0,255,102,0.35)" }}>
+                style={{ background: GREEN, color: "var(--on-accent)", boxShadow: "0 0 30px var(--accent-border-strong)" }}>
                 Request My Quote →
               </button>
               <p className="text-xs text-center" style={{ color: T.dim }}>

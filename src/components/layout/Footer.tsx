@@ -135,13 +135,13 @@ export default function Footer() {
                 required
                 className="flex-1 sm:w-64 px-4 py-2.5 rounded-full text-sm outline-none transition-all duration-200"
                 style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", color: "white", caretColor: GREEN }}
-                onFocus={(e) => ((e.target as HTMLElement).style.borderColor = "rgba(0,255,102,0.4)")}
+                onFocus={(e) => ((e.target as HTMLElement).style.borderColor = "var(--accent-border-strong)")}
                 onBlur={(e) => ((e.target as HTMLElement).style.borderColor = "rgba(255,255,255,0.12)")}
               />
               <button
                 type="submit"
                 className="px-6 py-2.5 rounded-full text-sm font-semibold shrink-0 transition-all duration-200 hover:scale-105 cursor-pointer"
-                style={{ background: GREEN, color: "#050505" }}
+                style={{ background: GREEN, color: "var(--on-accent)" }}
               >
                 Subscribe
               </button>
@@ -155,7 +155,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
-            © 2026 ETS International UG (haftungsbeschränkt) · HRB 88478 Registergericht Köln, Germany.
+            © 2026 ETS International UG (haftungsbeschränkt) · HRB 89819 Registergericht Köln, Germany.
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Use", "Impressum"].map((link) => (

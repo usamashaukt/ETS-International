@@ -75,12 +75,12 @@ export default function Disinfection() {
       </section>
 
       {/* FOG-IT INNOVA spotlight */}
-      <section className="py-24 px-6 relative overflow-hidden" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-24 px-6 relative overflow-hidden" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6 w-fit"
-                style={{ background: "rgba(0,204,255,0.08)", border: "1px solid rgba(0,204,255,0.2)", color: CYAN }}>
+                style={{ background: "var(--cyan-soft)", border: "1px solid var(--cyan-border)", color: CYAN }}>
                 <IconFlask /> FOG-IT INNOVA
               </div>
               <h2 className="text-4xl font-black tracking-tight mb-5 text-white" style={{ fontFamily: JK }}>
@@ -107,9 +107,9 @@ export default function Disinfection() {
             <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: "360px" }}>
               <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?w=700&h=500&fit=crop&auto=format"
                 alt="FOG-IT INNOVA" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.6 }} />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,204,255,0.06) 0%, rgba(0,0,0,0.4) 100%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, var(--cyan-soft) 0%, rgba(0,0,0,0.4) 100%)" }} />
               <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider"
-                style={{ background: "rgba(0,204,255,0.15)", border: "1px solid rgba(0,204,255,0.3)", color: CYAN }}>
+                style={{ background: "var(--cyan-border)", border: "1px solid var(--cyan-border)", color: CYAN }}>
                 FOG-IT INNOVA™
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function Disinfection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
             {products.map((p) => (
               <div key={p.name} className="bento-card p-6 rounded-2xl border" style={{ borderColor: T.border, background: T.glassCard }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                   <IconFlask />
                 </div>
                 <h3 className="font-bold text-sm mb-1.5" style={{ fontFamily: JK, color: T.fg }}>{p.name}</h3>

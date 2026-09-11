@@ -43,14 +43,14 @@ export const router = createBrowserRouter([
       { path: "technology/aquasmarter", Component: AquaSmarter },
       { path: "technology/nano-diamond", Component: NanoDiamond },
 
-      /* ─── Exact etsint.eu Aviation Subpages ─── */
+      /* ─── Exact etsint.de Aviation Subpages ─── */
       { path: "commercial-aviation-industry", Component: SubpageTemplate },
       { path: "military-aviation-industry", Component: SubpageTemplate },
       { path: "benefits", Component: SubpageTemplate },
       { path: "cleaning-accessories", Component: SubpageTemplate },
       { path: "aviation-services", Component: SubpageTemplate },
 
-      /* ─── Exact etsint.eu Industrial Subpages ─── */
+      /* ─── Exact etsint.de Industrial Subpages ─── */
       { path: "metal-paint-workshop", Component: SubpageTemplate },
       { path: "refineries-gas-pipelines", Component: SubpageTemplate },
       { path: "offshore-marine", Component: SubpageTemplate },
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       { path: "food-industry-and-agriculture", Component: SubpageTemplate },
       { path: "corrosion-prevention", Component: SubpageTemplate },
 
-      /* ─── Exact etsint.eu HACCP Subpages ─── */
+      /* ─── Exact etsint.de HACCP Subpages ─── */
       { path: "what-is-haccp", Component: SubpageTemplate },
       { path: "how-it-works", Component: SubpageTemplate },
       { path: "haccp-product", Component: SubpageTemplate },
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
       { path: "sanitary-bleach-liquid-sanipower-extra", Component: SubpageTemplate },
       { path: "oven-and-grill-cleaner", Component: SubpageTemplate },
 
-      /* ─── Exact etsint.eu Disinfection / Water Treatment Subpages ─── */
+      /* ─── Exact etsint.de Disinfection / Water Treatment Subpages ─── */
       { path: "water-treatment-introduction", Component: SubpageTemplate },
       { path: "water-treatment-information", Component: SubpageTemplate },
       { path: "how-it-works-2", Component: SubpageTemplate },
@@ -86,12 +86,12 @@ export const router = createBrowserRouter([
       { path: "fog-it", Component: SubpageTemplate },
       { path: "desi-box", Component: SubpageTemplate },
 
-      /* ─── Exact etsint.eu Derusting & Paint Stripping Subpages ─── */
+      /* ─── Exact etsint.de Derusting & Paint Stripping Subpages ─── */
       { path: "eco-safe-air-blaster", Component: SubpageTemplate },
       { path: "bioderuster", Component: SubpageTemplate },
       { path: "actan-3f", Component: SubpageTemplate },
 
-      /* ─── Exact etsint.eu About, Info & Technologies Subpages ─── */
+      /* ─── Exact etsint.de About, Info & Technologies Subpages ─── */
       { path: "why-ets", Component: SubpageTemplate },
       { path: "presentations", Component: SubpageTemplate },
       { path: "co-partners", Component: SubpageTemplate },

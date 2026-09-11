@@ -79,31 +79,31 @@ export default function Industries() {
                 className="bento-card group relative rounded-2xl overflow-hidden border block"
                 style={{ borderColor: "rgba(255,255,255,0.08)", minHeight: "420px" }}>
                 <img src={ind.img} alt={ind.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ opacity: "var(--img-opacity-sm)" }} />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(3,8,18,0.97) 0%, rgba(3,8,18,0.5) 50%, rgba(0,0,0,0.1) 100%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--section-inset) 0%, rgba(3,8,18,0.5) 50%, rgba(0,0,0,0.1) 100%)" }} />
 
                 {/* Icon chip */}
                 <div className="absolute top-5 left-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `rgba(${ind.color === GREEN ? "0,255,102" : ind.color === CYAN ? "0,204,255" : "68,153,255"},0.1)`, border: `1px solid rgba(${ind.color === GREEN ? "0,255,102" : ind.color === CYAN ? "0,204,255" : "68,153,255"},0.25)`, color: ind.color }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(7, 16, 24, 0.88)", border: "1px solid rgba(255,255,255,0.22)", color: "#FFFFFF" }}>
                     {ind.icon}
                   </div>
                 </div>
 
                 <div className="relative z-10 flex flex-col justify-end h-full p-7" style={{ minHeight: "420px" }}>
-                  <span className="text-xs font-semibold tracking-widest uppercase mb-2 block" style={{ color: "rgba(255,255,255,0.45)" }}>{ind.label}</span>
+                  <span className="text-xs font-semibold tracking-widest uppercase mb-2 block" style={{ color: "rgba(255,255,255,0.55)" }}>{ind.label}</span>
                   <h3 className="text-2xl font-black mb-2 text-white" style={{ fontFamily: JK }}>{ind.title}</h3>
-                  <p className="text-sm italic mb-4" style={{ color: ind.color }}>{ind.subtitle}</p>
+                  <p className="text-sm italic mb-4" style={{ color: "rgba(255,255,255,0.88)" }}>{ind.subtitle}</p>
                   <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.7)" }}>{ind.desc}</p>
 
                   {/* Challenges */}
                   <div className="grid grid-cols-2 gap-2 mb-5">
                     {ind.challenges.map((c) => (
-                      <div key={c} className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
-                        <span style={{ color: ind.color, fontSize: "10px" }}>▸</span> {c}
+                      <div key={c} className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
+                        <span style={{ color: "#FFFFFF", fontSize: "10px" }}>▸</span> {c}
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-xs font-semibold group-hover:gap-3 transition-all duration-200" style={{ color: ind.color }}>
+                  <div className="flex items-center gap-2 text-xs font-semibold group-hover:gap-3 transition-all duration-200" style={{ color: "#FFFFFF" }}>
                     Explore {ind.title} <IconArrowRight />
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function Industries() {
       </section>
 
       {/* Cross-industry stats */}
-      <section className="py-20 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-20 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[

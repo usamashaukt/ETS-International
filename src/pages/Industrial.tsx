@@ -71,7 +71,7 @@ export default function Industrial() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             {products.map((p) => (
               <div key={p.name} className="bento-card group p-5 rounded-2xl border flex flex-col transition-all duration-300" style={{ borderColor: T.border, background: T.glassCard }}>
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,204,255,0.08)", border: "1px solid rgba(0,204,255,0.2)", color: CYAN }}>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ background: "var(--cyan-soft)", border: "1px solid var(--cyan-border)", color: CYAN }}>
                   <IconFactory />
                 </div>
                 <h3 className="font-bold text-sm mb-1.5" style={{ fontFamily: JK, color: T.fg }}>{p.name}</h3>
@@ -84,7 +84,7 @@ export default function Industrial() {
       </section>
 
       {/* Benefits dark */}
-      <section className="py-24 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,204,255,0.1)" }}>
+      <section className="py-24 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--cyan-border)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[

@@ -146,12 +146,12 @@ export default function Products() {
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(3,8,18,0.85) 0%, rgba(0,0,0,0) 60%)" }} />
                   <div className="absolute top-3 left-3">
                     <span className="px-2.5 py-1 rounded-full text-xs font-semibold tracking-wider"
-                      style={{ background: "rgba(0,0,0,0.6)", border: `1px solid ${product.categoryColor}30`, color: product.categoryColor }}>
+                      style={{ background: "rgba(7, 16, 24, 0.88)", border: "1px solid rgba(255,255,255,0.22)", color: "#FFFFFF" }}>
                       {product.category}
                     </span>
                   </div>
                   <div className="absolute bottom-3 left-3">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,0,0,0.7)", color: product.categoryColor }}>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(7, 16, 24, 0.88)", border: "1px solid rgba(255,255,255,0.22)", color: "#FFFFFF" }}>
                       {product.icon}
                     </div>
                   </div>
@@ -171,13 +171,13 @@ export default function Products() {
       </section>
 
       {/* Why ETS products */}
-      <section className="py-20 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-20 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
               <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: GREEN }}>The ETS Standard</span>
-              <div className="h-px w-10 bg-[#00FF66]" />
+              <div className="h-px w-10 bg-[var(--accent)]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4" style={{ fontFamily: JK }}>
               Every product. The same commitment.

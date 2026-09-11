@@ -1045,7 +1045,7 @@ const coreSubpagesData: Record<string, SubpageInfo> = {
     specifications: [
       { label: "Global Deployments", value: "Over 40 countries across 5 continents" },
       { label: "Hazard Rating", value: "0 VOC, Non-carcinogenic, Non-mutagenic, Non-flammable" },
-      { label: "Corporate Entity", value: "ETS International UG (Cologne Commercial Register HRB 88478)" }
+      { label: "Corporate Entity", value: "ETS International UG (Cologne Commercial Register HRB 89819)" }
     ],
     applications: [
       "Corporate ESG environmental compliance modernization",
@@ -1151,20 +1151,20 @@ const coreSubpagesData: Record<string, SubpageInfo> = {
       },
       {
         title: "Operating & Customer Service Hours",
-        description: "Monday to Friday: 08:00 to 17:00 Central European Time (CET). Closed Saturday and Sunday.",
+        description: "Monday to Friday: 09:00–12:00 and 13:00–16:00. Closed on weekends and public holidays.",
         highlight: "Direct German engineering hotline"
       },
       {
         title: "Direct Corporate Contacts",
-        description: "Telephone: +49 (0) 2203 18889-0 / +49 (0) 2203 981180. Email: info@etsint.eu.",
+        description: "Telephone: +49 226 19130865 / +49 176 84294205. Email: info@etsint.de.",
         highlight: "Instant support response"
       }
     ],
     specifications: [
-      { label: "Commercial Register", value: "Amtsgericht Köln (HRB 88478)" },
-      { label: "Managing Director", value: "Dipl.-Ing. Massoud Rad Soltani" },
-      { label: "VAT Identification", value: "DE 308 058 763" },
-      { label: "WEEE Registration", value: "DE 77800049" }
+      { label: "Commercial Register", value: "Amtsgericht Köln (HRB 89819)" },
+      { label: "Managing Directors", value: "Jahangir Mirza · Ralf Brehm" },
+      { label: "VAT / Ust-ID", value: "310009644" },
+      { label: "IHK Registration", value: "99653089" }
     ],
     applications: [
       "In-person technical consultations and sample reviews",

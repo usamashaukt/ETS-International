@@ -107,14 +107,14 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
             className="absolute inset-0"
             style={{
               background: isDark
-                ? "linear-gradient(to bottom, rgba(5,5,5,0.75) 0%, rgba(10,25,47,0.85) 50%, #050505 100%)"
-                : "linear-gradient(to bottom, rgba(248,249,250,0.8) 0%, rgba(248,249,250,0.92) 50%, #F8F9FA 100%)",
+                ? "linear-gradient(to bottom, rgba(7,16,24,0.78) 0%, rgba(14,26,40,0.88) 50%, #071018 100%)"
+                : "linear-gradient(to bottom, rgba(240,242,245,0.82) 0%, rgba(240,242,245,0.94) 50%, #F0F2F5 100%)",
             }}
           />
           <div
             className="absolute -top-32 -left-32 w-96 h-96 rounded-full pointer-events-none"
             style={{
-              background: "radial-gradient(circle, rgba(0,255,102,0.12) 0%, transparent 70%)",
+              background: "radial-gradient(circle, var(--accent-soft-md) 0%, transparent 70%)",
             }}
           />
         </div>
@@ -137,6 +137,11 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
             <Link to="/quote" className="btn-neon glow-btn hover:scale-105">
               Request Free Sample & Quote <IconArrowRight />
             </Link>
+            {related.length > 0 && (
+              <a href="#products" className="btn-secondary hover:scale-105 inline-flex items-center gap-2">
+                View Products ({related.length}) <span aria-hidden="true">↓</span>
+              </a>
+            )}
             <Link to="/contact" className="btn-secondary hover:scale-105">
               Contact Specialist
             </Link>
@@ -163,7 +168,7 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
               <span className="text-xs font-bold tracking-widest uppercase text-theme-neon">
                 TECHNICAL OVERVIEW
               </span>
-              <div className="h-px w-12 bg-[#00FF66]" />
+              <div className="h-px w-12 bg-[var(--accent)]" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-black mb-6 font-display text-theme-fg">
               Engineered to Deliver Clean-Tech Excellence Without Compromise
@@ -172,13 +177,53 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
               {data.overview}
             </p>
 
+            {related.length > 0 && (
+              <div
+                className="mb-10 p-5 rounded-2xl border border-theme-subtle"
+                style={{ background: "var(--accent-soft)" }}
+              >
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
+                  <p className="text-sm font-bold text-theme-fg">
+                    {related.length} certified products for this industry
+                  </p>
+                  <a
+                    href="#products"
+                    className="text-xs font-semibold inline-flex items-center gap-1.5 text-theme-neon hover:underline"
+                  >
+                    See all products <span aria-hidden="true">↓</span>
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {related.slice(0, 4).map((product) => (
+                    <Link
+                      key={product.to}
+                      to={product.to}
+                      className="px-3 py-1.5 rounded-full text-xs font-medium border border-theme-subtle transition-colors hover:border-[var(--accent-border-strong)]"
+                      style={{ background: "var(--glass-card)", color: "var(--fg)" }}
+                    >
+                      {product.name}
+                    </Link>
+                  ))}
+                  {related.length > 4 && (
+                    <a
+                      href="#products"
+                      className="px-3 py-1.5 rounded-full text-xs font-semibold border border-theme-subtle text-theme-neon"
+                      style={{ background: "var(--glass-card)" }}
+                    >
+                      +{related.length - 4} more
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+
             <h3 className="text-sm font-bold tracking-widest uppercase mb-4 text-theme-dim">
               PRIMARY DEPLOYMENT USE-CASES:
             </h3>
             <div className="space-y-3">
               {data.applications.map((app, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl border border-theme-subtle card-glass transition-all duration-200">
-                  <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-[rgba(0,255,102,0.15)] text-theme-neon">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-[var(--accent-border)] text-theme-neon">
                     <IconCheck />
                   </div>
                   <span className="text-sm font-medium text-theme-fg">{app}</span>
@@ -196,7 +241,7 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
                   </h3>
                   <span className="text-xs text-theme-dim">Standard Laboratory Analysis</span>
                 </div>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[rgba(0,204,255,0.15)] text-theme-cyan">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[var(--cyan-border)] text-theme-cyan">
                   <IconShield />
                 </div>
               </div>
@@ -247,7 +292,7 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
       </section>
 
       {related.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6 py-12 border-t border-theme-subtle">
+        <section id="products" className="max-w-6xl mx-auto px-6 py-12 border-t border-theme-subtle scroll-mt-28">
           <div className="mb-10">
             <span className="text-xs font-bold tracking-widest uppercase block mb-2 text-theme-neon">
               PRODUCT RANGE
@@ -278,7 +323,7 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
                     <Link
                       to={product.to}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold transition-all hover:scale-105"
-                      style={{ background: GREEN, color: "#050505" }}
+                      style={{ background: GREEN, color: "var(--on-accent)" }}
                     >
                       View Product <IconArrowRight />
                     </Link>

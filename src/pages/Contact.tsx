@@ -48,27 +48,35 @@ export default function Contact() {
               <SectionHeader eyebrow="Get in Touch" title="Our team is ready to help." />
               <div className="space-y-6 mt-4">
                 {[
-                  { icon: <IconMail />, label: "Email", value: "info@etsint.eu", href: "mailto:info@etsint.eu" },
-                  { icon: <IconPhone />, label: "Phone", value: "+31 (0) 10 000 0000", href: "tel:+31100000000" },
-                  { icon: <IconGlobe />, label: "Website", value: "etsint.eu", href: "https://etsint.eu" },
-                  { icon: <IconMapPin />, label: "Headquarters", value: "Rotterdam, Netherlands", href: "#" },
+                  { icon: <IconMail />, label: "Email", value: "info@etsint.de", href: "mailto:info@etsint.de" },
+                  { icon: <IconPhone />, label: "Phone", value: "+49 226 19130865", href: "tel:+4922619130865" },
+                  { icon: <IconPhone />, label: "Mobile", value: "+49 176 84294205", href: "tel:+4917684294205" },
+                  { icon: <IconGlobe />, label: "Website", value: "etsint.de", href: "https://etsint.de" },
+                  { icon: <IconMapPin />, label: "Headquarters", value: "Wilhelm-Rupert-Str. 38, 51147 Köln, Germany", href: "https://maps.google.com/?q=Wilhelm-Rupert-Str.+38,+51147+Köln" },
                 ].map((item) => (
                   <a key={item.label} href={item.href}
                     className="flex items-start gap-4 group"
                     style={{ color: T.muted }}>
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-200 group-hover:scale-110"
-                      style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                      style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                       {item.icon}
                     </div>
                     <div>
                       <div className="text-xs font-semibold tracking-wider uppercase mb-0.5" style={{ color: T.dim }}>{item.label}</div>
-                      <div className="text-sm font-medium group-hover:text-[#00FF66] transition-colors duration-200" style={{ color: T.fg }}>{item.value}</div>
+                      <div className="text-sm font-medium group-hover:text-[var(--accent)] transition-colors duration-200" style={{ color: T.fg }}>{item.value}</div>
                     </div>
                   </a>
                 ))}
               </div>
 
               <div className="mt-10 p-5 rounded-2xl" style={{ background: T.glassCard, border: `1px solid ${T.border}` }}>
+                <h4 className="font-bold text-sm mb-3" style={{ fontFamily: JK, color: T.fg }}>Opening Hours</h4>
+                <p className="text-xs leading-relaxed mb-1" style={{ color: T.muted }}>
+                  Monday–Friday: 09:00–12:00 &amp; 13:00–16:00
+                </p>
+                <p className="text-xs leading-relaxed mb-4" style={{ color: T.dim }}>
+                  Closed on weekends and public holidays.
+                </p>
                 <h4 className="font-bold text-sm mb-3" style={{ fontFamily: JK, color: T.fg }}>Quick Quote</h4>
                 <p className="text-xs leading-relaxed mb-4" style={{ color: T.muted }}>
                   Need a price? Use our dedicated quote page for faster response.
@@ -93,7 +101,7 @@ export default function Contact() {
             <div className="lg:col-span-2">
               {sent ? (
                 <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center px-8">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ background: "rgba(0,255,102,0.1)", border: "1px solid rgba(0,255,102,0.3)" }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ background: "var(--accent-soft-md)", border: "1px solid var(--accent-border-strong)" }}>
                     <span style={{ color: GREEN, fontSize: "28px" }}>✓</span>
                   </div>
                   <h3 className="text-2xl font-black mb-3" style={{ fontFamily: JK, color: T.fg }}>Message received.</h3>
@@ -122,7 +130,7 @@ export default function Contact() {
                           value={(form as any)[field.key]}
                           onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                           style={inputStyle}
-                          onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                          onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                           onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                         />
                       </div>
@@ -135,7 +143,7 @@ export default function Contact() {
                       value={form.industry}
                       onChange={(e) => setForm({ ...form, industry: e.target.value })}
                       style={{ ...inputStyle, appearance: "none" }}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                       onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                     >
                       <option value="">Select your industry</option>
@@ -151,7 +159,7 @@ export default function Contact() {
                       value={form.product}
                       onChange={(e) => setForm({ ...form, product: e.target.value })}
                       style={inputStyle}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                       onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                     />
                   </div>
@@ -165,13 +173,13 @@ export default function Contact() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       style={{ ...inputStyle, resize: "vertical" }}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(0,255,102,0.5)")}
+                      onFocus={(e) => (e.target.style.borderColor = "var(--accent-border-strong)")}
                       onBlur={(e) => (e.target.style.borderColor = "var(--input-border)")}
                     />
                   </div>
 
                   <button type="submit" className="glow-btn w-full py-4 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-[1.02]"
-                    style={{ background: GREEN, color: "#050505" }}>
+                    style={{ background: GREEN, color: "var(--on-accent)" }}>
                     Send Message
                   </button>
                   <p className="text-xs text-center" style={{ color: T.dim }}>

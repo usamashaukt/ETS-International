@@ -55,7 +55,7 @@ export default function AquaSmarter() {
             <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: "480px" }}>
               <img src="https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&h=700&fit=crop&auto=format"
                 alt="AquaSmarter water chemistry" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: "var(--img-opacity-sm)" }} />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(0,255,102,0.06) 0%, rgba(0,204,255,0.04) 100%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, var(--accent-soft) 0%, var(--cyan-soft) 100%)" }} />
               <div className="absolute top-5 left-5 badge-cert">
                 <span className="badge-dot" />
                 AQUASMARTER™
@@ -87,7 +87,7 @@ export default function AquaSmarter() {
       </section>
 
       {/* Features */}
-      <section className="py-24 px-6" style={{ background: "rgba(3,8,18,0.97)", borderTop: "1px solid rgba(0,255,102,0.1)" }}>
+      <section className="py-24 px-6" style={{ background: "var(--section-inset)", borderTop: "1px solid var(--accent-soft-md)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {features.map((f) => (
@@ -113,7 +113,7 @@ export default function AquaSmarter() {
             ].map((app) => (
               <div key={app.label} className="card-glass group p-6 rounded-2xl transition-all duration-300">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
-                  style={{ background: `rgba(${app.color === GREEN ? "0,255,102" : app.color === CYAN ? "0,204,255" : "68,153,255"},0.08)`, border: `1px solid rgba(${app.color === GREEN ? "0,255,102" : app.color === CYAN ? "0,204,255" : "68,153,255"},0.2)`, color: app.color }}>
+                  style={{ background: app.color === GREEN ? T.accentSoft : app.color === CYAN ? T.cyanSoft : "rgba(68,153,255,0.08)", border: `1px solid ${app.color === GREEN ? T.accentBorder : app.color === CYAN ? T.cyanBorder : "rgba(68,153,255,0.2)"}`, color: app.color }}>
                   {app.icon}
                 </div>
                 <h3 className="font-bold text-base mb-2 font-display text-theme-fg">{app.label}</h3>

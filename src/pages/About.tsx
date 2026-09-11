@@ -28,9 +28,9 @@ export default function About() {
         eyebrow="About ETS International"
         title="Environmental Technologies Solutions."
         accent="Solutions."
-        subtitle="Since 1994, ETS International has pioneered biodegradable cleaning chemistry for the world's most demanding industries — without compromise on performance or environmental responsibility."
+        subtitle="ETS International develops environment-friendly, highly efficient cleaning chemicals for cleaning, corrosion prevention and de-rusting — founded by Jahangir Mirza and headquartered in Köln, Germany."
         imgUrl="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop&auto=format"
-        badge="ISO 9001:2015 CERTIFIED · EST. 1994 · 40+ COUNTRIES"
+        badge="ISO 9001:2015 CERTIFIED · KÖLN, GERMANY · HRB 89819"
         ctaPrimary={{ label: "Explore Products", to: "/products" }}
         ctaSecondary={{ label: "View Certifications", to: "/certifications" }}
       />
@@ -42,10 +42,10 @@ export default function About() {
             <div>
               <SectionHeader eyebrow="Our Mission" title="Clean industry. Healthy planet." />
               <p className="text-lg leading-relaxed mb-6" style={{ color: T.muted }}>
-                ETS International was founded on a single belief: the industrial sector should not have to choose between performance and responsibility. For three decades, we have developed and delivered professional cleaning solutions that are 100% biodegradable, solvent-free, and certified to the highest international standards.
+                Free your environmental thinking for a better, clean world. ETS International develops environment-friendly and highly efficient cleaning chemicals for cleaning, corrosion prevention and de-rusting — replacing dangerous and toxic products with safe, biodegradable alternatives.
               </p>
               <p className="text-base leading-relaxed mb-8" style={{ color: T.muted }}>
-                Our customers include airlines, MRO facilities, offshore operators, food manufacturers, and metal processing plants — all of whom require cleaning technology that works in extreme conditions while meeting the strictest environmental and safety regulations.
+                Our water-based, solvent-free cleaners are designed as substitutes for conventional harmful cleaners used on airplanes, military vehicles, refineries and machines. They meet the strongest U.S. and European regulations and are safe for applications and for workers.
               </p>
               <div className="flex flex-wrap gap-8">
                 {[
@@ -66,7 +66,7 @@ export default function About() {
                 alt="ETS technology laboratory" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: "var(--img-opacity-sm)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(3,8,18,0.85) 0%, rgba(0,0,0,0) 60%)" }} />
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="px-4 py-3 rounded-xl" style={{ background: "rgba(0,255,102,0.08)", border: "1px solid rgba(0,255,102,0.2)" }}>
+                <div className="px-4 py-3 rounded-xl" style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)" }}>
                   <p className="text-xs font-semibold tracking-wider uppercase mb-1" style={{ color: GREEN }}>ETS Environmental Philosophy</p>
                   <p className="text-sm text-white/80">Every formulation must outperform its solvent equivalent — and leave no toxic trace in the environment.</p>
                 </div>
@@ -84,12 +84,12 @@ export default function About() {
             {pillars.map((p) => (
               <div key={p.title} className="bento-card group p-6 rounded-2xl border transition-all duration-300" style={{ borderColor: T.border, background: T.glassCard }}>
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
-                  style={{ background: "rgba(0,255,102,0.07)", border: "1px solid rgba(0,255,102,0.15)", color: GREEN }}>
+                  style={{ background: "var(--accent-soft)", border: "1px solid var(--accent-border)", color: GREEN }}>
                   {p.icon}
                 </div>
                 <h3 className="font-bold text-base mb-2" style={{ fontFamily: JK, color: T.fg }}>{p.title}</h3>
                 <p className="text-xs leading-relaxed" style={{ color: T.muted }}>{p.desc}</p>
-                <div className="mt-5 h-px w-0 group-hover:w-full transition-all duration-500" style={{ background: "linear-gradient(to right, #00FF66, transparent)" }} />
+                <div className="mt-5 h-px w-0 group-hover:w-full transition-all duration-500" style={{ background: "linear-gradient(to right, var(--accent), transparent)" }} />
               </div>
             ))}
           </div>
@@ -99,7 +99,7 @@ export default function About() {
       {/* Timeline */}
       <section className="py-24 px-6 relative overflow-hidden" style={{ borderTop: `1px solid ${T.borderSubtle}` }}>
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: isDark ? "linear-gradient(to bottom, transparent 0%, rgba(0,255,102,0.02) 50%, transparent 100%)" : "none" }} />
+          style={{ background: isDark ? "linear-gradient(to bottom, transparent 0%, var(--accent-soft) 50%, transparent 100%)" : "none" }} />
         <div className="max-w-4xl mx-auto">
           <SectionHeader eyebrow="Company History" title="Thirty years of clean innovation." center />
           <div className="relative mt-16">
@@ -114,7 +114,7 @@ export default function About() {
                       <p className="text-xs leading-relaxed mt-1" style={{ color: T.muted }}>{item.desc}</p>
                     </div>
                   </div>
-                  <div className="w-4 h-4 rounded-full shrink-0 z-10 mt-3" style={{ background: GREEN, boxShadow: `0 0 12px rgba(0,255,102,0.6)` }} />
+                  <div className="w-4 h-4 rounded-full shrink-0 z-10 mt-3" style={{ background: GREEN, boxShadow: `0 0 12px var(--accent-border-strong)` }} />
                   <div className="flex-1" />
                 </div>
               ))}
