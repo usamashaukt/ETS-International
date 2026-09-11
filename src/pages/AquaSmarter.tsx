@@ -1,4 +1,4 @@
-import { GREEN, CYAN } from "@/theme";
+import { T, GREEN, CYAN } from "@/theme";
 import { PageHero, SectionHeader, CtaBanner } from "@/components/shared";
 import { IconDrop, IconLeaf, IconShield, IconPlane, IconAnchor, IconFactory } from "@/components/icons";
 

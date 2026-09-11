@@ -46,40 +46,40 @@ The primary objective of the redesign is **not** creating a simple brochure site
 - Quote form prefills from finder query params (`industry`, `application`, `product`, `message`).
 - Entry points: Products hub, Home CTA, Products nav item, footer.
 
+### 🟢 Step 3 complete — Product detail & Equipment (Phase 3)
+- Canonical product pages at `/products/:id` via `productsCatalog.ts` + `ProductDetail.tsx` (specs, dilution, packaging, TDS download, SDS request, Quote CTA, Add to Cart disabled).
+- Products hub filters by category and lists SKU catalogue; `/products/aviation` etc. still work.
+- `/equipment` expanded into wash systems, foamers, airfield, and RO sections with detail links.
+- Legacy flat SKU routes remain available via `SubpageTemplate`.
+
+### 🟢 Step 4 complete — Resources & Certifications (Phase 4)
+- Filterable `/resources` library (TDS download / SDS request / certificates / FAQs) in `resourcesData.ts`.
+- Certifications cards now show **standard number**, **validity**, and **Download / Request PDF** actions.
+- SDS and certificate PDFs still request via quote until Supabase Storage (Phase 5) hosts originals.
+
 ### 🟡 Partially Implemented / Needs Restructuring
 1. **Certifications Verification & Downloads (Sec. 6 & 33)**:
-   - *Current:* Listed with detailed textual descriptions.
-   - *Requirement:* Standardized card structure with validity dates, standard numbers, and direct **[Download Certificate / PDF]** buttons.
+   - *Current:* Cards include standard numbers, validity, and request/download CTAs; hosted certificate PDFs still pending client assets / Storage.
+   - *Remaining:* Attach real certificate PDF binaries when provided.
 2. **Problem-Solving Industry Workflows (Sec. 10–16)**:
-   - *Current:* Standard bento and product showcase.
+   - *Current:* Product Finder covers cross-industry problem → product flows; industry-page embedded guides still optional.
    - *Requirement:* Interactive "What problem are you trying to solve?" guides (e.g., Oil & Gas: Rust vs. Heavy-duty degreasing vs. Oxygen cleaning).
 
 ---
 
 ### 🔴 Yet to Implement
-1. **Reusable Individual Product Detail Template (Sec. 9)**:
-   - Dedicated canonical pages (`/products/:id`) with:
-     - Boeing / Airbus / NATO specs & NATO stock numbers
-     - Dilution ratios, chemical characteristics, storage & packaging
-     - **[Download TDS]** and **[Download SDS]** buttons
-     - Dual CTAs: **[Add to Cart]** and **[Request a Quote]**
-     - Related equipment & complementary products
-2. **Dedicated Equipment & Systems Section (Sec. 10)**:
-   - Stub `/equipment` overview exists; expand into full systems catalog (washers, sprayers, foamers, RO).
-3. **Integrated E-Commerce & Shop Flow (Sec. 19, 20, 26)**:
+1. **Integrated E-Commerce & Shop Flow (Sec. 19, 20, 26)**:
    - Stub `/shop` (“Catalog coming soon”) exists; add pricing catalog, cart (`/cart`), and checkout (`/checkout`).
-   - Removal of legacy template placeholder info (e.g. +1 212 NYC address from `shop.etsint.eu`).
-4. **Resources & Downloads Hub (Sec. 22, 26)**:
-   - Stub `/resources` overview exists; upgrade to searchable/filterable TDS, SDS, Case Studies, and FAQs.
-5. **Germany & EU Legal Disclosures (Sec. 35)**:
+   - Enable Add to Cart on product detail pages; remove legacy shop placeholder info.
+2. **Germany & EU Legal Disclosures (Sec. 35)**:
    - Legal **Impressum** (mandatory under § 5 TMG in Germany)
    - **Datenschutzerklärung** (GDPR privacy policy) & Cookie Consent Banner
    - E-Commerce Terms (AGB), Shipping rules, and VAT specifications.
-6. **Database & Backend Integration (Sec. 27–29)**:
+3. **Database & Backend Integration (Sec. 27–29)**:
    - Supabase / PostgreSQL database schema (`products`, `certifications`, `quotes`, `documents`).
    - Supabase Storage buckets for PDFs and high-resolution assets.
    - Automated email webhook dispatch on quote requests.
-7. **SEO Migration & 301 Redirect Architecture (Sec. 30)**:
+4. **SEO Migration & 301 Redirect Architecture (Sec. 30)**:
    - 301 redirect map from old `etsint.de` and `etsint.eu` URLs to new consolidated routes.
    - Structured JSON-LD schema (Schema.org `Product` and `Organization`).
 
