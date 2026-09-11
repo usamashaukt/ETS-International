@@ -19,6 +19,7 @@ import Quote from "@/pages/Quote";
 import Equipment from "@/pages/Equipment";
 import Resources from "@/pages/Resources";
 import Shop from "@/pages/Shop";
+import Finder from "@/pages/Finder";
 import NotFound from "@/pages/NotFound";
 import SubpageTemplate from "@/pages/SubpageTemplate";
 
@@ -52,7 +53,10 @@ export const router = createBrowserRouter([
       { path: "resources", Component: Resources },
       { path: "shop", Component: Shop },
 
-      /* ΓöÇΓöÇΓöÇ Exact etsint.de Aviation Subpages ΓöÇΓöÇΓöÇ */
+      /* Phase 2 Product Finder */
+      { path: "finder", Component: Finder },
+
+      /* Exact etsint.de Aviation Subpages */
       { path: "commercial-aviation-industry", Component: SubpageTemplate },
       { path: "military-aviation-industry", Component: SubpageTemplate },
       { path: "benefits", Component: SubpageTemplate },

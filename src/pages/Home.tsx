@@ -305,8 +305,8 @@ export default function Home() {
         title="Ready to go solvent-free?"
         accent="solvent-free?"
         subtitle="Speak with our technical team about a custom cleaning solution. We provide free sample kits and full regulatory documentation."
-        ctaPrimary={{ label: "Request a Free Sample", to: "/quote" }}
-        ctaSecondary={{ label: "Download Product Catalog", to: "/products" }}
+        ctaPrimary={{ label: "Find Your Product", to: "/finder" }}
+        ctaSecondary={{ label: "Request a Free Sample", to: "/quote" }}
       />
     </>
   );

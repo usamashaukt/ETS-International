@@ -75,6 +75,7 @@ export const navConfig: NavTopItem[] = [
   {
     label: "Products",
     items: [
+      { label: "Product Finder", to: "/finder" },
       { label: "All Products", to: "/products" },
       { label: "Aviation", to: "/products/aviation" },
       { label: "Industrial", to: "/products/industrial" },

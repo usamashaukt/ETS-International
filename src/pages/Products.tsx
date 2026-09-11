@@ -122,8 +122,8 @@ export default function Products() {
         subtitle="ETS International offers a complete range of biodegradable, certified cleaning and maintenance solutions — from aviation MRO to food processing."
         imgUrl="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=800&fit=crop&auto=format"
         badge="AIRBUS · BOEING · NSF H1 · MARPOL · REACH"
-        ctaPrimary={{ label: "Get a Quote", to: "/quote" }}
-        ctaSecondary={{ label: "Contact Technical Team", to: "/contact" }}
+        ctaPrimary={{ label: "Product Finder", to: "/finder" }}
+        ctaSecondary={{ label: "Get a Quote", to: "/quote" }}
         minHeight="min-h-[60vh]"
       />
 
@@ -203,8 +203,8 @@ export default function Products() {
       <CtaBanner
         title="Need help choosing the right product?"
         accent="right product?"
-        subtitle="Our technical team can identify the ideal solution for your specific application and compliance requirements."
-        ctaPrimary={{ label: "Talk to an Expert", to: "/contact" }}
+        subtitle="Answer four short questions in the Product Finder, or talk to our technical team for a tailored recommendation."
+        ctaPrimary={{ label: "Open Product Finder", to: "/finder" }}
         ctaSecondary={{ label: "Get a Quote", to: "/quote" }}
       />
     </>

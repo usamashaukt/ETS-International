@@ -40,6 +40,12 @@ The primary objective of the redesign is **not** creating a simple brochure site
 - Stub overview pages: `/equipment`, `/resources`, `/shop` (placeholders; full catalogs in later phases).
 - Existing deep-link routes preserved.
 
+### 🟢 Step 2 complete — Product Finder (Phase 2)
+- Interactive wizard at `/finder`: Industry → Surface → Problem → Method → recommendations.
+- Static decision tree in `src/data/productFinder.ts` mapping to existing product/subpage routes.
+- Quote form prefills from finder query params (`industry`, `application`, `product`, `message`).
+- Entry points: Products hub, Home CTA, Products nav item, footer.
+
 ### 🟡 Partially Implemented / Needs Restructuring
 1. **Certifications Verification & Downloads (Sec. 6 & 33)**:
    - *Current:* Listed with detailed textual descriptions.
@@ -51,31 +57,29 @@ The primary objective of the redesign is **not** creating a simple brochure site
 ---
 
 ### 🔴 Yet to Implement
-1. **Interactive Product Finder Wizard (Sec. 23)**:
-   - Step-by-step interactive questionnaire (Industry ➔ Surface ➔ Problem ➔ Application method ➔ Recommended Products).
-2. **Reusable Individual Product Detail Template (Sec. 9)**:
+1. **Reusable Individual Product Detail Template (Sec. 9)**:
    - Dedicated canonical pages (`/products/:id`) with:
      - Boeing / Airbus / NATO specs & NATO stock numbers
      - Dilution ratios, chemical characteristics, storage & packaging
      - **[Download TDS]** and **[Download SDS]** buttons
      - Dual CTAs: **[Add to Cart]** and **[Request a Quote]**
      - Related equipment & complementary products
-3. **Dedicated Equipment & Systems Section (Sec. 10)**:
+2. **Dedicated Equipment & Systems Section (Sec. 10)**:
    - Stub `/equipment` overview exists; expand into full systems catalog (washers, sprayers, foamers, RO).
-4. **Integrated E-Commerce & Shop Flow (Sec. 19, 20, 26)**:
+3. **Integrated E-Commerce & Shop Flow (Sec. 19, 20, 26)**:
    - Stub `/shop` (“Catalog coming soon”) exists; add pricing catalog, cart (`/cart`), and checkout (`/checkout`).
    - Removal of legacy template placeholder info (e.g. +1 212 NYC address from `shop.etsint.eu`).
-5. **Resources & Downloads Hub (Sec. 22, 26)**:
+4. **Resources & Downloads Hub (Sec. 22, 26)**:
    - Stub `/resources` overview exists; upgrade to searchable/filterable TDS, SDS, Case Studies, and FAQs.
-6. **Germany & EU Legal Disclosures (Sec. 35)**:
+5. **Germany & EU Legal Disclosures (Sec. 35)**:
    - Legal **Impressum** (mandatory under § 5 TMG in Germany)
    - **Datenschutzerklärung** (GDPR privacy policy) & Cookie Consent Banner
    - E-Commerce Terms (AGB), Shipping rules, and VAT specifications.
-7. **Database & Backend Integration (Sec. 27–29)**:
+6. **Database & Backend Integration (Sec. 27–29)**:
    - Supabase / PostgreSQL database schema (`products`, `certifications`, `quotes`, `documents`).
    - Supabase Storage buckets for PDFs and high-resolution assets.
    - Automated email webhook dispatch on quote requests.
-8. **SEO Migration & 301 Redirect Architecture (Sec. 30)**:
+7. **SEO Migration & 301 Redirect Architecture (Sec. 30)**:
    - 301 redirect map from old `etsint.de` and `etsint.eu` URLs to new consolidated routes.
    - Structured JSON-LD schema (Schema.org `Product` and `Organization`).
 

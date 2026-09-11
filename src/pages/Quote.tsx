@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router";
-import { T, JK, GREEN, CYAN } from "@/theme";
+import { Link, useSearchParams } from "react-router";
+import { T, JK, GREEN } from "@/theme";
 import { useTheme } from "@/context/ThemeContext";
 import { IconArrowRight, IconShield, IconLeaf, IconCheck } from "@/components/icons";
 import { ThemeSelect } from "@/components/shared";
@@ -21,11 +21,24 @@ const countries = [
   "South Africa", "Singapore", "Australia", "United States", "Canada", "Other",
 ];
 
+function pickPrefill(value: string | null, options: string[]): string {
+  if (!value) return "";
+  return options.includes(value) ? value : "";
+}
+
 export default function Quote() {
   const { isDark } = useTheme();
+  const [searchParams] = useSearchParams();
   const [form, setForm] = useState({
-    name: "", company: "", email: "", phone: "", country: "",
-    industry: "", application: "", product: "", message: "",
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    country: "",
+    industry: pickPrefill(searchParams.get("industry"), industries),
+    application: pickPrefill(searchParams.get("application"), applications),
+    product: pickPrefill(searchParams.get("product"), products),
+    message: searchParams.get("message") ?? "",
   });
   const [sent, setSent] = useState(false);
 

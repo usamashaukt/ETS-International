@@ -65,9 +65,9 @@ export default function Footer() {
               heading: "Products",
               links: [
                 { label: "All Products", to: "/products" },
+                { label: "Product Finder", to: "/finder" },
                 { label: "Cleaners", to: "/cleaners" },
                 { label: "Equipment", to: "/equipment" },
-                { label: "Cleaning Accessories", to: "/cleaning-accessories" },
                 { label: "Shop", to: "/shop" },
                 { label: "Request a Quote", to: "/quote" },
               ],
