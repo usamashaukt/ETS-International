@@ -80,7 +80,7 @@ export const navConfig: NavTopItem[] = [
       { label: "Aviation", to: "/products/aviation" },
       { label: "Industrial", to: "/products/industrial" },
       { label: "HACCP / Food Safety", to: "/products/haccp" },
-      { label: "C² Coating Systems", to: "/products" },
+      { label: "Equipment Systems", to: "/equipment" },
       { label: "Cleaners", to: "/cleaners" },
     ],
   },

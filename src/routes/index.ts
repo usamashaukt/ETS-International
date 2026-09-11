@@ -1,4 +1,4 @@
-﻿import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router";
 import Shell from "@/components/layout/Shell";
 import Home from "@/pages/Home";
 import LegacyEts from "@/pages/LegacyEts";
@@ -6,6 +6,7 @@ import About from "@/pages/About";
 import Leadership from "@/pages/Leadership";
 import Certifications from "@/pages/Certifications";
 import Products from "@/pages/Products";
+import ProductsRouter from "@/pages/ProductsRouter";
 import Industries from "@/pages/Industries";
 import Aviation from "@/pages/Aviation";
 import Industrial from "@/pages/Industrial";
@@ -38,7 +39,7 @@ export const router = createBrowserRouter([
 
       /* Products & Overview */
       { path: "products", Component: Products },
-      { path: "products/:category", Component: Products },
+      { path: "products/:id", Component: ProductsRouter },
       { path: "industries", Component: Industries },
       { path: "industries/aviation", Component: Aviation },
       { path: "industries/industrial", Component: Industrial },
@@ -56,14 +57,14 @@ export const router = createBrowserRouter([
       /* Phase 2 Product Finder */
       { path: "finder", Component: Finder },
 
-      /* Exact etsint.de Aviation Subpages */
+      /* ─── Exact etsint.de Aviation Subpages ─── */
       { path: "commercial-aviation-industry", Component: SubpageTemplate },
       { path: "military-aviation-industry", Component: SubpageTemplate },
       { path: "benefits", Component: SubpageTemplate },
       { path: "cleaning-accessories", Component: SubpageTemplate },
       { path: "aviation-services", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Exact etsint.de Industrial Subpages ΓöÇΓöÇΓöÇ */
+      /* ─── Exact etsint.de Industrial Subpages ─── */
       { path: "metal-paint-workshop", Component: SubpageTemplate },
       { path: "refineries-gas-pipelines", Component: SubpageTemplate },
       { path: "offshore-marine", Component: SubpageTemplate },
@@ -75,7 +76,7 @@ export const router = createBrowserRouter([
       { path: "food-industry-and-agriculture", Component: SubpageTemplate },
       { path: "corrosion-prevention", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Exact etsint.de HACCP Subpages ΓöÇΓöÇΓöÇ */
+      /* ─── Exact etsint.de HACCP Subpages ─── */
       { path: "what-is-haccp", Component: SubpageTemplate },
       { path: "how-it-works", Component: SubpageTemplate },
       { path: "haccp-product", Component: SubpageTemplate },
@@ -91,7 +92,7 @@ export const router = createBrowserRouter([
       { path: "sanitary-bleach-liquid-sanipower-extra", Component: SubpageTemplate },
       { path: "oven-and-grill-cleaner", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Exact etsint.de Disinfection / Water Treatment Subpages ΓöÇΓöÇΓöÇ */
+      /* ─── Exact etsint.de Disinfection / Water Treatment Subpages ─── */
       { path: "water-treatment-introduction", Component: SubpageTemplate },
       { path: "water-treatment-information", Component: SubpageTemplate },
       { path: "how-it-works-2", Component: SubpageTemplate },
@@ -99,12 +100,12 @@ export const router = createBrowserRouter([
       { path: "fog-it", Component: SubpageTemplate },
       { path: "desi-box", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Exact etsint.de Derusting & Paint Stripping Subpages ΓöÇΓöÇΓöÇ */
+      /* ─── Exact etsint.de Derusting & Paint Stripping Subpages ─── */
       { path: "eco-safe-air-blaster", Component: SubpageTemplate },
       { path: "bioderuster", Component: SubpageTemplate },
       { path: "actan-3f", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Exact etsint.de About, Info & Technologies Subpages ΓöÇΓöÇΓöÇ */
+      /* ─── Exact etsint.de About, Info & Technologies Subpages ─── */
       { path: "why-ets", Component: SubpageTemplate },
       { path: "presentations", Component: SubpageTemplate },
       { path: "co-partners", Component: SubpageTemplate },
@@ -117,7 +118,7 @@ export const router = createBrowserRouter([
       { path: "barrel-cleaner", Component: SubpageTemplate },
       { path: "icx2", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Aviation product & accessory pages (etsint.de) ΓöÇΓöÇΓöÇ */
+      /* ─── Aviation product & accessory pages (etsint.de) ─── */
       { path: "aircraft-cleaner-fluid-exterior", Component: SubpageTemplate },
       { path: "aircraft-cleaner-fluid-interior", Component: SubpageTemplate },
       { path: "aircraft-cleaner-gel", Component: SubpageTemplate },
@@ -135,7 +136,7 @@ export const router = createBrowserRouter([
       { path: "osmose", Component: SubpageTemplate },
       { path: "multi-tissue-wipes", Component: SubpageTemplate },
 
-      /* ΓöÇΓöÇΓöÇ Industrial / vehicle product SKUs (etsint.de) ΓöÇΓöÇΓöÇ */
+      /* ─── Industrial / vehicle product SKUs (etsint.de) ─── */
       { path: "aqua-silicon-remover", Component: SubpageTemplate },
       { path: "bupi-cleaner-nf-concentrate", Component: SubpageTemplate },
       { path: "universal-cleaner", Component: SubpageTemplate },
@@ -159,7 +160,7 @@ export const router = createBrowserRouter([
       { path: "floor-shine", Component: SubpageTemplate },
       { path: "pressure-cleaner-8ato", Component: SubpageTemplate },
 
-      /* Fallback */
+      /* 404 */
       { path: "*", Component: NotFound },
     ],
   },

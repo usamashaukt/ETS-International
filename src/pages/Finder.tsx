@@ -10,9 +10,15 @@ import {
   type FinderOption,
   type FinderResult,
 } from "@/data/productFinder";
+import { canonicalProductPath, isCatalogProduct } from "@/data/productsCatalog";
 
 interface Selection {
   option: FinderOption;
+}
+
+function resolveRecommendationPath(to: string): string {
+  const slug = to.replace(/^\//, "").replace(/\/$/, "");
+  return isCatalogProduct(slug) ? canonicalProductPath(slug) : to;
 }
 
 export default function Finder() {
@@ -195,7 +201,7 @@ export default function Finder() {
                 {result.recommendations.map((rec, idx) => (
                   <Link
                     key={rec.to + rec.name}
-                    to={rec.to}
+                    to={resolveRecommendationPath(rec.to)}
                     className="group block px-5 py-5 rounded-2xl transition-all duration-200 hover:translate-x-1"
                     style={{
                       background: T.glassCard,
