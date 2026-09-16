@@ -56,7 +56,7 @@ export default function Home() {
           </p>
 
           <div className="fade-up delay-4 flex flex-wrap gap-4 items-center">
-            <Link to="/industries" className="btn-neon glow-btn hover:scale-105">
+            <Link to="/products" className="btn-neon glow-btn hover:scale-105">
               {i.heroCta1} <IconArrowRight />
             </Link>
             <Link to="/certifications" className="btn-secondary">
