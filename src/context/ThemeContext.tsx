@@ -52,19 +52,11 @@ export const translations: Record<Lang, Translations> = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
+/** Light theme is disabled for now — site is dark-only. */
+const FORCED_DARK = true;
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Synchronous lazy initialization prevents theme-flicker or resetting to dark on refresh
-  const [isDark, setIsDarkState] = useState<boolean>(() => {
-    if (typeof window === "undefined") return true;
-    try {
-      const stored = localStorage.getItem("ets-theme");
-      if (stored === "light") return false;
-      if (stored === "dark") return true;
-    } catch (e) {
-      console.warn("Unable to access localStorage for ets-theme", e);
-    }
-    return true; // Default theme
-  });
+  const isDark = FORCED_DARK;
 
   const [lang, setLangState] = useState<Lang>(() => {
     if (typeof window === "undefined") return "en";
@@ -77,13 +69,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return "en";
   });
 
-  const setIsDark = (v: boolean) => {
-    setIsDarkState(v);
+  /** No-op while light theme is disabled; always stays dark. */
+  const setIsDark = (_v: boolean) => {
     if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("data-theme", v ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", "dark");
     }
     try {
-      localStorage.setItem("ets-theme", v ? "dark" : "light");
+      localStorage.setItem("ets-theme", "dark");
     } catch (e) {
       console.warn("Failed to set ets-theme in localStorage", e);
     }
@@ -99,11 +91,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", "dark");
     try {
-      localStorage.setItem("ets-theme", isDark ? "dark" : "light");
+      localStorage.setItem("ets-theme", "dark");
     } catch (e) {}
-  }, [isDark]);
+  }, []);
 
   useEffect(() => {
     try {

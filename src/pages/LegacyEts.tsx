@@ -152,29 +152,6 @@ const IconChevronRight = () => (
     <path d="M9 18l6-6-6-6" />
   </svg>
 )
-const IconSun = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    className="w-4 h-4"
-  >
-    <circle cx="12" cy="12" r="4" />
-    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-  </svg>
-)
-const IconMoon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    className="w-4 h-4"
-  >
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-  </svg>
-)
 const IconCheck = () => (
   <svg
     viewBox="0 0 24 24"
@@ -748,15 +725,8 @@ const translations = {
 type Lang = keyof typeof translations
 
 export default function LegacyEts() {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === "undefined") return true;
-    try {
-      const stored = localStorage.getItem("ets-theme");
-      if (stored === "light") return false;
-      if (stored === "dark") return true;
-    } catch (e) {}
-    return true;
-  });
+  /* Light theme disabled — dark only */
+  const isDark = true;
   const [lang, setLang] = useState<Lang>(() => {
     if (typeof window === "undefined") return "en";
     try {
@@ -775,14 +745,11 @@ export default function LegacyEts() {
 
   /* Apply data-theme to <html> */
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      isDark ? "dark" : "light",
-    )
+    document.documentElement.setAttribute("data-theme", "dark")
     try {
-      localStorage.setItem("ets-theme", isDark ? "dark" : "light")
+      localStorage.setItem("ets-theme", "dark")
     } catch (e) {}
-  }, [isDark])
+  }, [])
 
   const toggleLanguage = () => {
     const nextLang = lang === "en" ? "de" : "en"
@@ -962,22 +929,6 @@ export default function LegacyEts() {
               aria-label="Switch language"
             >
               {i.langLabel}
-            </button>
-
-            {/* Theme toggle */}
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200 hover:scale-110"
-              style={{
-                background: isDark
-                  ? "rgba(255,255,255,0.06)"
-                  : "rgba(10,25,47,0.07)",
-                border: `1px solid ${t.border}`,
-                color: isDark ? "rgba(255,255,255,0.7)" : "rgba(10,25,47,0.6)",
-              }}
-              aria-label="Toggle theme"
-            >
-              {isDark ? <IconSun /> : <IconMoon />}
             </button>
 
             <a

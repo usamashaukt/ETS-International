@@ -9,8 +9,6 @@ import {
   IconChevronRight,
   IconMenu,
   IconX,
-  IconSun,
-  IconMoon,
 } from "@/components/icons";
 import { navConfig } from "@/data/navConfig";
 
@@ -18,7 +16,7 @@ export type { NavTopItem, NavDropdownItem, NavSubItem } from "@/types";
 export { navConfig };
 
 export default function Navbar() {
-  const { isDark, setIsDark, lang, setLang, i } = useTheme();
+  const { isDark, lang, setLang, i } = useTheme();
   const scrolled = useScrolled();
 
   // Desktop menu states
@@ -258,20 +256,6 @@ export default function Navbar() {
             aria-label="Switch Language"
           >
             {lang === "en" ? "DE" : "EN"}
-          </button>
-
-          {/* Dark/Light Theme Toggle */}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200 hover:scale-110 cursor-pointer"
-            style={{
-              background: isDark ? "rgba(255,255,255,0.06)" : "rgba(10,25,47,0.07)",
-              border: `1px solid ${T.border}`,
-              color: isDark ? "rgba(255,255,255,0.8)" : "rgba(10,25,47,0.7)",
-            }}
-            aria-label="Toggle Theme"
-          >
-            {isDark ? <IconSun /> : <IconMoon />}
           </button>
 
           {/* Request Quote Button */}

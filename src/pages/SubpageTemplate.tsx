@@ -291,6 +291,42 @@ export default function SubpageTemplate({ forcedSlug }: SubpageTemplateProps) {
         </div>
       </section>
 
+      {data.map && (
+        <section className="max-w-6xl mx-auto px-6 py-12 border-t border-theme-subtle">
+          <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <span className="text-xs font-bold tracking-widest uppercase block mb-2 text-theme-neon">
+                FIND US
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black font-display text-theme-fg">
+                Headquarters Map
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-theme-muted max-w-xl">
+                {data.map.address}
+              </p>
+            </div>
+            <a
+              href={data.map.directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary hover:scale-105 inline-flex items-center gap-2 shrink-0"
+            >
+              Get Directions <IconArrowRight />
+            </a>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-theme-subtle shadow-xl bg-theme-base">
+            <iframe
+              title={`Map showing ${data.map.address}`}
+              src={data.map.embedUrl}
+              className="w-full h-[320px] sm:h-[420px] md:h-[480px] border-0 block"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </section>
+      )}
+
       {related.length > 0 && (
         <section id="products" className="max-w-6xl mx-auto px-6 py-12 border-t border-theme-subtle scroll-mt-28">
           <div className="mb-10">

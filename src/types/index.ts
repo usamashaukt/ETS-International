@@ -74,6 +74,12 @@ export interface RelatedProduct {
   pdf?: string;
 }
 
+export interface SubpageMap {
+  address: string;
+  embedUrl: string;
+  directionsUrl: string;
+}
+
 export interface SubpageInfo {
   slug: string;
   category: string;
@@ -92,6 +98,7 @@ export interface SubpageInfo {
   relatedProducts?: RelatedProduct[];
   pdfUrl?: string;
   pdfLabel?: string;
+  map?: SubpageMap;
 }
 
 /* ─── Common UI Types ─── */

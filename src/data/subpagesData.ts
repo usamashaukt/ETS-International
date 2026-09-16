@@ -1,6 +1,14 @@
 import { etsDePagesData } from "./etsDePagesData";
 import type { RelatedProduct } from "./productPdfs";
 
+export interface SubpageMap {
+  address: string;
+  /** Google Maps / OSM embed URL for the iframe */
+  embedUrl: string;
+  /** Opens in Google Maps / Apple Maps */
+  directionsUrl: string;
+}
+
 export interface SubpageInfo {
   slug: string;
   category: string;
@@ -28,6 +36,8 @@ export interface SubpageInfo {
   /** Explicit PDF for this page; otherwise looked up via productPdfs[slug] */
   pdfUrl?: string;
   pdfLabel?: string;
+  /** Optional embedded map (e.g. Location page) */
+  map?: SubpageMap;
 }
 
 const coreSubpagesData: Record<string, SubpageInfo> = {
@@ -1171,7 +1181,14 @@ const coreSubpagesData: Record<string, SubpageInfo> = {
       "Audited batch pickup and European freight forwarding",
       "Executive partnership meetings"
     ],
-    certifications: ["Registered in Cologne, Germany", "ISO 9001:2015"]
+    certifications: ["Registered in Cologne, Germany", "ISO 9001:2015"],
+    map: {
+      address: "Wilhelm-Rupert-Str. 38, 51147 Köln, Germany",
+      embedUrl:
+        "https://www.google.com/maps?q=Wilhelm-Rupert-Str.+38,+51147+K%C3%B6ln,+Germany&z=15&output=embed",
+      directionsUrl:
+        "https://www.google.com/maps/dir/?api=1&destination=Wilhelm-Rupert-Str.+38,+51147+K%C3%B6ln,+Germany",
+    },
   }
 };
 
