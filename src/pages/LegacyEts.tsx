@@ -2100,7 +2100,7 @@ export default function LegacyEts() {
                 </div>
                 <div>HRB 89819 Registergericht Köln</div>
                 <div>WEEE DE: 77800049</div>
-                <div>Wilhelm-Rupert-Str. 38, 51147 Köln, Germany</div>
+                <div>Wilhelm-Ruppert-Straße 38, 51147 Porz, Germany</div>
                 <div className="pt-2 text-white font-medium">
                   {i.footerCourtCeo}
                 </div>
@@ -2121,7 +2121,7 @@ export default function LegacyEts() {
               >
                 <div className="flex items-start gap-2">
                   <span className="text-[#00FF66]">📍</span>
-                  <span>Wilhelm-Rupert-Str. 38, 51147 Köln (Cologne) Germany</span>
+                  <span>Wilhelm-Ruppert-Straße 38, 51147 Porz, Germany</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-[#00FF66]">📞</span>

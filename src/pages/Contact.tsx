@@ -52,7 +52,7 @@ export default function Contact() {
                   { icon: <IconPhone />, label: "Phone", value: "+49 226 19130865", href: "tel:+4922619130865" },
                   { icon: <IconPhone />, label: "Mobile", value: "+49 176 84294205", href: "tel:+4917684294205" },
                   { icon: <IconGlobe />, label: "Website", value: "etsint.de", href: "https://etsint.de" },
-                  { icon: <IconMapPin />, label: "Headquarters", value: "Wilhelm-Rupert-Str. 38, 51147 Köln, Germany", href: "https://maps.google.com/?q=Wilhelm-Rupert-Str.+38,+51147+Köln" },
+                  { icon: <IconMapPin />, label: "Headquarters", value: "Wilhelm-Ruppert-Straße 38, 51147 Porz, Germany", href: "https://maps.google.com/?q=Wilhelm-Ruppert-Stra%C3%9Fe+38,+51147+Porz,+Germany" },
                 ].map((item) => (
                   <a key={item.label} href={item.href}
                     className="flex items-start gap-4 group"

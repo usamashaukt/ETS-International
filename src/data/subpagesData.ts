@@ -1156,7 +1156,7 @@ const coreSubpagesData: Record<string, SubpageInfo> = {
     features: [
       {
         title: "Corporate Headquarters & R&D Laboratory",
-        description: "Wilhelm-Rupert-Str. 38, 51147 Köln, Germany. House of our formulations lab, technical staff, and European executive leadership.",
+        description: "Wilhelm-Ruppert-Straße 38, 51147 Porz, Germany. House of our formulations lab, technical staff, and European executive leadership.",
         highlight: "Visitor appointments welcome"
       },
       {
@@ -1183,11 +1183,11 @@ const coreSubpagesData: Record<string, SubpageInfo> = {
     ],
     certifications: ["Registered in Cologne, Germany", "ISO 9001:2015"],
     map: {
-      address: "Wilhelm-Rupert-Str. 38, 51147 Köln, Germany",
+      address: "Wilhelm-Ruppert-Straße 38, 51147 Porz, Germany",
       embedUrl:
-        "https://www.google.com/maps?q=Wilhelm-Rupert-Str.+38,+51147+K%C3%B6ln,+Germany&z=15&output=embed",
+        "https://www.google.com/maps?q=Wilhelm-Ruppert-Stra%C3%9Fe+38,+51147+Porz,+Germany&z=15&output=embed",
       directionsUrl:
-        "https://www.google.com/maps/dir/?api=1&destination=Wilhelm-Rupert-Str.+38,+51147+K%C3%B6ln,+Germany",
+        "https://www.google.com/maps/dir/?api=1&destination=Wilhelm-Ruppert-Stra%C3%9Fe+38,+51147+Porz,+Germany",
     },
   }
 };
